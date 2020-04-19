@@ -1,0 +1,127 @@
+{
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "debug.console.fontSize": 16,
+  "editor.fontFamily": "'Mars Mono', 'Fira Code'",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 16,
+  "editor.fontWeight": "300",
+  "editor.formatOnPaste": true,
+  "editor.lineHeight": 24,
+  "editor.minimap.enabled": false,
+  "editor.quickSuggestions": {
+    "comments": true,
+    "other": true,
+    "strings": true
+  },
+  "editor.renderWhitespace": "all",
+  "editor.snippetSuggestions": "bottom",
+  "editor.tabCompletion": "on",
+  "editor.tabSize": 2,
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": [
+          "comment",
+          "punctuation.definition.comment",
+          "comment.block",
+          "comment.line",
+          "comment.block.documentation",
+          "comment.line.double-slash",
+          "entity.other.attribute-name",
+          "entity.other.attribute-name.html",
+          "markup.italic",
+          "entity.other.attribute-name.id",
+          "entity.other.attribute-name.class.css",
+          "entity.other.attribute-name.tag.jade",
+          "entity.other.attribute-name.class.jade",
+          "entity.other.attribute-name.id.jade",
+          "keyword.control",
+          "storage",
+          "emphasis",
+          "variable.language",
+          "comment",
+          "constant.language",
+          "keyword.control",
+          "keyword.operator.expression",
+          "keyword.other",
+          "keyword.operator.new",
+          "variable.language",
+          "entity.other.attribute-name",
+          "storage"
+        ],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      }
+    ]
+  },
+  "editor.wordWrap": "on",
+  "markdown.preview.fontSize": 16,
+  "oneDarkPro.italic": true,
+  "oneDarkPro.vivid": false,
+  "peacock.favoriteColors": [
+    {
+      "name": "Angular Red",
+      "value": "#b52e31"
+    },
+    {
+      "name": "Auth0 Orange",
+      "value": "#eb5424"
+    },
+    {
+      "name": "Azure Blue",
+      "value": "#007fff"
+    },
+    {
+      "name": "C# Purple",
+      "value": "#68217A"
+    },
+    {
+      "name": "Gatsby Purple",
+      "value": "#639"
+    },
+    {
+      "name": "Go Cyan",
+      "value": "#5dc9e2"
+    },
+    {
+      "name": "Java Blue-Gray",
+      "value": "#557c9b"
+    },
+    {
+      "name": "JavaScript Yellow",
+      "value": "#f9e64f"
+    },
+    {
+      "name": "Mandalorian Blue",
+      "value": "#1857a4"
+    },
+    {
+      "name": "Node Green",
+      "value": "#215732"
+    },
+    {
+      "name": "React Blue",
+      "value": "#00b3e6"
+    },
+    {
+      "name": "Something Different",
+      "value": "#832561"
+    },
+    {
+      "name": "Vue Green",
+      "value": "#42b883"
+    }
+  ],
+  "sync.gist": "fcef1435c5494b1f0415dd73fdb8e40f",
+  "terminal.integrated.fontFamily": "'Mars Mono'",
+  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+  "window.zoomLevel": 0,
+  "workbench.activityBar.visible": true,
+  "workbench.colorTheme": "One Dark Pro",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.statusBar.visible": true
+}

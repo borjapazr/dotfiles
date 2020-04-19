@@ -1,0 +1,7 @@
+[submodule "modules/dotbot"]
+	path = modules/dotbot
+	url = git@github.com:anishathalye/dotbot.git
+
+[submodule "modules/oh-my-zsh"]
+	path = modules/oh-my-zsh
+	url = git@github.com:ohmyzsh/ohmyzsh.git
