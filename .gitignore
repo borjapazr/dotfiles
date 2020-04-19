@@ -6,4 +6,4 @@ shell/zsh/**/**.zwc.old
 /**/**/private-*
 
 # External bin
-bin/external/*
+bin/external/**
