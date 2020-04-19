@@ -34,7 +34,7 @@ _fzf_prompt() {
   match="$(echo "$paths" |
     xargs -I % sh -c 'echo "$(basename $(dirname %)) $(basename %)"' |
     $(__fzfcmd) --height 100% --preview 'dot $(echo {} | cut -d" " -f 1) $(echo {} | cut -d" " -f 2) -h')"
-  zle -U "dot $match"
+  zle -U "dot $match "
 }
 
 # ctrl+e - Paste the selected dot command from dot commands into the command line
