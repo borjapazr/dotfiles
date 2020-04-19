@@ -6,4 +6,5 @@ shell/zsh/**/**.zwc.old
 /**/**/private-*
 
 # External bin
-bin/external/**
+bin/external/*
+!bin/external/.gitkeep
