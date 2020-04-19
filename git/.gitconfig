@@ -1,6 +1,7 @@
 [user]
 	name = Borja Paz Rodríguez
 	email = borjapazr@gmail.com
+	signingkey = 158DD7B288CEA651
 
 [fetch]
 	prune = true
