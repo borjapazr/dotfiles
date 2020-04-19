@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Add all files and then a commit
+#?? 1.0.0
+##?
+##? Usage:
+##?    commit            # A prompt appears askign for the commit message
+##?    commit <message>
+
+docs::eval_help "$@"
+
+git add -A
+
+if [ -z "$1" ]; then
+  git commit -S
+else
+  git commit -S -m"$1"
+fi
