@@ -25,11 +25,11 @@ bindkey '^R' fzf-history-widget
 
 # ctrl+g - Navi cheat sheet
 _call_navi() {
-   local navi_path=$(command -v navi)
-   local buff="$BUFFER"
-   zle kill-whole-line
-   local cmd="$(NAVI_USE_FZF_ALL_INPUTS=true "$navi_path" --print <> /dev/tty)"
-   zle -U "${buff}${cmd}"
+  local navi_path=$(command -v navi)
+  local buff="$BUFFER"
+  zle kill-whole-line
+  local cmd="$(NAVI_USE_FZF_ALL_INPUTS=true "$navi_path" --print <> /dev/tty)"
+  zle -U "${buff}${cmd}"
 }
 zle -N _call_navi
 bindkey '^g' _call_navi
@@ -45,8 +45,10 @@ _fzf_prompt() {
   match="$(echo "$paths" |
     xargs -I % sh -c 'echo "$(basename $(dirname %)) $(basename %)"' |
     $(__fzfcmd) --height 100% --preview 'dot $(echo {} | cut -d" " -f 1) $(echo {} | cut -d" " -f 2) -h')"
-  LBUFFER="dot $match"
-  zle -U " "
+  if [ -n "$match" ]; then
+    LBUFFER="dot $match"
+    zle -U " "
+  fi
 }
 
 # ctrl+e - Paste the selected dot command from dot commands into the command line
