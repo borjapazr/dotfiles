@@ -46,6 +46,3 @@ source $ZSH/oh-my-zsh.sh
 source $DOTFILES_PATH/shell/init.sh
 # Load key bindings
 source $DOTFILES_PATH/shell/zsh/key-bindings.zsh
-
-# fzf functions
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

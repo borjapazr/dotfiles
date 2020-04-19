@@ -30,7 +30,7 @@ _apply_symlinks() {
 }
 
 apply_common_symlinks() {
-  _apply_symlinks "unix.yml"
+  _apply_symlinks "common.yml"
 }
 
 project_status() {
