@@ -48,4 +48,4 @@ source $DOTFILES_PATH/shell/init.sh
 source $DOTFILES_PATH/shell/zsh/key-bindings.zsh
 
 # fzf functions
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

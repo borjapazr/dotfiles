@@ -5,7 +5,6 @@ DOTBOT_BIN="bin/dotbot"
 
 self_update() {
   cd "$DOTFILES_PATH" || exit
-
   git fetch
   if [[ $(project_status) == "behind" ]]; then
     log::note "Needs to pull!"
@@ -14,38 +13,24 @@ self_update() {
 }
 
 update_submodules() {
-  cd "$DOTFILES_PATH" || exit
-
-  zsh "$ZIM_HOME/zimfw.zsh" upgrade
-  rm -rf "$ZIM_HOME/modules/"* && zsh "$ZIM_HOME/zimfw.zsh" install
-
-  git submodule foreach git reset --hard
+  cd "$DOTFILES_PATH"
+  git pull
+  git submodule init
+  git submodule update
+  git submodule status
+  git submodule update --init --recursive
 }
 
-apply_symlinks() {
-  local -r CONFIG="$DOTFILES_PATH/symlinks/$1"
+_apply_symlinks() {
+  local -r CONFIG="$DOTFILES_PATH/links/$1"
   shift
-
   echo
   "$DOTFILES_PATH/$DOTBOT_DIR/$DOTBOT_BIN" -d "$DOTFILES_PATH" -c "$CONFIG" "$@"
   echo
 }
 
 apply_common_symlinks() {
-  apply_symlinks "conf.yaml"
-}
-
-apply_macos_symlinks() {
-  apply_symlinks "conf.macos.yaml"
-
-  sudo ln -sf "$DOTFILES_PATH/mac/plist/limit.maxfiles.plist" "/Library/LaunchDaemons/limit.maxfiles.plist"
-  sudo ln -sf "$DOTFILES_PATH/mac/plist/limit.maxproc.plist" "/Library/LaunchDaemons/limit.maxproc.plist"
-  sudo chmod 644 "/Library/LaunchDaemons/limit.maxfiles.plist"
-  sudo chmod 644 "/Library/LaunchDaemons/limit.maxproc.plist"
-  sudo chown root:wheel /Library/LaunchDaemons/limit.maxfiles.plist
-  sudo chown root:wheel /Library/LaunchDaemons/limit.maxproc.plist
-  sudo launchctl load -w "/Library/LaunchDaemons/limit.maxfiles.plist"
-  sudo launchctl load -w "/Library/LaunchDaemons/limit.maxproc.plist"
+  _apply_symlinks "unix.yml"
 }
 
 project_status() {
@@ -65,4 +50,10 @@ project_status() {
   else
     echo "diverged"
   fi
+}
+
+update_linux() {
+  sudo apt update -y
+  sudo apt upgrade -y
+  sudo snap refresh
 }

@@ -1,5 +1,5 @@
 __fzfcmd() {
-  echo "fzf"
+  echo "fzf --reverse"
 }
 
 # ctrl+r - Paste the selected command from history into the command line
@@ -22,3 +22,24 @@ fzf-history-widget() {
 }
 zle -N fzf-history-widget
 bindkey '^R' fzf-history-widget
+
+_list_command_paths() {
+  find "$DOTFILES_PATH/scripts" -maxdepth 2 -executable -type f \
+      | grep -v core \
+      | sort
+}
+
+_fzf_prompt() {
+  local paths="$1"
+  match="$(echo "$paths" |
+    xargs -I % sh -c 'echo "$(basename $(dirname %)) $(basename %)"' |
+    $(__fzfcmd) --height 100% --preview 'dot $(echo {} | cut -d" " -f 1) $(echo {} | cut -d" " -f 2) -h')"
+  zle -U "dot $match"
+}
+
+# ctrl+e - Paste the selected dot command from dot commands into the command line
+fzf_show_dot_commands() {
+  _fzf_prompt "$(_list_command_paths)"
+}
+zle -N fzf_show_dot_commands
+bindkey '^E' fzf_show_dot_commands

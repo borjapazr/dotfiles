@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+source "$DOTFILES_PATH/scripts/self/utils/update.sh"
+
+##? Update symlinks
+#?? 1.0.0
+##?
+##? Usage:
+##?    link
+
+docs::eval_help "$@"
+
+log::note "🔗 Applying symlinks..."
+apply_common_symlinks

@@ -1,22 +1,16 @@
 #!/bin/user/env bash
 
-install_macos_custom() {
-  # Install brew if not installed
-  if ! [ -x "$(command -v brew)" ]; then
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  fi
-
-  # All apps (This line is 2 times because there are dependencies between brew cask and brew)
-  brew bundle --file="$DOTFILES_PATH/mac/brew/Brewfile" || true
-  brew bundle --file="$DOTFILES_PATH/mac/brew/Brewfile"
-
-  # Correct paths (so, we handle all with $PATH)
-  sudo truncate -s 0 /etc/paths
-
-  # Custom macOS "defaults"
-  sh "$DOTFILES_PATH/mac/mac-os.sh"
-}
+OH_MY_ZSH_CUSTOM="$DOTFILES_PATH/modules/oh-my-zsh/custom"
 
 install_linux_custom() {
-  echo
+  log::note "📦 Installing snap packages..."
+  sudo snap install code --classic
+  sudo snap install intellij-idea-ultimate --classic
+  sudo snap install webstorm --classic
+}
+
+install_oh_my_zsh_plugins() {
+  git clone https://github.com/zsh-users/zsh-autosuggestions "$OH_MY_ZSH_CUSTOM/plugins/zsh-autosuggestions"
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$OH_MY_ZSH_CUSTOM/plugins/zsh-syntax-highlighting"
+  git clone https://github.com/MichaelAquilina/zsh-you-should-use.git "$OH_MY_ZSH_CUSTOM/plugins/you-should-use"
 }

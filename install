@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 
-set -e
+set -euo pipefail
 
-CONFIG="links/unix.yml"
-DOTBOT_DIR="modules/dotbot"
+##? Setups the environment
+#?? 1.0.0
+##?
+##? Usage:
+##?    install
 
-DOTBOT_BIN="bin/dotbot"
-BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+export DOTFILES_PATH="$HOME/.dotfiles"
 
-cd "${BASEDIR}"
-git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
-git submodule update --init --recursive "${DOTBOT_DIR}"
+echo "👋 Welcome to the borjapazr/dotfiles installer!"
 
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${BASEDIR}/${CONFIG}" "${@}"
+"$DOTFILES_PATH/bin/dot" self install
