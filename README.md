@@ -1,6 +1,6 @@
 ## 🚀 Installation
 ```bash
-$ git clone [<repo>](https://github.com/borjapazr/dotfiles.git) $HOME/.dotfiles
+$ git clone https://github.com/borjapazr/dotfiles.git $HOME/.dotfiles
 $ $HOME/.dotfiles/install
 ```
 
