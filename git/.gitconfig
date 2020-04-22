@@ -3,18 +3,6 @@
 	email = borjapazr@gmail.com
 	signingkey = 158DD7B288CEA651
 
-[fetch]
-	prune = true
-
-[push]
-	default = simple
-
-[color]
-	diff = auto
-	status = auto
-	branch = auto
-	ui = true
-
 [core]
 	excludesfile = ~/.gitignore_global
 	attributesfile = ~/.gitattributes
@@ -22,24 +10,36 @@
 	autocrlf = input
 	trustctime = false
 	precomposeunicode = false
+	pager = less -FRSX
 	ignorecase = false
 
-[help]
-	autocorrect = 1
+[fetch]
+	prune = true
+
+[push]
+	default = simple
+
+[apply]
+	whitespace = fix
 
 [diff]
 	tool = vimdiff
 	compactionHeuristic = true
 	indentHeuristic = true
 
+[help]
+	autocorrect = 1
+
 [difftool]
 	prompt = false
 
-[credential]
-	helper = osxkeychain
-
 [color]
-	ui = always
+	branch = auto
+	diff = auto
+	interactive = auto
+	pager = true
+	status = auto
+	ui = true
 
 [color "diff"]
 	meta = yellow bold
@@ -64,6 +64,3 @@
 	added = yellow
 	changed = green
 	untracked = cyan
-
-[apply]
-	whitespace = fix
