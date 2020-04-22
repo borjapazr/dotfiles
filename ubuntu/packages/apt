@@ -1,0 +1,14 @@
+# Java JDK
+oracle-java14-installer
+oracle-java14-set-default
+
+# Docker
+docker.io
+
+# Node
+nodejs
+npm
+
+# Tools
+zsh
+fzf

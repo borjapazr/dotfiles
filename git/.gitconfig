@@ -22,16 +22,10 @@
 	autocrlf = input
 	trustctime = false
 	precomposeunicode = false
-	pager = delta --dark
 	ignorecase = false
 
 [help]
 	autocorrect = 1
-
-[filter "hawser"]
-	clean = git hawser clean %f
-	smudge = git hawser smudge %f
-	required = true
 
 [diff]
 	tool = vimdiff
@@ -40,12 +34,6 @@
 
 [difftool]
 	prompt = false
-
-[diff "json"]
-	textconv = python -m json.tool
-
-[diff "word"]
-	textconv = docx2txt
 
 [credential]
 	helper = osxkeychain
@@ -63,8 +51,8 @@
 
 [color "diff-highlight"]
 	oldNormal = red bold
-	oldHighlight = "red bold 52"
-	newNormal = "green bold"
+	oldHighlight = red bold 52
+	newNormal = green bold
 	newHighlight = "green bold 22"
 
 [color "branch"]
@@ -78,5 +66,4 @@
 	untracked = cyan
 
 [apply]
-	# Detect whitespace errors when applying a patch
 	whitespace = fix

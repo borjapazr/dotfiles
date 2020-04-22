@@ -2,8 +2,8 @@
 
 - defaults:
     link:
-      create: true
-      force: true
+        create: true
+        force: true
 
 - link:
     ~/.bashrc: shell/bash/.bashrc
@@ -16,7 +16,8 @@
     ~/.gitignore_global: git/.gitignore_global
     ~/.gitattributes: git/.gitattributes
     ~/.vimrc: editors/vim/.vimrc
-    #~/.config/Code/User/settings.json: editors/vscode/settings.json
+    ~/.config/Code/User/settings.json: editors/vscode/settings.json
+    ~/.config/Code/User/settings.json: editors/vscode/settings.json
 
 - create:
     - ~/.z

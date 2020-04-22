@@ -1,5 +1,0 @@
-terminalizer
-typescript
-@angular/cli
-http-server
-n

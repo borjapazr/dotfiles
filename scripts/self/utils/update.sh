@@ -6,19 +6,31 @@ DOTBOT_BIN="bin/dotbot"
 self_update() {
   cd "$DOTFILES_PATH" || exit
   git fetch
-  if [[ $(project_status) == "behind" ]]; then
-    log::note "Needs to pull!"
-    git pull && exit 0 || log::error "Failed"
+  if [[ $(_project_status) == "behind" ]]; then
+    log::note "⤵️ .dotfiles needs to pull!"
+    git pull && exit 0 || log::error "❌ Failed trying to pull .dotfiles"
   fi
 }
 
 update_submodules() {
-  cd "$DOTFILES_PATH"
+  cd "$DOTFILES_PATH" || exit
+
   git pull
   git submodule init
   git submodule update
   git submodule status
   git submodule update --init --recursive
+}
+
+apply_common_symlinks() {
+  _apply_symlinks "common.yml"
+}
+
+ubuntu::update() {
+  sudo apt update -y
+  #sudo apt upgrade -y
+  #sudo apt autoremove -y
+  #sudo snap refresh
 }
 
 _apply_symlinks() {
@@ -29,11 +41,7 @@ _apply_symlinks() {
   echo
 }
 
-apply_common_symlinks() {
-  _apply_symlinks "common.yml"
-}
-
-project_status() {
+_project_status() {
   cd "$DOTFILES_PATH" || exit
 
   local -r UPSTREAM="master"
@@ -50,10 +58,4 @@ project_status() {
   else
     echo "diverged"
   fi
-}
-
-update_linux() {
-  sudo apt update -y
-  sudo apt upgrade -y
-  sudo snap refresh
 }

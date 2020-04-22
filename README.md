@@ -7,7 +7,7 @@ $HOME/.dotfiles/install
 
 ## 🤩 Inspiration
 
-* <https://github.com/rgomezcasas/dotfiles:> Good job, mate!
+* <https://github.com/rgomezcasas/dotfiles> Good job, mate!
 
 ## ⚖️ License
 
