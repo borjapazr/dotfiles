@@ -8,7 +8,7 @@ self_update() {
   git fetch
   if [[ $(_project_status) == "behind" ]]; then
     log::note "⤵️ .dotfiles needs to pull!"
-    git pull && exit 0 || log::error "❌ Failed trying to pull .dotfiles"
+    git pull && exit 0 || log::error "❌ Failed trying to pull .dotfiles!"
   fi
 }
 

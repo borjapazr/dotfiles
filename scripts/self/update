@@ -13,8 +13,10 @@ source "$DOTFILES_PATH/scripts/self/utils/update.sh"
 
 docs::eval_help "$@"
 
-log::note "🔄 Updating system..."
-ubuntu::update
+if platform::is_linux; then
+  log::note "🔄 Updating system..."
+  ubuntu::update
+fi
 
 log::note "🐙 Updating .dotfiles..."
 self_update

@@ -4,6 +4,7 @@ set -euo pipefail
 
 source "$DOTFILES_PATH/scripts/core/_main.sh"
 source "$DOTFILES_PATH/scripts/self/utils/install.sh"
+source "$DOTFILES_PATH/scripts/self/utils/update.sh"
 
 ##? Install the dotfiles
 #?? 1.0.0
@@ -13,34 +14,42 @@ source "$DOTFILES_PATH/scripts/self/utils/install.sh"
 
 docs::eval_help "$@"
 
+log::note "🔴🟢🔵 Installing .dotfiles..."
+self_update
+update_submodules
+
 if platform::is_linux; then
   log::note "🐧 Installing Linux custom packages..."
-  #ubuntu::add_repositories
-  #ubuntu::install_tools
-  #ubuntu::configure_tools
+  ubuntu::update
+  ubuntu::add_repositories
+  ubuntu::install_tools
+  ubuntu::configure_tools
 fi
 
 log::note "💚 Installing npm packages..."
-#langs::install_npm_packages
+langs::install_npm_packages
 
 log::note "💻 Setting ZSH as the default shell..."
 chsh -s "$(command -v zsh)"
 
-"$DOTFILES_PATH/bin/dot" self update
+"$DOTFILES_PATH/bin/dot" self link
 
 log::note "💄 Installing oh-my-zsh plugins..."
 oh_my_zsh::install_plugins
 
-# read -rp "🐙 Git config: What is you email? " git_email
-# read -rp "🐙 Git config: And your name? " git_name
-# git config --global user.email "$git_email"
-# git config --global user.name "$git_name"
-# git config --global --unset user.signingkey
-# git config --global --unset commit.gpgsign
-# git config --global --unset tag.gpgsign
-# git config --global --unset gpg.program
+log::header "Global git configuration"
+read -rp "🐙 Git config: What is you email? " git_email
+read -rp "🐙 Git config: And your name? " git_name
+git config --global user.email "$git_email"
+git config --global user.name "$git_name"
+git config --global --unset user.signingkey
+git config --global --unset commit.gpgsign
+git config --global --unset tag.gpgsign
+git config --global --unset gpg.program
 
-echo
-log::header "Remember to install manually"
-ubuntu::install_manually
-echo
+if platform::is_linux; then
+  echo
+  log::header "Remember to install manually"
+  ubuntu::install_manually
+  echo
+fi

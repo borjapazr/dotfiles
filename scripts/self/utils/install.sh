@@ -1,21 +1,21 @@
 #!/bin/user/env bash
 
 OH_MY_ZSH_CUSTOM="$DOTFILES_PATH/modules/oh-my-zsh/custom"
-NAVI_BIN="$DOTFILES_PATH/bin/external"
+EXTERNAL_BIN="$DOTFILES_PATH/bin/external"
 
 ubuntu::add_repositories() {
   log::note "📥 Adding PPA repositories..."
-  xargs -a <(awk '! /^ *(#|$)/' "$DOTFILES_PATH/ubuntu/repositories/ppa") -r -- sudo add-apt-repository -y
+  xargs -a <(awk '! /^ *(#|$)/' "$DOTFILES_PATH/os/ubuntu/repositories/ppa") -r -- sudo add-apt-repository -y
 }
 
 ubuntu::install_tools() {
   log::note "📦 Installing snap packages..."
-  grep -vE "^(\s*$|#)" "$DOTFILES_PATH/ubuntu/packages/snap" | while read line; do
+  grep -vE "^(\s*$|#)" "$DOTFILES_PATH/os/ubuntu/packages/snap" | while read line; do
     sudo snap install $line
   done
 
   log::note "📦 Installing apt packages..."
-  xargs -a <(awk '! /^ *(#|$)/' "$DOTFILES_PATH/ubuntu/packages/apt") -r -- sudo apt-get install -y
+  xargs -a <(awk '! /^ *(#|$)/' "$DOTFILES_PATH/os/ubuntu/packages/apt") -r -- sudo apt-get install -y
 
   log::note "📦 Installing external packages..."
   _install_navi
@@ -27,9 +27,7 @@ ubuntu::configure_tools() {
 }
 
 ubuntu::install_manually() {
-  log::warning "CHEAT -> https://github.com/cheat/cheat"
-  log::warning "EXA -> https://github.com/ogham/exa"
-  log::warning "LAZYDOCKER -> https://github.com/jesseduffield/lazydocker"
+  log::warning "Nothing at the moment!"
 }
 
 langs::install_npm_packages() {
@@ -46,8 +44,16 @@ oh_my_zsh::install_plugins() {
 }
 
 _install_navi() {
-  rm -rf "$NAVI_BIN/navi" || true
-  BIN_DIR=$NAVI_BIN bash <(curl -sL https://raw.githubusercontent.com/denisidoro/navi/master/scripts/install)
+  rm -rf "$EXTERNAL_BIN/navi" || true
+  BIN_DIR=$EXTERNAL_BIN bash <(curl -sL https://raw.githubusercontent.com/denisidoro/navi/master/scripts/install)
+}
+
+_install_exa() {
+  sudo cargo install --root=$EXTERNAL_BIN exa
+}
+
+_install_lazydocker() {
+  curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | DIR=$EXTERNAL_BIN bash
 }
 
 _configure_docker() {

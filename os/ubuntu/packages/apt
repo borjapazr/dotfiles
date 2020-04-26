@@ -12,3 +12,8 @@ npm
 # Tools
 zsh
 fzf
+cargo
+tldr
+rofi
+prettyping
+glances

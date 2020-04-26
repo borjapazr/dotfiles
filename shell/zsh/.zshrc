@@ -6,10 +6,10 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FCNTL_LOCK
 
 # Theme
-ZSH_THEME="robbyrussell"
+ZSH_THEME="mrmars"
 
 # Configuration
-COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="false"
 ZSH_AUTOSUGGEST_USE_ASYNC=true
 ZSH_HIGHLIGHT_MAXLENGTH=300
 ZSH_DISABLE_COMPFIX="true"
@@ -35,8 +35,6 @@ plugins=(
   zsh-syntax-highlighting
 )
 
-autoload -U compinit && compinit
-
 # Disable paste highlighting
 zle_highlight+=(paste:none)
 
@@ -46,3 +44,11 @@ source $ZSH/oh-my-zsh.sh
 source $DOTFILES_PATH/shell/init.sh
 # Load key bindings
 source $DOTFILES_PATH/shell/zsh/key-bindings.zsh
+
+# Load completions once per day
+fpath=("$DOTFILES_PATH/shell/zsh/completions" $fpath)
+autoload -Uz compinit
+for dump in ~/.zcompdump(N.mh+24); do
+  compinit
+done
+compinit -C
