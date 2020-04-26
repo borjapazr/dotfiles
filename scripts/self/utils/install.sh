@@ -19,6 +19,8 @@ ubuntu::install_tools() {
 
   log::note "📦 Installing external packages..."
   _install_navi
+  _install_lazydocker
+  _install_exa
 }
 
 ubuntu::configure_tools() {
@@ -31,7 +33,7 @@ ubuntu::install_manually() {
 }
 
 langs::install_npm_packages() {
-  xargs -a <(awk '! /^ *(#|$)/' "$DOTFILES_PATH/langs/js/npm") -r -- sudo npm install -g
+  xargs -a <(awk '! /^ *(#|$)/' "$DOTFILES_PATH/langs/js/npm") -r -- sudo npm install -g || true
 }
 
 oh_my_zsh::install_plugins() {
@@ -48,18 +50,18 @@ _install_navi() {
   BIN_DIR=$EXTERNAL_BIN bash <(curl -sL https://raw.githubusercontent.com/denisidoro/navi/master/scripts/install)
 }
 
-_install_exa() {
-  sudo cargo install --root=$EXTERNAL_BIN exa
-}
-
 _install_lazydocker() {
+  rm -rf "$EXTERNAL_BIN/lazydocker" || true
   curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | DIR=$EXTERNAL_BIN bash
 }
 
+_install_exa() {
+  rm -rf "$EXTERNAL_BIN/exa" || true
+  sudo cargo install --root=$EXTERNAL_BIN exa
+}
+
 _configure_docker() {
-  sudo systemctl enable --now docker
   sudo groupadd docker
-  sudo usermod -aG docker $USER
-  newgrp docker
-  docker run hello-world
+  sudo gpasswd -a $USER docker
+  sudo service docker resart
 }

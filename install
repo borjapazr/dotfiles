@@ -9,7 +9,9 @@ set -euo pipefail
 ##?    install
 
 export DOTFILES_PATH="$HOME/.dotfiles"
+source "$DOTFILES_PATH/scripts/core/_main.sh"
 
-echo "👋 Welcome to the borjapazr/dotfiles installer!"
-
+echo
+log::header "🚀 Mr. Mars .dotfiles installer"
+echo
 "$DOTFILES_PATH/bin/dot" self install
