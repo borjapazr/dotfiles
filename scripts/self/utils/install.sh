@@ -57,11 +57,13 @@ _install_lazydocker() {
 
 _install_exa() {
   rm -rf "$EXTERNAL_BIN/exa" || true
-  sudo cargo install --root=$EXTERNAL_BIN exa
+  cargo install --root=$EXTERNAL_BIN exa
+  mv "$EXTERNAL_BIN/bin/exa" $EXTERNAL_BIN
+  rm -rf $EXTERNAL_BIN/bin
 }
 
 _configure_docker() {
-  sudo groupadd docker
+  # sudo groupadd docker
   sudo gpasswd -a $USER docker
-  sudo service docker resart
+  sudo service docker restart
 }

@@ -9,6 +9,9 @@ docker.io
 nodejs
 npm
 
+# Python
+python
+
 # Tools
 zsh
 fzf
