@@ -13,4 +13,4 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 docs::eval "$@"
 
 git add .
-gitmoji commit -S -c
+gitmoji commit -c
