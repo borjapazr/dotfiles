@@ -2,7 +2,7 @@
 
 ```bash
 git clone https://github.com/borjapazr/dotfiles.git $HOME/.dotfiles
-$HOME/.dotfiles/install
+$HOME/.dotfiles/installer
 ```
 
 ## 🤩 Inspiration
