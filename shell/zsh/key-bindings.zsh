@@ -69,10 +69,10 @@ _fzf_prompt() {
   local paths="$1"
   match="$(echo "$paths" |
     xargs -I % sh -c 'echo "$(basename $(dirname %)) $(basename %)"' |
-    $(__fzfcmd) --height 100% --preview 'dot $(echo {} | cut -d" " -f 1) $(echo {} | cut -d" " -f 2) -h')"
+    $(__fzfcmd) --height 50% --preview 'dot $(echo {} | cut -d" " -f 1) $(echo {} | cut -d" " -f 2) -h')"
   if [ -n "$match" ]; then
     LBUFFER="dot $match"
-    zle -U " "
+    zle redisplay
   fi
 }
 
