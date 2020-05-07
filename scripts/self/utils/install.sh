@@ -18,6 +18,24 @@ ubuntu::install_tools() {
   xargs -a <(awk '! /^ *(#|$)/' "$DOTFILES_PATH/os/ubuntu/packages/apt") -r -- sudo apt-get install -y
 
   log::note "📦 Installing external packages..."
+  if ! platform::command_exists navi; then
+    _install_navi
+  fi
+
+  if ! platform::command_exists lazydocker; then
+    _install_lazydocker
+  fi
+
+  if ! platform::command_exists exa; then
+    _install_exa
+  fi
+
+  if ! platform::command_exists google-chrome; then
+    _install_google_chrome
+  fi
+}
+
+ubuntu::update_external_tools() {
   _install_navi
   _install_lazydocker
   _install_exa
@@ -26,6 +44,7 @@ ubuntu::install_tools() {
 ubuntu::configure_tools() {
   log::note "⚙️ Configuring tools..."
   _configure_docker
+  _configure_tlp
 }
 
 ubuntu::install_manually() {
@@ -62,8 +81,19 @@ _install_exa() {
   rm -rf $EXTERNAL_BIN/bin
 }
 
+_install_google_chrome() {
+  sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /tmp
+  sudo gdebi -n /tmp/google-chrome-stable_current_amd64.deb
+  sudo rm -rf /tmp/google-chrome-stable_current_amd64.deb
+}
+
 _configure_docker() {
-  # sudo groupadd docker
   sudo gpasswd -a $USER docker
   sudo service docker restart
+  newgrp docker
+}
+
+_configure_tlp() {
+  sudo systemctl enable tlp
+  sudo tlp start
 }

@@ -24,4 +24,4 @@ commit=$(
 
 commit_hash=$(echo ${commit} | awk '{print $2}')
 
-echo ${commit_hash} | tr -d '\n' | pbcopy
+echo ${commit_hash} | tr -d '\n' | dot system clip copy

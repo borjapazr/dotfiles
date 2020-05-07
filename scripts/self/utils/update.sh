@@ -28,9 +28,9 @@ apply_common_symlinks() {
 
 ubuntu::update() {
   sudo apt update -y
-  #sudo apt upgrade -y
-  #sudo apt autoremove -y
-  #sudo snap refresh
+  sudo apt upgrade -y
+  sudo apt autoremove -y
+  sudo snap refresh
 }
 
 _apply_symlinks() {

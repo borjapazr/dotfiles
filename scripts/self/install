@@ -23,7 +23,7 @@ if platform::is_linux; then
   ubuntu::update
   ubuntu::add_repositories
   ubuntu::install_tools
-  ubuntu::configure_tools
+  #ubuntu::configure_tools
 fi
 
 log::note "💚 Installing npm packages..."

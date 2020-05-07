@@ -1,6 +1,3 @@
-export DOTFILES_PATH=$HOME/.dotfiles
-export ZSH="$DOTFILES_PATH/modules/oh-my-zsh"
-
 # Options
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FCNTL_LOCK
@@ -52,3 +49,7 @@ for dump in ~/.zcompdump(N.mh+24); do
   compinit
 done
 compinit -C
+
+# Load z.lua
+export _ZL_FZF_FLAG=${_ZL_FZF_FLAG:-"-e"}
+eval "$(lua $DOTFILES_PATH/modules/zlua/z.lua --init zsh once enhanced)"

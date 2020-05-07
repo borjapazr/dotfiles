@@ -2,10 +2,10 @@
 	path = modules/dotbot
 	url = git@github.com:anishathalye/dotbot.git
 
-[submodule "modules/z"]
-	path = modules/z
-	url = git@github.com:rupa/z.git
-
 [submodule "modules/oh-my-zsh"]
 	path = modules/oh-my-zsh
 	url = git@github.com:ohmyzsh/ohmyzsh.git
+
+[submodule "modules/zlua"]
+	path = modules/zlua
+	url = git@github.com:skywind3000/z.lua.git

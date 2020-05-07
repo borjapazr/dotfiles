@@ -119,3 +119,7 @@ fi
 export DOTFILES_PATH=$HOME/.dotfiles
 
 source $DOTFILES_PATH/shell/init.sh
+
+# Load z.lua
+export _ZL_FZF_FLAG=${_ZL_FZF_FLAG:-"-e"}
+eval "$(lua $DOTFILES_PATH/modules/zlua/z.lua --init bash once enhanced)"

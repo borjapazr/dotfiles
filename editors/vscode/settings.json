@@ -2,10 +2,10 @@
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "debug.console.fontSize": 16,
+  "debug.console.fontSize": 18,
   "editor.fontFamily": "'Mars Mono', 'Fira Code'",
   "editor.fontLigatures": true,
-  "editor.fontSize": 16,
+  "editor.fontSize": 18,
   "editor.fontWeight": "300",
   "editor.formatOnPaste": true,
   "editor.lineHeight": 24,
@@ -58,7 +58,7 @@
     ]
   },
   "editor.wordWrap": "on",
-  "markdown.preview.fontSize": 16,
+  "markdown.preview.fontSize": 18,
   "oneDarkPro.italic": true,
   "oneDarkPro.vivid": false,
   "peacock.favoriteColors": [
@@ -117,11 +117,12 @@
   ],
   "sync.gist": "fcef1435c5494b1f0415dd73fdb8e40f",
   "terminal.integrated.fontFamily": "'Mars Mono'",
-  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.fontSize": 18,
   "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
   "window.zoomLevel": 0,
   "workbench.activityBar.visible": true,
   "workbench.colorTheme": "One Dark Pro",
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.statusBar.visible": true
+  "workbench.statusBar.visible": true,
+  "explorer.confirmDelete": false
 }
