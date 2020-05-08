@@ -81,7 +81,7 @@ fzf_show_dot_commands() {
   _fzf_prompt "$(_list_command_paths)"
 }
 zle -N fzf_show_dot_commands
-bindkey '^E' fzf_show_dot_commands
+bindkey '^e' fzf_show_dot_commands
 
 # alt+c - cd into the selected directory
 # Ensure precmds are run after cd
