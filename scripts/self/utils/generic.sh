@@ -2,8 +2,22 @@
 
 DOTBOT_DIR="modules/dotbot"
 DOTBOT_BIN="bin/dotbot"
+OH_MY_ZSH_CUSTOM="$DOTFILES_PATH/modules/oh-my-zsh/custom"
 
-self_update() {
+generic::install_npm_packages() {
+  xargs -a <(awk '! /^ *(#|$)/' "$DOTFILES_PATH/langs/js/npm") -r -- sudo npm install -g || true
+}
+
+generic::install_ohmyzsh_plugins() {
+  rm -rf "$OH_MY_ZSH_CUSTOM/plugins/zsh-autosuggestions" || true
+  git::clone_if_not_exists https://github.com/zsh-users/zsh-autosuggestions "$OH_MY_ZSH_CUSTOM/plugins/zsh-autosuggestions"
+  rm -rf "$OH_MY_ZSH_CUSTOM/plugins/zsh-syntax-highlighting" || true
+  git::clone_if_not_exists https://github.com/zsh-users/zsh-syntax-highlighting.git "$OH_MY_ZSH_CUSTOM/plugins/zsh-syntax-highlighting"
+  rm -rf "$OH_MY_ZSH_CUSTOM/plugins/you-should-use" || true
+  git::clone_if_not_exists https://github.com/MichaelAquilina/zsh-you-should-use.git "$OH_MY_ZSH_CUSTOM/plugins/you-should-use"
+}
+
+generic::self_update() {
   cd "$DOTFILES_PATH" || exit
   git fetch
   if [[ $(_project_status) == "behind" ]]; then
@@ -12,7 +26,7 @@ self_update() {
   fi
 }
 
-update_submodules() {
+generic::update_submodules() {
   cd "$DOTFILES_PATH" || exit
 
   git pull
@@ -22,15 +36,8 @@ update_submodules() {
   git submodule update --init --recursive
 }
 
-apply_common_symlinks() {
+generic::apply_common_symlinks() {
   _apply_symlinks "common.yml"
-}
-
-ubuntu::update() {
-  sudo apt update -y
-  sudo apt upgrade -y
-  sudo apt autoremove -y
-  sudo snap refresh
 }
 
 _apply_symlinks() {

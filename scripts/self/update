@@ -3,8 +3,8 @@
 set -euo pipefail
 
 source "$DOTFILES_PATH/scripts/core/_main.sh"
-source "$DOTFILES_PATH/scripts/self/utils/install.sh"
-source "$DOTFILES_PATH/scripts/self/utils/update.sh"
+source "$DOTFILES_PATH/scripts/self/utils/generic.sh"
+source "$DOTFILES_PATH/scripts/self/utils/ubuntu.sh"
 
 ##? Updates submodules, dotfiles and attempts to do some setup
 #?? 1.0.0
@@ -16,14 +16,14 @@ docs::eval_help "$@"
 
 if platform::is_linux; then
   log::note "🔄 Updating system..."
-  ubuntu::update
+  ubuntu::update_system
 fi
 
 log::note "🐙 Updating .dotfiles..."
-self_update
+generic::self_update
 
 log::note "🐙 Updating submodules..."
-update_submodules
+generic::update_submodules
 
 log::note "📦 Updating external tools..."
 ubuntu::update_external_tools

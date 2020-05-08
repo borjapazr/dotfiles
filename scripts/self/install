@@ -3,8 +3,8 @@
 set -euo pipefail
 
 source "$DOTFILES_PATH/scripts/core/_main.sh"
-source "$DOTFILES_PATH/scripts/self/utils/install.sh"
-source "$DOTFILES_PATH/scripts/self/utils/update.sh"
+source "$DOTFILES_PATH/scripts/self/utils/generic.sh"
+source "$DOTFILES_PATH/scripts/self/utils/ubuntu.sh"
 
 ##? Install the dotfiles
 #?? 1.0.0
@@ -15,19 +15,19 @@ source "$DOTFILES_PATH/scripts/self/utils/update.sh"
 docs::eval_help "$@"
 
 log::note "🔴🟢🔵 Installing .dotfiles..."
-self_update
-update_submodules
+generic::self_update
+generic::update_submodules
 
 if platform::is_linux; then
   log::note "🐧 Installing Linux custom packages..."
-  ubuntu::update
+  ubuntu::update_system
   ubuntu::add_repositories
   ubuntu::install_tools
   #ubuntu::configure_tools
 fi
 
 log::note "💚 Installing npm packages..."
-langs::install_npm_packages
+generic::install_npm_packages
 
 log::note "💻 Setting ZSH as the default shell..."
 chsh -s $(which zsh)
@@ -35,7 +35,7 @@ chsh -s $(which zsh)
 "$DOTFILES_PATH/bin/dot" self link
 
 log::note "💄 Installing oh-my-zsh plugins..."
-oh_my_zsh::install_plugins
+generic::install_ohmyzsh_plugins
 
 if platform::is_linux; then
   echo

@@ -35,12 +35,6 @@ ubuntu::install_tools() {
   fi
 }
 
-ubuntu::update_external_tools() {
-  _install_navi
-  _install_lazydocker
-  _install_exa
-}
-
 ubuntu::configure_tools() {
   log::note "⚙️ Configuring tools..."
   _configure_docker
@@ -51,17 +45,17 @@ ubuntu::install_manually() {
   log::warning "Nothing at the moment!"
 }
 
-langs::install_npm_packages() {
-  xargs -a <(awk '! /^ *(#|$)/' "$DOTFILES_PATH/langs/js/npm") -r -- sudo npm install -g || true
+ubuntu::update_system() {
+  sudo apt update -y
+  sudo apt upgrade -y
+  sudo apt autoremove -y
+  sudo snap refresh
 }
 
-oh_my_zsh::install_plugins() {
-  rm -rf "$OH_MY_ZSH_CUSTOM/plugins/zsh-autosuggestions" || true
-  git::clone_if_not_exists https://github.com/zsh-users/zsh-autosuggestions "$OH_MY_ZSH_CUSTOM/plugins/zsh-autosuggestions"
-  rm -rf "$OH_MY_ZSH_CUSTOM/plugins/zsh-syntax-highlighting" || true
-  git::clone_if_not_exists https://github.com/zsh-users/zsh-syntax-highlighting.git "$OH_MY_ZSH_CUSTOM/plugins/zsh-syntax-highlighting"
-  rm -rf "$OH_MY_ZSH_CUSTOM/plugins/you-should-use" || true
-  git::clone_if_not_exists https://github.com/MichaelAquilina/zsh-you-should-use.git "$OH_MY_ZSH_CUSTOM/plugins/you-should-use"
+ubuntu::update_external_tools() {
+  _install_navi
+  _install_lazydocker
+  _install_exa
 }
 
 _install_navi() {
