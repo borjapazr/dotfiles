@@ -14,7 +14,7 @@ This is an installation guide to migrate from a legacy computer with **Ubuntu** 
     - `chmod -R 700 ~/.ssh`
     - `chmod -R 700 ~/.gnupg`
 2. Execute the dotfiles installer
-    - `~/.dotfiles/install`
+    - `~/.dotfiles/installer`
 3. Configure, customize and set **Tilix** terminal as default terminal
     - Load configuration: `dconf load /com/gexperts/Tilix/ < tilix.dconf`
     - Backup configuration: `dconf dump /com/gexperts/Tilix/ > tilix.dconf`
