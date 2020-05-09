@@ -72,8 +72,8 @@ _fzf_prompt() {
     $(__fzfcmd) --height 50% --preview 'dot $(echo {} | cut -d" " -f 1) $(echo {} | cut -d" " -f 2) -h')"
   if [ -n "$match" ]; then
     LBUFFER="dot $match"
-    zle redisplay
   fi
+  zle redisplay
 }
 
 # ctrl+e - Paste the selected dot command from dot commands into the command line
