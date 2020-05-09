@@ -33,6 +33,7 @@ xclip
 xsel
 jq
 visualvm
+httpie
 
 # Tweaks
 arc-theme

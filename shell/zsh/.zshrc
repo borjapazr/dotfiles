@@ -11,7 +11,6 @@ ZSH_AUTOSUGGEST_USE_ASYNC=true
 ZSH_HIGHLIGHT_MAXLENGTH=300
 ZSH_DISABLE_COMPFIX="true"
 DEFAULT_USER=borja
-skip_global_compinit=1
 
 # Plugins
 plugins=(
@@ -37,7 +36,7 @@ plugins=(
 zle_highlight+=(paste:none)
 
 # Load completions
-fpath=("$DOTFILES_PATH/shell/zsh/completions" $fpath)
+fpath=("$DOTFILES_PATH/shell/zsh/completions" "$DOTFILES_PATH/modules/zsh-completions/src" $fpath)
 
 # Load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
