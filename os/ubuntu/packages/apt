@@ -32,6 +32,7 @@ lua5.3
 xclip
 xsel
 jq
+visualvm
 
 # Tweaks
 arc-theme
