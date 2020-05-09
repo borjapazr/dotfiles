@@ -11,6 +11,7 @@ ZSH_AUTOSUGGEST_USE_ASYNC=true
 ZSH_HIGHLIGHT_MAXLENGTH=300
 ZSH_DISABLE_COMPFIX="true"
 DEFAULT_USER=borja
+skip_global_compinit=1
 
 # Plugins
 plugins=(
@@ -35,21 +36,14 @@ plugins=(
 # Disable paste highlighting
 zle_highlight+=(paste:none)
 
+# Load completions
+fpath=("$DOTFILES_PATH/shell/zsh/completions" $fpath)
+
 # Load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 # Load aliases, exports and functions
 source $DOTFILES_PATH/shell/init.sh
 # Load key bindings
 source $DOTFILES_PATH/shell/zsh/key-bindings.zsh
-
-# Load completions once per day
-fpath=("$DOTFILES_PATH/shell/zsh/completions" $fpath)
-autoload -Uz compinit
-for dump in ~/.zcompdump(N.mh+24); do
-  compinit
-done
-compinit -C
-
 # Load z.lua
-export _ZL_FZF_FLAG=${_ZL_FZF_FLAG:-"-e"}
 eval "$(lua $DOTFILES_PATH/modules/zlua/z.lua --init zsh once enhanced)"
