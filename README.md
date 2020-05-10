@@ -26,11 +26,12 @@ This is an installation guide to migrate from a legacy computer with **Ubuntu** 
         - Arc Menu
     - **Shell theme**: [https://www.gnome-look.org/p/1267246](https://www.gnome-look.org/p/1267246/)
 
-        Remember to edit the font size
+      💡 Remember to edit the font size
 
     - **Icon Theme**: [https://www.snwh.org/paper/download](https://www.snwh.org/paper/download)
 6. **Configure JetBrains products** and synchronize them with Jetbrains account
 7. **Configure VS Code** and synchronize plugins
+8. **Set INTEL graphic card as default** `sudo prime-select intel`
 
 ## 🤩 Inspiration
 
