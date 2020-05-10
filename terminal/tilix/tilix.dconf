@@ -1,8 +1,10 @@
 [/]
 app-title=''
+auto-hide-mouse=true
 control-click-titlebar=true
 control-scroll-zoom=true
 enable-wide-handle=false
+focus-follow-mouse=false
 paste-strip-first-char=false
 prompt-on-close=true
 prompt-on-delete-profile=true
@@ -36,6 +38,7 @@ font='Mars Mono 13'
 foreground-color='#F8F8F2'
 highlight-colors-set=false
 palette=['#272822', '#F92672', '#A6E22E', '#F4BF75', '#66D9EF', '#AE81FF', '#A1EFE4', '#F8F8F2', '#75715E', '#F92672', '#A6E22E', '#F4BF75', '#66D9EF', '#AE81FF', '#A1EFE4', '#F9F8F5']
+terminal-bell='none'
 terminal-title='${title}'
 use-system-font=false
 use-theme-colors=true
