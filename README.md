@@ -8,7 +8,7 @@ $HOME/.dotfiles/installer
 
 This is an installation guide to migrate from a legacy computer with **Ubuntu** to a new one.
 
-## Steps
+### ➜ Steps
 
 1. Backup **~/.ssh** and **~/.gnupg** from the previous computer to the new one
     - `chmod -R 700 ~/.ssh`
