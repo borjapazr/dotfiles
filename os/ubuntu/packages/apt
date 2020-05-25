@@ -34,6 +34,7 @@ xsel
 jq
 visualvm
 httpie
+imagemagick
 
 # Tweaks
 arc-theme
