@@ -17,19 +17,17 @@ ubuntu::install_tools() {
   log::note "📦 Installing apt packages..."
   xargs -a <(awk '! /^ *(#|$)/' "$DOTFILES_PATH/os/ubuntu/packages/apt") -r -- sudo apt-get install -y
 
+  if ! platform::command_exists brew; then
+    log::note "📦 Installing Homebrew..."
+    _install_homebrew
+  fi
+
+  log::note "📦 Installing Homebrew packages..."
+  grep -vE "^(\s*$|#)" "$DOTFILES_PATH/os/ubuntu/packages/brew" | while read line; do
+    brew install $line
+  done
+
   log::note "📦 Installing external packages..."
-  if ! platform::command_exists navi; then
-    _install_navi
-  fi
-
-  if ! platform::command_exists lazydocker; then
-    _install_lazydocker
-  fi
-
-  if ! platform::command_exists exa; then
-    _install_exa
-  fi
-
   if ! platform::command_exists google-chrome; then
     _install_google_chrome
   fi
@@ -50,29 +48,17 @@ ubuntu::update_system() {
   sudo apt upgrade -y
   sudo apt autoremove -y
   sudo snap refresh
+  if ! platform::command_exists brew; then
+    brew update && brew upgrade
+  fi
 }
 
 ubuntu::update_external_tools() {
-  _install_navi
-  _install_lazydocker
-  _install_exa
+  log::warning "Nothing at the moment!"
 }
 
-_install_navi() {
-  rm -rf "$EXTERNAL_BIN/navi" || true
-  BIN_DIR=$EXTERNAL_BIN bash <(curl -sL https://raw.githubusercontent.com/denisidoro/navi/master/scripts/install)
-}
-
-_install_lazydocker() {
-  rm -rf "$EXTERNAL_BIN/lazydocker" || true
-  curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | DIR=$EXTERNAL_BIN bash
-}
-
-_install_exa() {
-  rm -rf "$EXTERNAL_BIN/exa" || true
-  cargo install --root=$EXTERNAL_BIN exa
-  mv "$EXTERNAL_BIN/bin/exa" $EXTERNAL_BIN
-  rm -rf $EXTERNAL_BIN/bin
+_install_homebrew() {
+  bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 }
 
 _install_google_chrome() {

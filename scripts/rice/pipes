@@ -3,12 +3,14 @@
 source "${DOTFILES_PATH}/scripts/core/_main.sh"
 
 ##? Animated pipes terminal screensaver
+##?
 ##? based on https://github.com/pipeseroni/pipes.sh
+#?? 0.1.0
 ##?
 ##? Usage:
-##?    pipes
+##?   pipe
 
-docs::eval_help "$@"
+docs::eval "$@"
 
 M=32768
 p=1
@@ -43,41 +45,41 @@ NOCOLOR=0
 OPTIND=1
 while getopts "p:t:f:s:r:RBChv" arg; do
    case $arg in
-      p) ((p = (OPTARG > 0) ? OPTARG : p)) ;;
-      t)
-         if [[ "$OPTARG" == c???????????????? ]]; then
-            V+=(${#sets[@]})
-            sets+=("${OPTARG:1}")
-         else
-            ((OPTARG >= 0 && OPTARG < ${#sets[@]})) && V+=($OPTARG)
-         fi
-         ;;
-      f) ((f = (OPTARG > 19 && OPTARG < 101) ? OPTARG : f)) ;;
-      s) ((s = (OPTARG > 4 && OPTARG < 16) ? OPTARG : s)) ;;
-      r) ((r = (OPTARG >= 0) ? OPTARG : r)) ;;
-      R) RNDSTART=1 ;;
-      B) BOLD=0 ;;
-      C) NOCOLOR=1 ;;
-      h)
-         echo -e "Usage: $(basename $0) [OPTION]..."
-         echo -e "Animated pipes terminal screensaver.\n"
-         echo -e " -p [1-]\tnumber of pipes (D=1)."
-         echo -e " -t [0-$((${#sets[@]} - 1))]\ttype of pipes, can be used more than once (D=0)."
-         echo -e " -t c[16 chars]\tcustom type of pipes."
-         echo -e " -f [20-100]\tframerate (D=75)."
-         echo -e " -s [5-15]\tprobability of a straight fitting (D=13)."
-         echo -e " -r LIMIT\treset after x characters, 0 if no limit (D=2000)."
-         echo -e " -R \t\trandom starting point."
-         echo -e " -B \t\tno bold effect."
-         echo -e " -C \t\tno color."
-         echo -e " -h\t\thelp (this screen)."
-         # echo -e " -v\t\tprint version number.\n"
-         exit 0
-         ;;
-      v)
-         echo "$(basename -- "$0") $VERSION"
-         exit 0
-         ;;
+   p) ((p = (OPTARG > 0) ? OPTARG : p)) ;;
+   t)
+      if [[ "$OPTARG" == c???????????????? ]]; then
+      V+=(${#sets[@]})
+      sets+=("${OPTARG:1}")
+      else
+      ((OPTARG >= 0 && OPTARG < ${#sets[@]})) && V+=($OPTARG)
+      fi
+      ;;
+   f) ((f = (OPTARG > 19 && OPTARG < 101) ? OPTARG : f)) ;;
+   s) ((s = (OPTARG > 4 && OPTARG < 16) ? OPTARG : s)) ;;
+   r) ((r = (OPTARG >= 0) ? OPTARG : r)) ;;
+   R) RNDSTART=1 ;;
+   B) BOLD=0 ;;
+   C) NOCOLOR=1 ;;
+   h)
+      echo -e "Usage: $(basename $0) [OPTION]..."
+      echo -e "Animated pipes terminal screensaver.\n"
+      echo -e " -p [1-]\tnumber of pipes (D=1)."
+      echo -e " -t [0-$((${#sets[@]} - 1))]\ttype of pipes, can be used more than once (D=0)."
+      echo -e " -t c[16 chars]\tcustom type of pipes."
+      echo -e " -f [20-100]\tframerate (D=75)."
+      echo -e " -s [5-15]\tprobability of a straight fitting (D=13)."
+      echo -e " -r LIMIT\treset after x characters, 0 if no limit (D=2000)."
+      echo -e " -R \t\trandom starting point."
+      echo -e " -B \t\tno bold effect."
+      echo -e " -C \t\tno color."
+      echo -e " -h\t\thelp (this screen)."
+      # echo -e " -v\t\tprint version number.\n"
+      exit 0
+      ;;
+   v)
+      echo "$(basename -- "$0") $VERSION"
+      exit 0
+      ;;
    esac
 done
 
@@ -105,9 +107,9 @@ resize
 
 for ((i = 1; i <= p; i++)); do
    c[i]=$((i % 8)) n[i]=0 l[i]=0
-   ((x[i] = RNDSTART == 1 ? RANDOM * w / 32768 : w / 2))
-   ((y[i] = RNDSTART == 1 ? RANDOM * h / 32768 : h / 2))
-   v[i]=${V[${#V[@]} * RANDOM / M]}
+  ((x[i] = RNDSTART == 1 ? RANDOM * w / 32768 : w / 2))
+  ((y[i] = RNDSTART == 1 ? RANDOM * h / 32768 : h / 2))
+  v[i]=${V[${#V[@]} * RANDOM / M]}
 done
 
 stty -echo
@@ -116,10 +118,10 @@ tput civis
 tput clear
 # any key press exits the loop and this script
 while
-REPLY=
-read -t 0.0$((1000 / f)) -n 1 2>/dev/null
-[[ -z $REPLY ]]
-do
+   REPLY=
+   read -t 0.0$((1000 / f)) -n 1 2>/dev/null
+   [[ -z $REPLY ]]
+   do
    for ((i = 1; i <= p; i++)); do
       # New position:
       ((${l[i]} % 2)) && ((x[i] += -${l[i]} + 2, 1)) || ((y[i] += ${l[i]} - 1))

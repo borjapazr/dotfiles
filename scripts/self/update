@@ -12,7 +12,7 @@ source "$DOTFILES_PATH/scripts/self/utils/ubuntu.sh"
 ##? Usage:
 ##?    update
 
-docs::eval_help "$@"
+docs::eval "$@"
 
 if platform::is_linux; then
   log::note "🔄 Updating system..."

@@ -6,24 +6,18 @@ source "${DOTFILES_PATH}/scripts/core/_main.sh"
 ##? Simulates typing
 ##?
 ##? Usage:
-##?    type <text> <speed>
+##?    type <text> <speed_in_ms>
 ##?
 ##? Examples:
-##?    type 'foo bar' 100
+##?   type 'foo bar' 100
 
-docs::eval_help "$@"
+docs::eval "$@"
 
 text="$1"
-speed="${2:-10}"
-wait=$(echo "scale=2; 1 / ${speed}" | bc)
+speed_in_ms="${2:-80}"
 
-while read -n1 character; do
-   count="$(echo "$character" | wc -w | xargs)"
-   if [[ $count > 0 ]]; then
-      printf "$character"
-   else
-      printf ' '
-   fi
-   sleep "$wait"
-done < <(echo -n "$text")
+for ((i = 0; i < ${#text}; i++)); do
+   echo "after $speed_in_ms" | tclsh
+   printf "${text:$i:1}"
+done
 echo

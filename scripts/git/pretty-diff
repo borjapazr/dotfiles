@@ -24,4 +24,4 @@ git -c color.status=always status --short |
   cut -c4- |
   sed 's/.* -> //' |
   tr -d '\n' |
-  pbcopy
+  dot system clip copy

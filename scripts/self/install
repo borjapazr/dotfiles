@@ -12,7 +12,7 @@ source "$DOTFILES_PATH/scripts/self/utils/ubuntu.sh"
 ##? Usage:
 ##?    install
 
-docs::eval_help "$@"
+docs::eval "$@"
 
 log::note "🔴🟢🔵 Installing .dotfiles..."
 generic::self_update

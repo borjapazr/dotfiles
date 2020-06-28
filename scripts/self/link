@@ -11,7 +11,7 @@ source "$DOTFILES_PATH/scripts/self/utils/generic.sh"
 ##? Usage:
 ##?    link
 
-docs::eval_help "$@"
+docs::eval "$@"
 
 log::note "🔗 Applying symlinks..."
 generic::apply_common_symlinks

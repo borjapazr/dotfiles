@@ -10,7 +10,7 @@ source "${DOTFILES_PATH}/scripts/core/_main.sh"
 ##?    color hex <r> <g> <b>
 ##?    color rgb <hex>
 
-docs::eval_help "$@"
+docs::eval "$@"
 
 _row() {
    for i in $(seq 1 ${COLS:-5}); do

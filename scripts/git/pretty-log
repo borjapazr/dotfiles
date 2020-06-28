@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 set -euo pipefail
 
@@ -8,9 +8,9 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 #?? 1.0.0
 ##?
 ##? Usage:
-##?    pretty-log
+##?   pretty-log
 
-docs::eval_zsh "$0" "$@"
+docs::eval "$@"
 
 commit=$(
   git log --graph \
@@ -22,6 +22,6 @@ commit=$(
       --preview-window right:35%
 )
 
-commit_hash=$(echo ${commit} | awk '{print $2}')
+commit_hash=$(echo ${commit} | grep -oP "\b[0-9a-f]{3,}\b")
 
 echo ${commit_hash} | tr -d '\n' | dot system clip copy
