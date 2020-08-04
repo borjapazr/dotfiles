@@ -2,7 +2,8 @@
 code --classic
 intellij-idea-ultimate --classic
 webstorm --classic
-gitkraken
+gitkraken --classic
+postman
 
 # Database management
 datagrip --classic

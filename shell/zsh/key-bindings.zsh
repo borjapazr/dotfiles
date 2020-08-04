@@ -68,7 +68,7 @@ _list_command_paths() {
 _fzf_prompt() {
   local paths="$1"
   match="$(echo "$paths" |
-    xargs -I % sh -c 'echo "$(basename $(dirname %)) $(basename %)"' |
+    awk -F"/" '{print $(NF-1) " " $NF}' |
     $(__fzfcmd) --height 50% --preview 'dot $(echo {} | cut -d" " -f 1) $(echo {} | cut -d" " -f 2) -h')"
   if [ -n "$match" ]; then
     LBUFFER="dot $match"
