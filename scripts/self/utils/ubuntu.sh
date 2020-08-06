@@ -2,7 +2,7 @@
 
 OH_MY_ZSH_CUSTOM="$DOTFILES_PATH/modules/oh-my-zsh/custom"
 EXTERNAL_BIN="$DOTFILES_PATH/bin/external"
-HOMEBREW_BIN="/home/linuxbrew/.linuxbrew/bin/"
+HOMEBREW_BIN="/home/linuxbrew/.linuxbrew/bin"
 
 ubuntu::add_repositories() {
   log::note "📥 Adding PPA repositories..."
@@ -24,7 +24,6 @@ ubuntu::install_tools() {
   fi
 
   log::note "📦 Installing Homebrew packages..."
-  "$HOMEBREW_BIN/brew" update
   # All apps (This line is 2 times because there are dependencies between brew cask and brew)
   "$HOMEBREW_BIN/brew" bundle --file="$DOTFILES_PATH/os/ubuntu/packages/Brewfile" || true
   "$HOMEBREW_BIN/brew" bundle --file="$DOTFILES_PATH/os/ubuntu/packages/Brewfile"
@@ -50,7 +49,7 @@ ubuntu::update_system() {
   sudo apt upgrade -y
   sudo apt autoremove -y
   sudo snap refresh
-  if ! platform::command_exists brew; then
+  if platform::command_exists brew; then
     "$HOMEBREW_BIN/brew" update && brew upgrade
   fi
 }
@@ -61,6 +60,8 @@ ubuntu::update_external_tools() {
 
 _install_homebrew() {
   bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+  eval $("$HOMEBREW_BIN/brew" shellenv)
+  "$HOMEBREW_BIN/brew" update
 }
 
 _install_google_chrome() {

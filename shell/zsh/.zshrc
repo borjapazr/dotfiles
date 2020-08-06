@@ -14,6 +14,7 @@ DEFAULT_USER=borja
 
 # Plugins
 plugins=(
+  brew
   colored-man-pages
   colorize
   command-not-found

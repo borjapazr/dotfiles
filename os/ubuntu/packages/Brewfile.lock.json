@@ -33,6 +33,14 @@
           }
         }
       }
+    },
+    "tap": {
+      "denisidoro/tools": {
+        "revision": "978c72c4e00f89ccc79a1384e0f81d31c187f716"
+      },
+      "jesseduffield/lazydocker": {
+        "revision": "c8bd20c88080e2f9e272a99d8dd44141b781db29"
+      }
     }
   },
   "system": {
@@ -41,6 +49,12 @@
         "HOMEBREW_VERSION": "2.4.9",
         "HOMEBREW_PREFIX": "/home/linuxbrew/.linuxbrew",
         "Homebrew/linuxbrew-core": "bad40e37726e5d88ccaf460b317b103cb87acc4c",
+        "GCC": "9.3.0"
+      },
+      "Ubuntu 20.04.1 LTS (focal)": {
+        "HOMEBREW_VERSION": "2.4.9",
+        "HOMEBREW_PREFIX": "/home/linuxbrew/.linuxbrew",
+        "Homebrew/linuxbrew-core": "6bbd5836b2657022ee5451435e4f15830594bead",
         "GCC": "9.3.0"
       }
     }

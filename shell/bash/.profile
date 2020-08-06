@@ -25,3 +25,6 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
+
+# Load Homebrew
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)

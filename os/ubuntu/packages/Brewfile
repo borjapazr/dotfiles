@@ -1,3 +1,5 @@
+tap "denisidoro/tools"
+tap "jesseduffield/lazydocker"
 brew "denisidoro/tools/navi"
 brew "denisidoro/tools/docpars"
 brew "jesseduffield/lazydocker/lazydocker"

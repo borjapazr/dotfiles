@@ -18,6 +18,8 @@ log::note "🔴🟢🔵 Installing .dotfiles..."
 generic::self_update
 generic::update_submodules
 
+"$DOTFILES_PATH/bin/dot" self link
+
 if platform::is_linux; then
   log::note "🐧 Installing Linux custom packages..."
   ubuntu::update_system
@@ -31,8 +33,6 @@ generic::install_npm_packages
 
 log::note "💻 Setting ZSH as the default shell..."
 chsh -s $(which zsh)
-
-"$DOTFILES_PATH/bin/dot" self link
 
 log::note "💄 Installing oh-my-zsh plugins..."
 generic::install_ohmyzsh_plugins
