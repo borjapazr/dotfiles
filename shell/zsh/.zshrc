@@ -45,5 +45,5 @@ source $ZSH/oh-my-zsh.sh
 source $DOTFILES_PATH/shell/init.sh
 # Load key bindings
 source $DOTFILES_PATH/shell/zsh/key-bindings.zsh
-# Load z.lua
-eval "$(lua $DOTFILES_PATH/modules/zlua/z.lua --init zsh once enhanced)"
+# Load z
+source $(brew --prefix)/etc/profile.d/z.sh

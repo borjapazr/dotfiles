@@ -6,10 +6,6 @@
 	path = modules/oh-my-zsh
 	url = git@github.com:ohmyzsh/ohmyzsh.git
 
-[submodule "modules/zlua"]
-	path = modules/zlua
-	url = git@github.com:skywind3000/z.lua.git
-
 [submodule "modules/zsh-completions"]
 	path = modules/zsh-completions
 	url = git@github.com:zsh-users/zsh-completions.git

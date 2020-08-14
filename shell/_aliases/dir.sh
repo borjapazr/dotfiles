@@ -9,11 +9,3 @@ alias dotfiles="cd ~/.dotfiles"
 
 # Jump arround
 alias j="z"
-alias jz="z -i"
-alias jc="z -c"
-alias jf="z -I"
-alias jb="z -b"
-alias jbi="z -b -i"
-alias jbf="z -b -I"
-alias jh="z -I -t ."
-alias jzc="jz -c"

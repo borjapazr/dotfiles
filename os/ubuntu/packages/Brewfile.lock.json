@@ -32,6 +32,10 @@
             }
           }
         }
+      },
+      "z": {
+        "version": "1.9",
+        "bottle": false
       }
     },
     "tap": {
@@ -52,9 +56,9 @@
         "GCC": "9.3.0"
       },
       "Ubuntu 20.04.1 LTS (focal)": {
-        "HOMEBREW_VERSION": "2.4.9",
+        "HOMEBREW_VERSION": "2.4.11",
         "HOMEBREW_PREFIX": "/home/linuxbrew/.linuxbrew",
-        "Homebrew/linuxbrew-core": "6bbd5836b2657022ee5451435e4f15830594bead",
+        "Homebrew/linuxbrew-core": "a72efba5f0bce4cd3f84f7cfce0936b6a11ae867",
         "GCC": "9.3.0"
       }
     }
