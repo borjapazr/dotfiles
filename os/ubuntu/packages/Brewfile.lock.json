@@ -36,6 +36,31 @@
       "z": {
         "version": "1.9",
         "bottle": false
+      },
+      "glances": {
+        "version": "3.1.4.1",
+        "bottle": {
+          "cellar": ":any_skip_relocation",
+          "prefix": "/home/linuxbrew/.linuxbrew",
+          "files": {
+            "catalina": {
+              "url": "https://linuxbrew.bintray.com/bottles/glances-3.1.4.1.catalina.bottle.tar.gz",
+              "sha256": "3bc1dc122d7ed7542795ac6b390dea5e7645528439295d29f8f127148425b5c2"
+            },
+            "mojave": {
+              "url": "https://linuxbrew.bintray.com/bottles/glances-3.1.4.1.mojave.bottle.tar.gz",
+              "sha256": "4f1c3d51bf77bb95586c81bdf5170f5fd2b53d544f06a311d9152c00f4abb038"
+            },
+            "high_sierra": {
+              "url": "https://linuxbrew.bintray.com/bottles/glances-3.1.4.1.high_sierra.bottle.tar.gz",
+              "sha256": "27db703a8a6fd3decc1d96ebed0c0d991c41a74e5a25d1c708a843671be072fd"
+            },
+            "x86_64_linux": {
+              "url": "https://linuxbrew.bintray.com/bottles/glances-3.1.4.1.x86_64_linux.bottle.tar.gz",
+              "sha256": "06bfce814bf4652ab0cb2d8cebc2002ee111b427ef36991da9ea5a8ed7cfc27f"
+            }
+          }
+        }
       }
     },
     "tap": {
@@ -46,7 +71,7 @@
         "revision": "c8bd20c88080e2f9e272a99d8dd44141b781db29"
       },
       "homebrew/core": {
-        "revision": "a7eb98b6dfe1c64c572c858984f369ac7c0a9591"
+        "revision": "bffd7649f9d195a06b856bdd33acb988f4f8eb8e"
       },
       "homebrew/bundle": {
         "revision": "3e9ebe1c94b361c05178cb69af3de0802272125f"
@@ -64,7 +89,7 @@
       "Ubuntu 20.04.1 LTS (focal)": {
         "HOMEBREW_VERSION": "2.4.11",
         "HOMEBREW_PREFIX": "/home/linuxbrew/.linuxbrew",
-        "Homebrew/linuxbrew-core": "a72efba5f0bce4cd3f84f7cfce0936b6a11ae867",
+        "Homebrew/linuxbrew-core": "bffd7649f9d195a06b856bdd33acb988f4f8eb8e",
         "GCC": "9.3.0"
       }
     }

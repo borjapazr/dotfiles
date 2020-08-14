@@ -9,3 +9,23 @@ function recent_dirs() {
 
   cd "$(echo "$selected" | sed "s/\~/$escaped_home/")" || echo "Invalid directory"
 }
+
+function open() {
+  dot system open "$@"
+}
+
+function pbcopy() {
+  dot system clip copy
+}
+
+function pbpaste() {
+  dot system clip paste
+}
+
+function echos() {
+  limit="${1:-22}"
+  for i in {1..$limit}
+    do
+      echo "--------------------------------------------------------------------------------"
+    done
+}

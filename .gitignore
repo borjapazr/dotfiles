@@ -2,9 +2,6 @@
 shell/zsh/**/**.zwc
 shell/zsh/**/**.zwc.old
 
-# Private Stuff
-/**/**/private*
-
 # External bin
 bin/external/*
 !bin/external/.gitkeep
