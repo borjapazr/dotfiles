@@ -40,6 +40,10 @@ generic::apply_common_symlinks() {
   _apply_symlinks "common.yml"
 }
 
+generic::create_private_files() {
+  touch "$DOTFILES_PATH/shell/private-stuff.sh"
+}
+
 _apply_symlinks() {
   local -r CONFIG="$DOTFILES_PATH/links/$1"
   shift

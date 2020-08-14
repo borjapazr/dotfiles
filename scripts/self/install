@@ -19,13 +19,14 @@ generic::self_update
 generic::update_submodules
 
 "$DOTFILES_PATH/bin/dot" self link
+generic::create_private_files
 
 if platform::is_linux; then
   log::note "🐧 Installing Linux custom packages..."
   ubuntu::update_system
   ubuntu::add_repositories
   ubuntu::install_tools
-  #ubuntu::configure_tools
+  # ubuntu::configure_tools
 fi
 
 log::note "💚 Installing npm packages..."
