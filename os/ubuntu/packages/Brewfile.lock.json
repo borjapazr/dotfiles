@@ -44,6 +44,12 @@
       },
       "jesseduffield/lazydocker": {
         "revision": "c8bd20c88080e2f9e272a99d8dd44141b781db29"
+      },
+      "homebrew/core": {
+        "revision": "a7eb98b6dfe1c64c572c858984f369ac7c0a9591"
+      },
+      "homebrew/bundle": {
+        "revision": "3e9ebe1c94b361c05178cb69af3de0802272125f"
       }
     }
   },
