@@ -21,5 +21,5 @@ alias c.='(code $PWD &>/dev/null &)'
 
 # Utils
 alias ping='prettyping --nolegend'
-alias htop='glances'
+alias htop='btm'
 alias k='kill -9'
