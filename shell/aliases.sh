@@ -16,7 +16,7 @@ alias lzd='lazydocker'
 alias dc='dot docker connect'
 
 # IDEs and editors
-alias i.='(idea $PWD &>/dev/null &)'
+alias i.='(intellij-idea-ultimate $PWD &>/dev/null &)'
 alias c.='(code $PWD &>/dev/null &)'
 
 # Utils
