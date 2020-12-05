@@ -57,6 +57,10 @@
             }
           }
         }
+      },
+      "bottom": {
+        "version": "0.5.3",
+        "bottle": false
       }
     },
     "tap": {
@@ -67,10 +71,13 @@
         "revision": "67d6559ebb6f1ca217ea3d2981160c5fcd707c1a"
       },
       "homebrew/core": {
-        "revision": "27240e88f1dd547fc12745f98b5d419e0d21bf6e"
+        "revision": "29bf58be3a5fc4217720360d9a5e86beca5d778e"
       },
       "homebrew/bundle": {
         "revision": "6fa389091d1b7450df0701d6a0d20e862bda6507"
+      },
+      "clementtsang/bottom": {
+        "revision": "5e003d4ea3ac2281b79cab2436f9a3f7bdea7141"
       }
     }
   },
@@ -85,7 +92,7 @@
       "Ubuntu 20.04.1 LTS (focal)": {
         "HOMEBREW_VERSION": "2.6.0",
         "HOMEBREW_PREFIX": "/home/linuxbrew/.linuxbrew",
-        "Homebrew/linuxbrew-core": "27240e88f1dd547fc12745f98b5d419e0d21bf6e",
+        "Homebrew/linuxbrew-core": "29bf58be3a5fc4217720360d9a5e86beca5d778e",
         "GCC": "9.3.0"
       }
     }
