@@ -5,12 +5,9 @@ set -euo pipefail
 source "$DOTFILES_PATH/scripts/core/_main.sh"
 
 ##? Git commit with emojis
-#?? 1.0.0
 ##?
 ##? Usage:
-##?    git-ecommit
-
-docs::eval "$@"
+##?    git ecommit
 
 git add .
 gitmoji commit -c

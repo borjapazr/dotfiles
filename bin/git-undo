@@ -5,11 +5,8 @@ set -euo pipefail
 source "$DOTFILES_PATH/scripts/core/_main.sh"
 
 ##? Delete the last commit, but not the files
-#?? 1.0.0
 ##?
 ##? Usage:
-##?    git-undo
-
-docs::eval "$@"
+##?    git undo
 
 git reset HEAD~1 --mixed
