@@ -3,7 +3,6 @@
 set -euo pipefail
 
 ##? Setups the environment
-#?? 1.0.0
 ##?
 ##? Usage:
 ##?    install

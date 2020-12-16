@@ -10,7 +10,7 @@ source "${DOTFILES_PATH}/scripts/core/_main.sh"
 ##?     clip paste
 ##?     clip map <args>...
 
-docs::eval "$@"
+docs::parse "$@"
 
 operation="$1"
 shift

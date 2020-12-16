@@ -15,6 +15,8 @@ generic::install_ohmyzsh_plugins() {
   git::clone_if_not_exists https://github.com/zsh-users/zsh-syntax-highlighting.git "$OH_MY_ZSH_CUSTOM/plugins/zsh-syntax-highlighting"
   rm -rf "$OH_MY_ZSH_CUSTOM/plugins/you-should-use" || true
   git::clone_if_not_exists https://github.com/MichaelAquilina/zsh-you-should-use.git "$OH_MY_ZSH_CUSTOM/plugins/you-should-use"
+  rm -rf "$OH_MY_ZSH_CUSTOM/plugins/forgit" || true
+  git::clone_if_not_exists https://github.com/wfxr/forgit.git "$OH_MY_ZSH_CUSTOM/plugins/forgit"
 }
 
 generic::self_update() {
@@ -38,6 +40,7 @@ generic::update_submodules() {
 
 generic::apply_common_symlinks() {
   _apply_symlinks "common.yml"
+  touch "$HOME/.z"
 }
 
 generic::create_private_files() {

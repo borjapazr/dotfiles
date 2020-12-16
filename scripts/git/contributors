@@ -5,11 +5,10 @@ set -euo pipefail
 source "$DOTFILES_PATH/scripts/core/_main.sh"
 
 ##? List contributors with number of commits
-#?? 1.0.0
 ##?
 ##? Usage:
 ##?    contributors
 
-docs::eval "$@"
+docs::parse "$@"
 
 git shortlog --summary --numbered

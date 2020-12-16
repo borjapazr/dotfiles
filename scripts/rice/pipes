@@ -10,7 +10,7 @@ source "${DOTFILES_PATH}/scripts/core/_main.sh"
 ##? Usage:
 ##?   pipe
 
-docs::eval "$@"
+docs::parse "$@"
 
 M=32768
 p=1

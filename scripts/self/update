@@ -7,12 +7,11 @@ source "$DOTFILES_PATH/scripts/self/utils/generic.sh"
 source "$DOTFILES_PATH/scripts/self/utils/ubuntu.sh"
 
 ##? Updates submodules, dotfiles and attempts to do some setup
-#?? 1.0.0
 ##?
 ##? Usage:
 ##?    update
 
-docs::eval "$@"
+docs::parse "$@"
 
 if platform::is_linux; then
   log::note "🔄 Updating system..."

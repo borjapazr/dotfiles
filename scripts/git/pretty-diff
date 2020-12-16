@@ -5,12 +5,11 @@ set -euo pipefail
 source "$DOTFILES_PATH/scripts/core/_main.sh"
 
 ##? Show a pretty git diff using fzf (and copy selected path to the clipboard)
-#?? 1.0.0
 ##?
 ##? Usage:
 ##?    pretty-diff
 
-docs::eval "$@"
+docs::parse "$@"
 
 if (! git::is_in_repo); then
   echo "Not in a git repo!"
@@ -19,7 +18,7 @@ fi
 
 git -c color.status=always status --short |
   fzf --height 100% --ansi \
-    --preview '(git diff HEAD --color=always -- {-1} | sed 1,4d)' \
+    --preview '(git diff HEAD --color=always -- {-1} | sed 1,4d | delta)' \
     --preview-window right:65% |
   cut -c4- |
   sed 's/.* -> //' |

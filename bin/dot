@@ -1,47 +1,48 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
+set -o pipefail
 
 source "$DOTFILES_PATH/scripts/core/_main.sh"
 
-##? Execute all scripts inside this dotfiles. Inspired by denisidoro/dotfiles.
-#?? 1.0.0
-##?
 ##? Usage:
 ##?    dot
 ##?    dot <context>
-##?    dot <context> <cmd> [<args>...]
-
-list_command_paths() {
-  find "$DOTFILES_PATH/scripts" -maxdepth 2 -executable -type f \
-      | grep -v core \
-      | sort
-}
+##?    dot <context> <script> [<args>...]
+##?    dot -h | --help
+if [ "$1" == "-h" ] || [ "$1" = "--help" ]; then
+  docs::parse "$@"
+fi
 
 fzf_prompt() {
   local paths="$1"
-  match="$(echo "$paths" |
-    awk -F"/" '{print $(NF-1) " " $NF}' |
-    fzf --height 50% --preview 'dot $(echo {} | cut -d" " -f 1) $(echo {} | cut -d" " -f 2) -h')"
-  printf "$match "
-  read args
-  if coll::is_empty "$args"; then
-    dot $match
-  else
-    dot $match "$args"
+  script="$(
+    echo "$paths" |
+      xargs -I % sh -c 'echo "$(basename $(dirname %)) $(basename %)"' |
+      fzf \
+        --height 50% \
+        --preview '"$DOTFILES_PATH/bin/dot" $(echo {} | cut -d" " -f 1) $(echo {} | cut -d" " -f 2) -h'
+  )"
+  if [ -n "$script" ]; then
+    printf "%s" "$script"
+    read -r args
+    "$DOTFILES_PATH/bin/dot" $script $args
   fi
 }
 
 if args::has_no_args "$@"; then
-  fzf_prompt "$(list_command_paths)"
+  fzf_prompt "$(dot::list_scripts_path)"
 elif args::total_is 1 "$@"; then
-  fzf_prompt "$(list_command_paths | grep "/$1/")"
+  fzf_prompt "$(dot::list_scripts_path | grep "/$1/")"
 else
   context="$1"
-  command="$2"
+  script="$2"
 
   shift 2
-  export DOT_TRACE=${TRACE:-false}
 
-  "${DOTFILES_PATH}/scripts/${context}/${command}" "$@"
+  if ! dot::script_exist "$DOTFILES_PATH" "$context" "$script"; then
+    output::error "The script <$context / $script> doesn't exist"
+    exit 1
+  fi
+
+  "${DOTFILES_PATH}/scripts/${context}/${script}" "$@"
 fi

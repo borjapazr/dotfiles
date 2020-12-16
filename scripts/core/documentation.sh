@@ -1,6 +1,6 @@
- #!/usr/bin/env bash
+#!/usr/bin/env bash
 
-docs::eval() {
+docs::parse() {
   if platform::command_exists docpars; then
     eval "$(docpars -h "$(grep "^##?" "$0" | cut -c 5-)" : "$@")"
   fi

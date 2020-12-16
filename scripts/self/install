@@ -7,12 +7,11 @@ source "$DOTFILES_PATH/scripts/self/utils/generic.sh"
 source "$DOTFILES_PATH/scripts/self/utils/ubuntu.sh"
 
 ##? Install the dotfiles
-#?? 1.0.0
 ##?
 ##? Usage:
 ##?    install
 
-docs::eval "$@"
+docs::parse "$@"
 
 log::note "🔴🟢🔵 Installing .dotfiles..."
 generic::self_update

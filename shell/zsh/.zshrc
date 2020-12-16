@@ -22,7 +22,7 @@ plugins=(
   copyfile
   cp
   extract
-  git
+  forgit
   gitignore
   mvn
   node

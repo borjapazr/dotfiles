@@ -120,5 +120,7 @@ export DOTFILES_PATH=$HOME/.dotfiles
 
 source $DOTFILES_PATH/shell/init.sh
 
+source $DOTFILES_PATH/shell/bash/themes/mrmars.sh
+
 # Load z
 source $(brew --prefix)/etc/profile.d/z.sh

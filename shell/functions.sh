@@ -2,14 +2,6 @@ function cdd() {
   cd "$(ls -d -- */ | fzf --height 50%)" || echo "Invalid directory"
 }
 
-function recent_dirs() {
-  # This script depends on pushd. It works better with autopush enabled in ZSH
-  escaped_home=$(echo $HOME | sed 's/\//\\\//g')
-  selected=$(dirs -p | sort -u | fzf --height 50%)
-
-  cd "$(echo "$selected" | sed "s/\~/$escaped_home/")" || echo "Invalid directory"
-}
-
 function open() {
   dot system open "$@"
 }
@@ -28,4 +20,9 @@ function echos() {
     do
       echo "--------------------------------------------------------------------------------"
     done
+}
+
+function fif() {
+  if [ ! "$#" -gt 0 ]; then echo "Need a string to search for!"; return 1; fi
+  rg --files-with-matches --no-messages "$1" | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 '$1' || rg --ignore-case --pretty --context 10 '$1' {}"
 }

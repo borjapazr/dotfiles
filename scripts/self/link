@@ -6,12 +6,11 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 source "$DOTFILES_PATH/scripts/self/utils/generic.sh"
 
 ##? Update symlinks
-#?? 1.0.0
 ##?
 ##? Usage:
 ##?    link
 
-docs::eval "$@"
+docs::parse "$@"
 
 log::note "🔗 Applying symlinks..."
 generic::apply_common_symlinks

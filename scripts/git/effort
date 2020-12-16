@@ -4,12 +4,11 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 
 ##? Prints repository past effort
 ##? From https://github.com/tj/git-extras/blob/master/bin/git-effort
-#?? 1.0.0
 ##?
 ##? Usage:
 ##?    effort [--above <value>] [<path>...] [-- [<log options>...]]
 
-docs::eval "$@"
+docs::parse "$@"
 
 git_extra_mktemp() {
   mktemp -t "$(basename "$0")".XXXXXXX

@@ -14,7 +14,6 @@ python
 
 # Tools
 zsh
-fzf
 cargo
 tldr
 rofi
@@ -35,6 +34,7 @@ visualvm
 httpie
 imagemagick
 tcl-dev
+pydf
 
 # Tweaks
 arc-theme

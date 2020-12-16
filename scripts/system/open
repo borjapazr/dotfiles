@@ -12,7 +12,7 @@ source "${DOTFILES_PATH}/scripts/core/_main.sh"
 ##? Examples:
 ##?    open http://google.com
 
-docs::eval "$@"
+docs::parse "$@"
 
 _open() {
    if platform::is_macos; then
