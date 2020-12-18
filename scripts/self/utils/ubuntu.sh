@@ -71,8 +71,8 @@ _install_google_chrome() {
 }
 
 _configure_docker() {
+  sudo groupadd docker
   sudo gpasswd -a $USER docker
-  sudo service docker restart
   newgrp docker
 }
 
