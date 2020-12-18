@@ -2,8 +2,14 @@ ROOT_EMOJI=""
 if [[ $USER == 'root' ]]; then
   ROOT_EMOJI="✨"
 fi
+parent_pid=$$
+while [[ -z "${tty_bits-}" || $tty_bits -ne 0 ]]; do
+  read initiator_name parent_pid tty_bits < <(
+    awk '{ print substr($2, 2, length($2) - 2) " " $4 " " $7 }' /proc/$parent_pid/stat
+  )
+done
 REMOTE_EMOJI=""
-if [[ -n $SSH_CONNECTION ]]; then
+if [[ $initiator_name == 'sshd' ]]; then
   REMOTE_EMOJI="☁️ "
 fi
 
