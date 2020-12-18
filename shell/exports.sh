@@ -3,8 +3,8 @@ CUSTOM_PATH_LIST=(
   "$DOTFILES_PATH/bin/external"
   "/home/linuxbrew/.linuxbrew/bin"
   "/home/linuxbrew/.linuxbrew/sbin"
-  "/usr/lib/jvm/java-14-oracle/bin"
-  "/usr/lib/jvm/java-14-oracle/db/bin"
+  "/usr/lib/jvm/java-15-oracle/bin"
+  "/usr/lib/jvm/java-15-oracle/db/bin"
 )
 
 CUSTOM_PATH=$(
