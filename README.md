@@ -1,8 +1,8 @@
 ## 🚀 Installation
 
 ```bash
-git clone https://github.com/borjapazr/dotfiles.git $HOME/.dotfiles
-$HOME/.dotfiles/installer
+git clone https://github.com/borjapazr/dotfiles.git /usr/local/share/.dotfiles
+/usr/local/share/.dotfiles/installer
 ```
 ## 🔮 Migrating from a legacy computer with Ubuntu
 
