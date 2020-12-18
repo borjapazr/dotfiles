@@ -29,7 +29,7 @@ _w "│   🚀 Mr. Mars ${green}.dotfiles${normal} installer   │"
 _w "└─────────────────────────────────────┘"
 _w
 
-export DOTFILES_PATH="$HOME/.dotfiles"
+export DOTFILES_PATH="/usr/local/share/.dotfiles"
 source "$DOTFILES_PATH/scripts/core/_main.sh"
 
 "$DOTFILES_PATH/bin/dot" self install

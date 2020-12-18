@@ -116,7 +116,7 @@ if ! shopt -oq posix; then
     fi
 fi
 
-export DOTFILES_PATH=$HOME/.dotfiles
+export DOTFILES_PATH="/usr/local/share/.dotfiles"
 
 source $DOTFILES_PATH/shell/init.sh
 

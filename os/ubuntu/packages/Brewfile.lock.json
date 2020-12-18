@@ -274,10 +274,10 @@
         "revision": "67d6559ebb6f1ca217ea3d2981160c5fcd707c1a"
       },
       "homebrew/core": {
-        "revision": "6af543b6032c6adc1ca7ecfd7308db373b6bbb41"
+        "revision": "084b58ede807d4329b45617b010cc54d075208d6"
       },
       "homebrew/bundle": {
-        "revision": "93aacde80622e3d658474d9916f7d536c0f3ea86"
+        "revision": "a374cc7c02e71cbb78b50510587f7163eeaefdc1"
       },
       "clementtsang/bottom": {
         "revision": "126105230242d11532dd0f20de0500f1ad9584b5"
@@ -295,7 +295,7 @@
       "Ubuntu 20.04.1 LTS (focal)": {
         "HOMEBREW_VERSION": "2.6.2",
         "HOMEBREW_PREFIX": "/home/linuxbrew/.linuxbrew",
-        "Homebrew/linuxbrew-core": "6af543b6032c6adc1ca7ecfd7308db373b6bbb41",
+        "Homebrew/linuxbrew-core": "084b58ede807d4329b45617b010cc54d075208d6",
         "GCC": "9.3.0"
       }
     }

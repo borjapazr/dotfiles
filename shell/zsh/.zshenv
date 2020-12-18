@@ -1,5 +1,5 @@
 # Exports
-export DOTFILES_PATH=$HOME/.dotfiles
+export DOTFILES_PATH="/usr/local/share/.dotfiles"
 export ZSH="$DOTFILES_PATH/modules/oh-my-zsh"
 
 # Skip global compinit

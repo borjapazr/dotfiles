@@ -9,7 +9,7 @@
     ~/.bashrc: shell/bash/.bashrc
     ~/.bash_profile: shell/bash/.bash_profile
     ~/.profile: shell/bash/.profile
-    ~/.dotfiles/modules/oh-my-zsh/custom/themes/mrmars.zsh-theme: shell/zsh/themes/mrmars.zsh-theme
+    /usr/local/share/.dotfiles/modules/oh-my-zsh/custom/themes/mrmars.zsh-theme: shell/zsh/themes/mrmars.zsh-theme
     ~/.zshrc: shell/zsh/.zshrc
     ~/.zlogin: shell/zsh/.zlogin
     ~/.zshenv: shell/zsh/.zshenv
