@@ -11,7 +11,7 @@ if [[ $USER == 'root' ]]; then
   ROOT_EMOJI="✨"
 fi
 REMOTE_EMOJI=""
-if [[ $IS_SSH_CONNECTION == 1 ]]; then
+if [[ -n $SSH_CONNECTION ]]; then
   REMOTE_EMOJI="☁️ "
 fi
 
