@@ -4,6 +4,7 @@ oracle-java15-set-default
 
 # Docker
 docker.io
+docker-compose
 
 # Node
 nodejs
