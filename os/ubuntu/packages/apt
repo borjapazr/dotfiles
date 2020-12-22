@@ -36,6 +36,7 @@ httpie
 imagemagick
 tcl-dev
 pydf
+ncdu
 
 # Tweaks
 arc-theme
