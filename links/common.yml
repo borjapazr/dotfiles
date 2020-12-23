@@ -2,8 +2,8 @@
 
 - defaults:
     link:
-        create: true
-        force: true
+      create: true
+      force: true
 
 - link:
     ~/.bashrc: shell/bash/.bashrc
