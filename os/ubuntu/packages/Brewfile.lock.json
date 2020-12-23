@@ -43,6 +43,10 @@
               "url": "https://linuxbrew.bintray.com/bottles/glances-3.1.5.big_sur.bottle.tar.gz",
               "sha256": "494157271f3830f5b2c82247679b4199510e2f3c3e6d4ab032904dfaa57c63c5"
             },
+            "arm64_big_sur": {
+              "url": "https://linuxbrew.bintray.com/bottles/glances-3.1.5.arm64_big_sur.bottle.tar.gz",
+              "sha256": "7cc4066a20ee564aa0776ba807484e499be932c289822185fec50e6376c093d6"
+            },
             "catalina": {
               "url": "https://linuxbrew.bintray.com/bottles/glances-3.1.5.catalina.bottle.tar.gz",
               "sha256": "fcdbab7bfe00247ace33bd4bf6db88baddc12c0ae090302a0bf100910b088417"
@@ -117,30 +121,26 @@
         }
       },
       "git-delta": {
-        "version": "0.4.4",
+        "version": "0.4.5",
         "bottle": {
           "cellar": ":any_skip_relocation",
           "prefix": "/home/linuxbrew/.linuxbrew",
           "files": {
             "big_sur": {
-              "url": "https://linuxbrew.bintray.com/bottles/git-delta-0.4.4.big_sur.bottle.tar.gz",
-              "sha256": "9ca2f88662822e52195b10e52f16f0261a3faebddf4ec30496997fab3ebc699c"
+              "url": "https://linuxbrew.bintray.com/bottles/git-delta-0.4.5.big_sur.bottle.tar.gz",
+              "sha256": "ea97c81e666640dad59723fc79e5a7773b064b1cefbb93d2164f2454d2635436"
             },
             "catalina": {
-              "url": "https://linuxbrew.bintray.com/bottles/git-delta-0.4.4.catalina.bottle.tar.gz",
-              "sha256": "3561fccb1ff28c7021d5cc5ed549f3be47dfd4127787510aac38192670077f17"
+              "url": "https://linuxbrew.bintray.com/bottles/git-delta-0.4.5.catalina.bottle.tar.gz",
+              "sha256": "a2d632b219259aaf9febbf383a0b243a24328a273d859ce320731d017ece8f30"
             },
             "mojave": {
-              "url": "https://linuxbrew.bintray.com/bottles/git-delta-0.4.4.mojave.bottle.tar.gz",
-              "sha256": "6ece760a0d39fbee0b2d40237c3a0e81c1d67df655502072dc06077676ac43ea"
-            },
-            "high_sierra": {
-              "url": "https://linuxbrew.bintray.com/bottles/git-delta-0.4.4.high_sierra.bottle.tar.gz",
-              "sha256": "a5767a8e9621884bb26cfb4205ffb9b2e2c0ff53536d79981ee2e22ff823a474"
+              "url": "https://linuxbrew.bintray.com/bottles/git-delta-0.4.5.mojave.bottle.tar.gz",
+              "sha256": "506bc14a8e5e0a371dd1ac5cceaeff6b337d4b84444c6b9809ff4a7c3a588be7"
             },
             "x86_64_linux": {
-              "url": "https://linuxbrew.bintray.com/bottles/git-delta-0.4.4.x86_64_linux.bottle.tar.gz",
-              "sha256": "1eb5cfa359e6988eea397b71b7da0d6ffbb5846a4277402664601a2d9f87c026"
+              "url": "https://linuxbrew.bintray.com/bottles/git-delta-0.4.5.x86_64_linux.bottle.tar.gz",
+              "sha256": "77da51ec36b0f1b15774e079a192be792031f9b675ddc09781bd5667cfcc060e"
             }
           }
         }
@@ -179,6 +179,10 @@
             "big_sur": {
               "url": "https://linuxbrew.bintray.com/bottles/tree-1.8.0.big_sur.bottle.tar.gz",
               "sha256": "572adeaba1ffee7fa8bcad414c8b18140c367bbc81dc2ab8fd438cbd7e4a985b"
+            },
+            "arm64_big_sur": {
+              "url": "https://linuxbrew.bintray.com/bottles/tree-1.8.0.arm64_big_sur.bottle.tar.gz",
+              "sha256": "b9d1925b5b306e098ff43f1ce5fc409b759c6d2d468e20af5628797a56234c4f"
             },
             "catalina": {
               "url": "https://linuxbrew.bintray.com/bottles/tree-1.8.0.catalina.bottle.tar.gz",
@@ -242,6 +246,10 @@
               "url": "https://linuxbrew.bintray.com/bottles/jq-1.6.big_sur.bottle.1.tar.gz",
               "sha256": "bf0f8577632af7b878b6425476f5b1ab9c3bf66d65affb0c455048a173a0b6bf"
             },
+            "arm64_big_sur": {
+              "url": "https://linuxbrew.bintray.com/bottles/jq-1.6.arm64_big_sur.bottle.1.tar.gz",
+              "sha256": "674b3ae41c399f1e8e44c271b0e6909babff9fcd2e04a2127d25e2407ea4dd33"
+            },
             "catalina": {
               "url": "https://linuxbrew.bintray.com/bottles/jq-1.6.catalina.bottle.1.tar.gz",
               "sha256": "820a3c85fcbb63088b160c7edf125d7e55fc2c5c1d51569304499c9cc4b89ce8"
@@ -264,6 +272,10 @@
             }
           }
         }
+      },
+      "dry": {
+        "version": "v0.10-beta.1",
+        "bottle": false
       }
     },
     "tap": {
@@ -274,13 +286,16 @@
         "revision": "67d6559ebb6f1ca217ea3d2981160c5fcd707c1a"
       },
       "homebrew/core": {
-        "revision": "64eba468d732751146e2a6101a80664cf8b08b1c"
+        "revision": "62f4f99d71cc32986b4a5561a3b6b6e15da0de8c"
       },
       "homebrew/bundle": {
-        "revision": "a374cc7c02e71cbb78b50510587f7163eeaefdc1"
+        "revision": "830855e7b0bb123da2a6acda4275b8a5e378f331"
       },
       "clementtsang/bottom": {
         "revision": "126105230242d11532dd0f20de0500f1ad9584b5"
+      },
+      "moncho/dry": {
+        "revision": "4010cfb7b71a5c93871eab0b714637c9694a9bd2"
       }
     }
   },
@@ -293,9 +308,9 @@
         "GCC": "9.3.0"
       },
       "Ubuntu 20.04.1 LTS (focal)": {
-        "HOMEBREW_VERSION": "2.6.2",
+        "HOMEBREW_VERSION": "2.7.0",
         "HOMEBREW_PREFIX": "/home/linuxbrew/.linuxbrew",
-        "Homebrew/linuxbrew-core": "64eba468d732751146e2a6101a80664cf8b08b1c",
+        "Homebrew/linuxbrew-core": "62f4f99d71cc32986b4a5561a3b6b6e15da0de8c",
         "GCC": "9.3.0"
       }
     }

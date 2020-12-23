@@ -30,7 +30,7 @@ plugins=(
   safe-paste
   you-should-use
   zsh-autosuggestions
-  zsh-syntax-highlighting
+  fast-syntax-highlighting
 )
 
 # Disable paste highlighting

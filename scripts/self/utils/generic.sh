@@ -13,6 +13,8 @@ generic::install_ohmyzsh_plugins() {
   git::clone_if_not_exists https://github.com/zsh-users/zsh-autosuggestions "$OH_MY_ZSH_CUSTOM/plugins/zsh-autosuggestions"
   rm -rf "$OH_MY_ZSH_CUSTOM/plugins/zsh-syntax-highlighting" || true
   git::clone_if_not_exists https://github.com/zsh-users/zsh-syntax-highlighting.git "$OH_MY_ZSH_CUSTOM/plugins/zsh-syntax-highlighting"
+  rm -rf "$OH_MY_ZSH_CUSTOM/plugins/fast-syntax-highlighting" || true
+  git::clone_if_not_exists https://github.com/zdharma/fast-syntax-highlighting.git "$OH_MY_ZSH_CUSTOM/plugins/fast-syntax-highlighting"
   rm -rf "$OH_MY_ZSH_CUSTOM/plugins/you-should-use" || true
   git::clone_if_not_exists https://github.com/MichaelAquilina/zsh-you-should-use.git "$OH_MY_ZSH_CUSTOM/plugins/you-should-use"
   rm -rf "$OH_MY_ZSH_CUSTOM/plugins/forgit" || true
