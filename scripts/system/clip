@@ -3,7 +3,6 @@
 source "${DOTFILES_PATH}/scripts/core/_main.sh"
 
 ##? Universal clipboard tools
-#?? 0.1.0
 ##?
 ##? Usage:
 ##?     clip copy

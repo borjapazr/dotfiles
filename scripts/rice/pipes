@@ -5,7 +5,6 @@ source "${DOTFILES_PATH}/scripts/core/_main.sh"
 ##? Animated pipes terminal screensaver
 ##?
 ##? based on https://github.com/pipeseroni/pipes.sh
-#?? 0.1.0
 ##?
 ##? Usage:
 ##?   pipe
