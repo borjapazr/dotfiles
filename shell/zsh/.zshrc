@@ -1,7 +1,6 @@
 # Options
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FCNTL_LOCK
-setopt GLOBDOTS
 
 # Theme
 ZSH_THEME="mrmars"
