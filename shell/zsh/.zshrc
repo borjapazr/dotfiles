@@ -1,6 +1,7 @@
 # Options
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FCNTL_LOCK
+unset zle_bracketed_paste
 
 # Theme
 ZSH_THEME="mrmars"
@@ -32,9 +33,6 @@ plugins=(
   zsh-autosuggestions
   fast-syntax-highlighting
 )
-
-# Disable paste highlighting
-zle_highlight+=(paste:none)
 
 # Load completions
 fpath=("$DOTFILES_PATH/shell/zsh/completions" "$DOTFILES_PATH/modules/zsh-completions/src" $fpath)
