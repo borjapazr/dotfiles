@@ -13,7 +13,8 @@ indent_size  = 2
 [.zshrc]
 indent_size  = 2
 
-[*.yml]
+[*.{yaml,yml}]
+mode = YAML
 indent_size  = 2
 
 [Makefile]
