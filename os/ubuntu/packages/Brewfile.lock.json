@@ -67,30 +67,30 @@
         "bottle": false
       },
       "stormssh": {
-        "version": "0.7.0_5",
+        "version": "0.7.0_6",
         "bottle": {
-          "cellar": ":any",
+          "cellar": "/home/linuxbrew/.linuxbrew/Cellar",
           "prefix": "/home/linuxbrew/.linuxbrew",
           "files": {
             "big_sur": {
-              "url": "https://linuxbrew.bintray.com/bottles/stormssh-0.7.0_5.big_sur.bottle.tar.gz",
-              "sha256": "79e330e941213f27be8570d069e752ac8062a3956a84a7f62ba8965584011e54"
+              "url": "https://linuxbrew.bintray.com/bottles/stormssh-0.7.0_6.big_sur.bottle.tar.gz",
+              "sha256": "e2519c5c0c796e4fa0a5f63a7bcbe4f17c188616c10abf6aee4921c2670a7f7e"
+            },
+            "arm64_big_sur": {
+              "url": "https://linuxbrew.bintray.com/bottles/stormssh-0.7.0_6.arm64_big_sur.bottle.tar.gz",
+              "sha256": "aa25e63f9cf6ff6d69e1c7b48dce6834de0ce4ed2d74af6775212ef1c9314f52"
             },
             "catalina": {
-              "url": "https://linuxbrew.bintray.com/bottles/stormssh-0.7.0_5.catalina.bottle.tar.gz",
-              "sha256": "e79afe5b92e065a4700562f0c440ca31ca10942bf3d7bd53676e9db0fe76765e"
+              "url": "https://linuxbrew.bintray.com/bottles/stormssh-0.7.0_6.catalina.bottle.tar.gz",
+              "sha256": "91c073021a2155e31ecfc09a7e5e2e03172c34408f31c725895b0ddd1bcf9a31"
             },
             "mojave": {
-              "url": "https://linuxbrew.bintray.com/bottles/stormssh-0.7.0_5.mojave.bottle.tar.gz",
-              "sha256": "63e97d8df81a1e56544fc231f404693cf0ce0263ea2a375d97b6a2c6608e72a2"
-            },
-            "high_sierra": {
-              "url": "https://linuxbrew.bintray.com/bottles/stormssh-0.7.0_5.high_sierra.bottle.tar.gz",
-              "sha256": "e4e4311de89e372150f030d233bbad94d03300fa81106bb212176c838fb82de1"
+              "url": "https://linuxbrew.bintray.com/bottles/stormssh-0.7.0_6.mojave.bottle.tar.gz",
+              "sha256": "ffeaf80fd8e4ff994985be761d55d90fd4a60a4198b3aa87983b8933dab8b4b4"
             },
             "x86_64_linux": {
-              "url": "https://linuxbrew.bintray.com/bottles/stormssh-0.7.0_5.x86_64_linux.bottle.tar.gz",
-              "sha256": "1075002a8bfb4b3c369b7ebdd4fb559e2724f38f0dc1b160529a9647312eb5c3"
+              "url": "https://linuxbrew.bintray.com/bottles/stormssh-0.7.0_6.x86_64_linux.bottle.tar.gz",
+              "sha256": "3058cc10a40a7fe66e2c9bb369aef73713733e9536fe63a9b793e561638596ab"
             }
           }
         }
@@ -102,49 +102,53 @@
           "prefix": "/home/linuxbrew/.linuxbrew",
           "files": {
             "big_sur": {
-              "url": "https://linuxbrew.bintray.com/bottles/fzf-0.25.0.big_sur.bottle.tar.gz",
-              "sha256": "e4cbab67d49b7472302b1809a8b6fb9569f3dfe8c17d92fba796810585ecb501"
+              "url": "https://linuxbrew.bintray.com/bottles/fzf-0.25.0.big_sur.bottle.1.tar.gz",
+              "sha256": "4785171206b293ad38415a377f49d6e7546c3918e6461fa7ef916881a4677d29"
             },
             "arm64_big_sur": {
-              "url": "https://linuxbrew.bintray.com/bottles/fzf-0.25.0.arm64_big_sur.bottle.tar.gz",
-              "sha256": "e496f401d222aa84759ceedbb9174eaf0a0f8c9e89b7e04ad2b14cca9f77bfa9"
+              "url": "https://linuxbrew.bintray.com/bottles/fzf-0.25.0.arm64_big_sur.bottle.1.tar.gz",
+              "sha256": "3f55a17211677c905f56c9407892474f1da8c44bcd4192260abb05243cfd3a02"
             },
             "catalina": {
-              "url": "https://linuxbrew.bintray.com/bottles/fzf-0.25.0.catalina.bottle.tar.gz",
-              "sha256": "8be78a2d3f66016fd770a52760bfcea039a2fef131027c58df101e229b0a17c1"
+              "url": "https://linuxbrew.bintray.com/bottles/fzf-0.25.0.catalina.bottle.1.tar.gz",
+              "sha256": "888d72fea172e0901dd08364004510f8f842a61f0d5f9bcbc1e4bab92c41c768"
             },
             "mojave": {
-              "url": "https://linuxbrew.bintray.com/bottles/fzf-0.25.0.mojave.bottle.tar.gz",
-              "sha256": "97c5f0acb223b9bc355169ca9bb76ee741d1b034c1766acf4b28c2fa2864ff32"
+              "url": "https://linuxbrew.bintray.com/bottles/fzf-0.25.0.mojave.bottle.1.tar.gz",
+              "sha256": "dc35db24918171592e325cd911bf7a17424f404904b355164ddc2295cd5bd645"
             },
             "x86_64_linux": {
-              "url": "https://linuxbrew.bintray.com/bottles/fzf-0.25.0.x86_64_linux.bottle.tar.gz",
-              "sha256": "855b30baa19c76d9bddbefe5d3a3bef77726175ae35d016181532dbc16ea4423"
+              "url": "https://linuxbrew.bintray.com/bottles/fzf-0.25.0.x86_64_linux.bottle.1.tar.gz",
+              "sha256": "abea9e4745b9efc469c6c858dc7e8e8535a7ad2a662ab8b804e9656e29af5a0f"
             }
           }
         }
       },
       "git-delta": {
-        "version": "0.5.0",
+        "version": "0.5.1",
         "bottle": {
           "cellar": ":any_skip_relocation",
           "prefix": "/home/linuxbrew/.linuxbrew",
           "files": {
             "big_sur": {
-              "url": "https://linuxbrew.bintray.com/bottles/git-delta-0.5.0.big_sur.bottle.tar.gz",
-              "sha256": "223b5315ca1c4977da846f8125feb3eec9ac95bb854c89c250838931294b6548"
+              "url": "https://linuxbrew.bintray.com/bottles/git-delta-0.5.1.big_sur.bottle.tar.gz",
+              "sha256": "22e1edac6c4454720855fd206856e5899db6cbb105f25ce42a1b2577234c0613"
+            },
+            "arm64_big_sur": {
+              "url": "https://linuxbrew.bintray.com/bottles/git-delta-0.5.1.arm64_big_sur.bottle.tar.gz",
+              "sha256": "1fffc0f5e4b4bf1b6a280f2af878485e2d74712bb2c591858535d3ea08d51de1"
             },
             "catalina": {
-              "url": "https://linuxbrew.bintray.com/bottles/git-delta-0.5.0.catalina.bottle.tar.gz",
-              "sha256": "e6ea46ea542b446bd5402a0f03d1fb824da03d71ad64d2326824a954ab0ac1c9"
+              "url": "https://linuxbrew.bintray.com/bottles/git-delta-0.5.1.catalina.bottle.tar.gz",
+              "sha256": "08e9ba2ad0cea3a581b5d5831fb7baa50f048307d8428eb72453397f779fc0c2"
             },
             "mojave": {
-              "url": "https://linuxbrew.bintray.com/bottles/git-delta-0.5.0.mojave.bottle.tar.gz",
-              "sha256": "f6054d63ffe6a8958195901b798f50d586e216e0ad424145bd3d2d376e365be4"
+              "url": "https://linuxbrew.bintray.com/bottles/git-delta-0.5.1.mojave.bottle.tar.gz",
+              "sha256": "42e1dab3a528bab5bb09be77d064f303f27939232a7f9fe51e5bf3f616270d5b"
             },
             "x86_64_linux": {
-              "url": "https://linuxbrew.bintray.com/bottles/git-delta-0.5.0.x86_64_linux.bottle.tar.gz",
-              "sha256": "50c20ad9dbf36ddad18128ac2ec1ca40ea9101b0f38662ab6d3c9423b8533995"
+              "url": "https://linuxbrew.bintray.com/bottles/git-delta-0.5.1.x86_64_linux.bottle.tar.gz",
+              "sha256": "9a0d64457d297bbd57cadc53a13db727373a2ef9485d9e02f51122cf5b43cdb9"
             }
           }
         }
@@ -292,16 +296,16 @@
     },
     "tap": {
       "denisidoro/tools": {
-        "revision": "978c72c4e00f89ccc79a1384e0f81d31c187f716"
+        "revision": "10bddec1cd9e89126f82826c8d9dacbc2de28e85"
       },
       "jesseduffield/lazydocker": {
         "revision": "67d6559ebb6f1ca217ea3d2981160c5fcd707c1a"
       },
       "homebrew/core": {
-        "revision": "1e9721a65a1b8010ddb148214fe60e02e263c026"
+        "revision": "fb24c0b6c5d4a3ecd5d7f32b7db6a7ec52a60bfb"
       },
       "homebrew/bundle": {
-        "revision": "ae49dc0edae42a3eae3897281071f25006ce6b8e"
+        "revision": "72f41aae9b14d3603dd6d9a4e6bdecd871b5310a"
       },
       "clementtsang/bottom": {
         "revision": "126105230242d11532dd0f20de0500f1ad9584b5"
@@ -320,10 +324,10 @@
         "GCC": "9.3.0"
       },
       "Ubuntu 20.04.1 LTS (focal)": {
-        "HOMEBREW_VERSION": "2.7.1",
+        "HOMEBREW_VERSION": "2.7.3",
         "HOMEBREW_PREFIX": "/home/linuxbrew/.linuxbrew",
-        "Homebrew/linuxbrew-core": "1e9721a65a1b8010ddb148214fe60e02e263c026",
-        "GCC": "9.3.0"
+        "Homebrew/linuxbrew-core": "fb24c0b6c5d4a3ecd5d7f32b7db6a7ec52a60bfb",
+        "GCC": "5.5.0"
       }
     }
   }

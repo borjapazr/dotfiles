@@ -35,7 +35,7 @@ This is an installation guide to migrate from a legacy computer with **Ubuntu** 
 
 ## 🤩 Inspiration
 
-* <https://github.com/rgomezcasas/dotfiles> Thank you very much for your great job!
+* <https://github.com/rgomezcasas/dotfiles> Thank you very much for your great work!
 
 ## ⚖️ License
 
