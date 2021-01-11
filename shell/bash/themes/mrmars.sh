@@ -30,6 +30,6 @@ mrmars_theme() {
     STATUS_COLOR=$RED_COLOR
   fi
 
-  export PS1="\[\e[1m\]\[\e[${STATUS_COLOR}m\][\[\e[${YELLOW_COLOR}m\]s\[\e[${GREEN_COLOR}m\]x\[\e[${RED_COLOR}m\]l\[\e[${BLUE_COLOR}m\]p\[\e[${STATUS_COLOR}m\]]\[\e[m\]\[\e[m\]${REMOTE_EMOJI}${ROOT_EMOJI} \[\e[1m\]\[\e[${CYAN_COLOR}m\]${CURRENT_DIR}\[\e[m\]\[\e[m\] "
+  export PS1="\[\e[1m\]\[\e[${STATUS_COLOR}m\][\[\e[${YELLOW_COLOR}m\]s\[\e[${GREEN_COLOR}m\]r\[\e[${RED_COLOR}m\]a\[\e[${BLUE_COLOR}m\]m\[\e[${STATUS_COLOR}m\]]\[\e[m\]\[\e[m\]${REMOTE_EMOJI}${ROOT_EMOJI} \[\e[1m\]\[\e[${CYAN_COLOR}m\]${CURRENT_DIR}\[\e[m\]\[\e[m\] "
 
 }
