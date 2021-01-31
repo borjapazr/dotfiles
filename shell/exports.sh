@@ -13,6 +13,7 @@ CUSTOM_PATH=$(
 )
 
 export PATH="${CUSTOM_PATH}:${PATH}"
+export GOPATH="$HOME/.go"
 export EDITOR="vim"
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS"
   --color=fg:#e5e9f0,hl:#81a1c1
