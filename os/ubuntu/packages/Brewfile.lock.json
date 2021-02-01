@@ -5,26 +5,30 @@
       "denisidoro/tools/docpars": null,
       "jesseduffield/lazydocker/lazydocker": null,
       "exa": {
-        "version": "0.9.0_1",
+        "version": "0.9.0_2",
         "bottle": {
           "cellar": ":any_skip_relocation",
           "prefix": "/home/linuxbrew/.linuxbrew",
           "files": {
             "big_sur": {
-              "url": "https://linuxbrew.bintray.com/bottles/exa-0.9.0_1.big_sur.bottle.tar.gz",
-              "sha256": "3ee8e461f50fa870cd035a44ba9973e26192953e235adef9d2936f2bdab0b1d3"
+              "url": "https://linuxbrew.bintray.com/bottles/exa-0.9.0_2.big_sur.bottle.tar.gz",
+              "sha256": "2ea88382cf3e9906bc27cd37f3f57c953cce9fcd686d958824ccb27093c5c8da"
+            },
+            "arm64_big_sur": {
+              "url": "https://linuxbrew.bintray.com/bottles/exa-0.9.0_2.arm64_big_sur.bottle.tar.gz",
+              "sha256": "b5fc2d5300cbd6ab2d3c113ce011c6ac187e8e774f3d3e4d1f1592b109206d39"
             },
             "catalina": {
-              "url": "https://linuxbrew.bintray.com/bottles/exa-0.9.0_1.catalina.bottle.tar.gz",
-              "sha256": "33332800316bd21da72087c8d21d2948e7b0bf678fc9d3c562c9e84c139b6de3"
+              "url": "https://linuxbrew.bintray.com/bottles/exa-0.9.0_2.catalina.bottle.tar.gz",
+              "sha256": "979193384c57b8858b592d1200468cb6584ffa7df7833d6777eb8637e0ecfc97"
             },
             "mojave": {
-              "url": "https://linuxbrew.bintray.com/bottles/exa-0.9.0_1.mojave.bottle.tar.gz",
-              "sha256": "507c870baae72b7961d695abbbee5029b86aee3e88037fafd08f4b55d78257b2"
+              "url": "https://linuxbrew.bintray.com/bottles/exa-0.9.0_2.mojave.bottle.tar.gz",
+              "sha256": "af7d2f089dc99cab221dbc57c33c443e112a843911d561588621e60378f56a46"
             },
             "x86_64_linux": {
-              "url": "https://linuxbrew.bintray.com/bottles/exa-0.9.0_1.x86_64_linux.bottle.tar.gz",
-              "sha256": "dc597e7833eaa54bf8347106d056c52e1b680289492dc34eadc3baf00a8132ef"
+              "url": "https://linuxbrew.bintray.com/bottles/exa-0.9.0_2.x86_64_linux.bottle.tar.gz",
+              "sha256": "0405214f5a3f4b39857c896cc5ca223d16b536ba8b0406781455f7b52bb13df1"
             }
           }
         }
@@ -34,36 +38,36 @@
         "bottle": false
       },
       "glances": {
-        "version": "3.1.5",
+        "version": "3.1.6.1",
         "bottle": {
           "cellar": ":any_skip_relocation",
           "prefix": "/home/linuxbrew/.linuxbrew",
           "files": {
             "big_sur": {
-              "url": "https://linuxbrew.bintray.com/bottles/glances-3.1.5.big_sur.bottle.tar.gz",
-              "sha256": "494157271f3830f5b2c82247679b4199510e2f3c3e6d4ab032904dfaa57c63c5"
+              "url": "https://linuxbrew.bintray.com/bottles/glances-3.1.6.1.big_sur.bottle.tar.gz",
+              "sha256": "76c4d76215950ba7c9739b42bb0542a2ae5675950104bdd99b3c1e9eacd801d2"
             },
             "arm64_big_sur": {
-              "url": "https://linuxbrew.bintray.com/bottles/glances-3.1.5.arm64_big_sur.bottle.tar.gz",
-              "sha256": "7cc4066a20ee564aa0776ba807484e499be932c289822185fec50e6376c093d6"
+              "url": "https://linuxbrew.bintray.com/bottles/glances-3.1.6.1.arm64_big_sur.bottle.tar.gz",
+              "sha256": "b8df470b377572b9586901f7c64aed23d84e9ff1490ffb16afbc24ae7be4d379"
             },
             "catalina": {
-              "url": "https://linuxbrew.bintray.com/bottles/glances-3.1.5.catalina.bottle.tar.gz",
-              "sha256": "fcdbab7bfe00247ace33bd4bf6db88baddc12c0ae090302a0bf100910b088417"
+              "url": "https://linuxbrew.bintray.com/bottles/glances-3.1.6.1.catalina.bottle.tar.gz",
+              "sha256": "1fd1fa2bfce06817d40711060ce0d2918303ce62e32e203de70bf89175d0176a"
             },
             "mojave": {
-              "url": "https://linuxbrew.bintray.com/bottles/glances-3.1.5.mojave.bottle.tar.gz",
-              "sha256": "ee6c05bc8d7293076aee0bfcce3eb2bedc2a6f3d8aa70346043033b41a4565e8"
+              "url": "https://linuxbrew.bintray.com/bottles/glances-3.1.6.1.mojave.bottle.tar.gz",
+              "sha256": "6939d40ec9f567132efbcf71539d503e2d5407fefcb08a90337a2059bf8e0dc4"
             },
             "x86_64_linux": {
-              "url": "https://linuxbrew.bintray.com/bottles/glances-3.1.5.x86_64_linux.bottle.tar.gz",
-              "sha256": "e356c523f1f1d086f7f049379088fff01b52389209bf6bcbabaf5157bed0f76f"
+              "url": "https://linuxbrew.bintray.com/bottles/glances-3.1.6.1.x86_64_linux.bottle.tar.gz",
+              "sha256": "e762a8133957a755aefa11059458a3d3894d7225e7fac7fa27670fcd9e3fb04a"
             }
           }
         }
       },
       "bottom": {
-        "version": "0.5.6",
+        "version": "0.5.7",
         "bottle": false
       },
       "stormssh": {
@@ -302,13 +306,13 @@
         "revision": "67d6559ebb6f1ca217ea3d2981160c5fcd707c1a"
       },
       "homebrew/core": {
-        "revision": "fb24c0b6c5d4a3ecd5d7f32b7db6a7ec52a60bfb"
+        "revision": "5d60a2567d3991fe5567fb8837fe93bf51b96bd6"
       },
       "homebrew/bundle": {
-        "revision": "72f41aae9b14d3603dd6d9a4e6bdecd871b5310a"
+        "revision": "473a0124c54d2d7f5fb2515f450030d445e58fe3"
       },
       "clementtsang/bottom": {
-        "revision": "126105230242d11532dd0f20de0500f1ad9584b5"
+        "revision": "10397cdc717cfe8c24497523e47bbd0b32770a05"
       },
       "moncho/dry": {
         "revision": "4010cfb7b71a5c93871eab0b714637c9694a9bd2"
@@ -328,6 +332,12 @@
         "HOMEBREW_PREFIX": "/home/linuxbrew/.linuxbrew",
         "Homebrew/linuxbrew-core": "fb24c0b6c5d4a3ecd5d7f32b7db6a7ec52a60bfb",
         "GCC": "5.5.0"
+      },
+      "Ubuntu 20.04.2 LTS (focal)": {
+        "HOMEBREW_VERSION": "2.7.7",
+        "HOMEBREW_PREFIX": "/home/linuxbrew/.linuxbrew",
+        "Homebrew/linuxbrew-core": "5d60a2567d3991fe5567fb8837fe93bf51b96bd6",
+        "GCC": "9.3.0"
       }
     }
   }
