@@ -12,15 +12,16 @@ alias dotfiles="cd ~/.dotfiles"
 alias j="z"
 
 # Docker
-alias lzd='lazydocker'
-alias dc='dot docker connect'
+alias lzd="lazydocker"
+alias dc="dot docker connect"
 
 # IDEs and editors
-alias i.='(intellij-idea-ultimate $PWD &>/dev/null &)'
-alias c.='(code $PWD &>/dev/null &)'
+alias vim="nvim"
+alias i.="(intellij-idea-ultimate $PWD &>/dev/null &)"
+alias c.="(code $PWD &>/dev/null &)"
 
 # Utils
-alias ping='prettyping --nolegend'
-alias htop='btm'
-alias k='kill -9'
-alias df='pydf'
+alias ping="prettyping --nolegend"
+alias htop="btm"
+alias k="kill -9"
+alias df="pydf"
