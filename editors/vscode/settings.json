@@ -1,6 +1,10 @@
 {
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "[go]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    },
+    "editor.formatOnSave": true,
+    "editor.insertSpaces": false
   },
   "debug.console.fontSize": 18,
   "editor.fontFamily": "'Cascadia Code PL', 'Mars Mono', 'Fira Code'",
@@ -57,6 +61,21 @@
     ]
   },
   "editor.wordWrap": "on",
+  "explorer.confirmDelete": false,
+  "go.autocompleteUnimportedPackages": true,
+  "go.docsTool": "gogetdoc",
+  "go.formatTool": "goimports",
+  "go.lintOnSave": "file",
+  "go.lintTool": "golangci-lint",
+  "go.liveErrors": {
+    "delay": 1000,
+    "enabled": true
+  },
+  "go.testFlags": [
+    "-v"
+  ],
+  "go.testOnSave": true,
+  "go.useLanguageServer": true,
   "markdown.preview.fontSize": 18,
   "oneDarkPro.italic": true,
   "oneDarkPro.vivid": false,
@@ -122,6 +141,5 @@
   "workbench.activityBar.visible": true,
   "workbench.colorTheme": "One Dark Pro",
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.statusBar.visible": true,
-  "explorer.confirmDelete": false
+  "workbench.statusBar.visible": true
 }
