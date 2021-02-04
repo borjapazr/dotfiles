@@ -1,2 +1,5 @@
 # Java JDK
 ppa:linuxuprising/java
+
+# Golang
+ppa:longsleep/golang-backports

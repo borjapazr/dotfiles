@@ -3,7 +3,7 @@ oracle-java15-installer
 oracle-java15-set-default
 
 # Golang
-golang
+golang-go
 
 # Docker
 docker.io
