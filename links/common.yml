@@ -19,6 +19,7 @@
     ~/.gitattributes: git/.gitattributes
     ~/.vimrc: editors/vim/.vimrc
     ~/.config/Code/User/settings.json: editors/vscode/settings.json
+    ~/.config/tilix/schemes/nord.json: terminal/tilix/schemes/nord.json
 
 - create:
     - ~/Resources
