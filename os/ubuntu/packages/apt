@@ -40,6 +40,7 @@ imagemagick
 tcl-dev
 pydf
 ncdu
+nvim
 
 # Tweaks
 arc-theme
