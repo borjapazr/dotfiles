@@ -6,7 +6,9 @@ HOMEBREW_BIN="/home/linuxbrew/.linuxbrew/bin"
 
 ubuntu::add_repositories() {
   log::note "📥 Adding PPA repositories..."
-  xargs -a <(awk '! /^ *(#|$)/' "$DOTFILES_PATH/os/ubuntu/repositories/ppa") -r -- sudo add-apt-repository -y
+  grep -vE "^(\s*$|#)" "$DOTFILES_PATH/os/ubuntu/repositories/ppa" | while read line; do
+    sudo add-apt-repository -y $line
+  done
 }
 
 ubuntu::install_tools() {
