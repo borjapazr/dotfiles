@@ -16,6 +16,7 @@ export JAVA_TOOLS_OPTIONS='-Dfile.encoding="UTF-8"'
 export GOPATH="${HOME}/.go"
 export GOBIN="${GOPATH}/bin"
 
+export GPG_TTY=$(tty)
 
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS"
   --color=fg:#e5e9f0,hl:#81a1c1
