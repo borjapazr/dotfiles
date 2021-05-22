@@ -73,6 +73,7 @@
   "markdown.preview.fontSize": 18,
   "oneDarkPro.italic": true,
   "oneDarkPro.vivid": false,
+  "oneDarkPro.bold": true,
   "peacock.favoriteColors": [
     {
       "name": "Angular Red",
