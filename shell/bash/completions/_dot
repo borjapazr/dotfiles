@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+_command_for() {
+  ls -p "$DOTFILES_PATH/scripts/$1" | grep -v / | xargs echo
+}
+
+_dot() {
+  local suggestions=""
+
+  case "${#COMP_WORDS[@]}" in
+  2) suggestions="$(ls "$DOTFILES_PATH/scripts" | grep -v core | xargs echo)" ;;
+  3) suggestions="$(_command_for ${COMP_WORDS[1]})" ;;
+  *) suggestions=""
+  esac
+
+  COMPREPLY=($(compgen -W "$suggestions" "${COMP_WORDS[$COMP_CWORD]}"))
+}
+
+complete -F _dot dot
