@@ -9,9 +9,16 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?    dot <context>
 ##?    dot <context> <script> [<args>...]
 ##?    dot -h | --help
-if [ "$1" == "-h" ] || [ "$1" = "--help" ]; then
-  docs::parse "$@"
-fi
+##?    dot -p | --print
+
+while :; do
+  case "${1-}" in
+    -h | --help) docs::parse "$@" ;;
+    -p | --print) PRINT=true ;;
+    *) break ;;
+  esac
+  shift
+done
 
 fzf_prompt() {
   local paths="$1"
@@ -23,9 +30,13 @@ fzf_prompt() {
         --preview '"$DOTFILES_PATH/bin/dot" $(echo {} | cut -d" " -f 1) $(echo {} | cut -d" " -f 2) -h'
   )"
   if [ -n "$script" ]; then
-    printf "%s" "$script"
-    read -r args
-    "$DOTFILES_PATH/bin/dot" $script $args
+    if [ "$PRINT" = true ] ; then
+      echo "dot $script"
+    else
+      printf "%s" "$script"
+      read -r args
+      "$DOTFILES_PATH/bin/dot" $script $args
+    fi
   fi
 }
 
