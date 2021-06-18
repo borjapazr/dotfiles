@@ -41,6 +41,7 @@ tcl-dev
 pydf
 ncdu
 neovim
+bash-completion
 
 # Tweaks
 arc-theme

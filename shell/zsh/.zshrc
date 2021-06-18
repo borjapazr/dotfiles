@@ -1,6 +1,7 @@
 # Options
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FCNTL_LOCK
+setopt +o nomatch
 unset zle_bracketed_paste
 
 # Theme
