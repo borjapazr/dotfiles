@@ -24,7 +24,4 @@ generic::self_update
 log::note "🐙 Updating submodules..."
 generic::update_submodules
 
-log::note "📦 Updating external tools..."
-ubuntu::update_external_tools
-
 "$DOTFILES_PATH/bin/dot" self link

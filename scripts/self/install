@@ -25,7 +25,6 @@ if platform::is_linux; then
   ubuntu::update_system
   ubuntu::add_repositories
   ubuntu::install_tools
-  # ubuntu::configure_tools
 fi
 
 log::note "💚 Installing npm packages..."
@@ -37,9 +36,4 @@ chsh -s $(which zsh)
 log::note "💄 Installing oh-my-zsh plugins..."
 generic::install_ohmyzsh_plugins
 
-if platform::is_linux; then
-  echo
-  log::header "🤔 Remember to install manually"
-  ubuntu::install_manually
-  echo
-fi
+log::success ".dotfiles installed successfully!"
