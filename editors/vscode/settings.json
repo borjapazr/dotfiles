@@ -125,5 +125,8 @@
     "yaml": false,
     "plaintext": true,
     "markdown": false
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
