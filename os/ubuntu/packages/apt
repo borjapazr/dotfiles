@@ -20,32 +20,16 @@ python
 zsh
 cargo
 tldr
-rofi
 prettyping
 curl
-tilix
 gdebi-core
-font-manager
-synaptic
-tlp tlp-rdw
-python-nautilus
 vim
 lua5.3
 xclip
 xsel
 jq
-visualvm
 httpie
-imagemagick
-tcl-dev
 pydf
 ncdu
 neovim
 bash-completion
-
-# Tweaks
-arc-theme
-chrome-gnome-shell
-gnome-tweaks
-
-
