@@ -5,7 +5,7 @@ DOTBOT_BIN="bin/dotbot"
 OH_MY_ZSH_CUSTOM="$DOTFILES_PATH/modules/oh-my-zsh/custom"
 
 generic::install_npm_packages() {
-  xargs -a <(awk '! /^ *(#|$)/' "$DOTFILES_PATH/langs/js/npm") -r -- npm install -g || true
+  xargs -a <(awk '! /^ *(#|$)/' "$DOTFILES_PATH/langs/js/npm") -r -- sudo npm install -g || true
 }
 
 generic::install_ohmyzsh_plugins() {
