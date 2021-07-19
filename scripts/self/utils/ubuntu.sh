@@ -12,11 +12,6 @@ ubuntu::add_repositories() {
 }
 
 ubuntu::install_tools() {
-  log::note "📦 Installing snap packages..."
-  grep -vE "^(\s*$|#)" "$DOTFILES_PATH/os/ubuntu/packages/snap" | while read line; do
-    sudo snap install $line
-  done
-
   log::note "📦 Installing apt packages..."
   xargs -a <(awk '! /^ *(#|$)/' "$DOTFILES_PATH/os/ubuntu/packages/apt") -r -- sudo apt-get install -y
 
@@ -35,7 +30,6 @@ ubuntu::update_system() {
   sudo apt update -y
   sudo apt upgrade -y
   sudo apt autoremove -y
-  sudo snap refresh
   if platform::command_exists brew; then
     "$HOMEBREW_BIN/brew" update && brew upgrade
   fi
