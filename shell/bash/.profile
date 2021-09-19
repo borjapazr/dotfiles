@@ -3,9 +3,6 @@ ulimit -u 10000
 # Load Homebrew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-# Load pyenv
-eval "$(pyenv init --path)"
-
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists

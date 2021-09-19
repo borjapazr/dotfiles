@@ -15,16 +15,12 @@ export BROWSER='google-chrome'
 export PAGER='less'
 
 # JVM
-export SDKMAN_DIR="${HOME}/.sdkman"
 export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=512M -Xdebug -Xrunjdwp:transport=dt_socket,address=8787,server=y,suspend=n"
 export JAVA_TOOLS_OPTIONS='-Dfile.encoding="UTF-8"'
 
 # Golang
 export GOPATH="${HOME}/.go"
 export GOBIN="${GOPATH}/bin"
-
-# Python
-export PYENV_ROOT="$HOME/.pyenv"
 
 GPG_TTY=$(tty)
 export GPG_TTY
@@ -48,7 +44,6 @@ CUSTOM_PATH_LIST=(
   "$DOTFILES_PATH/bin"
   "$DOTFILES_PATH/bin/external"
   "$GOBIN"
-  "$PYENV_ROOT/bin"
 )
 
 for val in ${CUSTOM_PATH_LIST[@]}; do
