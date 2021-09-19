@@ -1,3 +1,9 @@
+# Add directory to $PATH if it's not already there
+_pathadd() {
+  if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+    PATH="${PATH:+"$PATH:"}$1"
+  fi
+}
 
 # Default editor
 export EDITOR='vim'
@@ -9,6 +15,7 @@ export BROWSER='google-chrome'
 export PAGER='less'
 
 # JVM
+export SDKMAN_DIR="${HOME}/.sdkman"
 export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=512M -Xdebug -Xrunjdwp:transport=dt_socket,address=8787,server=y,suspend=n"
 export JAVA_TOOLS_OPTIONS='-Dfile.encoding="UTF-8"'
 
@@ -16,7 +23,11 @@ export JAVA_TOOLS_OPTIONS='-Dfile.encoding="UTF-8"'
 export GOPATH="${HOME}/.go"
 export GOBIN="${GOPATH}/bin"
 
-export GPG_TTY=$(tty)
+# Python
+export PYENV_ROOT="$HOME/.pyenv"
+
+GPG_TTY=$(tty)
+export GPG_TTY
 
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS"
   --color=fg:#e5e9f0,hl:#81a1c1
@@ -37,15 +48,9 @@ CUSTOM_PATH_LIST=(
   "$DOTFILES_PATH/bin"
   "$DOTFILES_PATH/bin/external"
   "$GOBIN"
-  "/home/linuxbrew/.linuxbrew/bin"
-  "/home/linuxbrew/.linuxbrew/sbin"
-  "/usr/lib/jvm/java-15-oracle/bin"
-  "/usr/lib/jvm/java-15-oracle/db/bin"
+  "$PYENV_ROOT/bin"
 )
 
-CUSTOM_PATH=$(
-  IFS=":"
-  echo "${CUSTOM_PATH_LIST[*]}"
-)
-
-export PATH="${CUSTOM_PATH}:${PATH}"
+for val in ${CUSTOM_PATH_LIST[@]}; do
+   _pathadd $val
+done

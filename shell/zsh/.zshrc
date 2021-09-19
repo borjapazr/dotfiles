@@ -33,6 +33,8 @@ plugins=(
   you-should-use
   zsh-autosuggestions
   fast-syntax-highlighting
+  pyenv
+  sdk
 )
 
 # Load completions
@@ -46,3 +48,8 @@ source $DOTFILES_PATH/shell/init.sh
 source $DOTFILES_PATH/shell/zsh/key-bindings.zsh
 # Load z
 source $(brew --prefix)/etc/profile.d/z.sh
+# Load sdkman
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+# Load pyenv-virtualenv
+# eval "$(pyenv virtualenv-init -)"
+

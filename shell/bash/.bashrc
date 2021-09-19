@@ -24,3 +24,7 @@ fi
 
 # Load z
 source $(brew --prefix)/etc/profile.d/z.sh
+# Load sdkman
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+# Load pyenv-virtualenv
+# eval "$(pyenv virtualenv-init -)"

@@ -1,6 +1,6 @@
 brew::install() {
-  bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-  eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+  bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
   /home/linuxbrew/.linuxbrew/bin/brew update
 }
 
