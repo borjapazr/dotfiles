@@ -38,7 +38,7 @@ plugins=(
 )
 
 # Load completions
-fpath=("$DOTFILES_PATH/shell/zsh/completions" "$DOTFILES_PATH/modules/zsh-completions/src" "$(brew --prefix)/share/zsh/site-functions" $fpath)
+fpath=("$DOTFILES_PATH/shell/zsh/completions" "$DOTFILES_PATH/modules/zsh-completions/src" "/home/linuxbrew/.linuxbrew/share/zsh/site-functions" $fpath)
 
 # Load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
@@ -48,4 +48,5 @@ source $DOTFILES_PATH/shell/init.sh
 source $DOTFILES_PATH/shell/zsh/key-bindings.zsh
 # Load z
 source $(brew --prefix)/etc/profile.d/z.sh
-
+# Load asdf
+source $(brew --prefix)/opt/asdf/libexec/asdf.sh

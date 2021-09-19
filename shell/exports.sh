@@ -41,6 +41,8 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS"
 export FORGIT_FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS$FORGIT_FZF_DEFAULT_OPTS
 
 CUSTOM_PATH_LIST=(
+  "/home/linuxbrew/.linuxbrew/bin"
+  "/home/linuxbrew/.linuxbrew/sbin"
   "$DOTFILES_PATH/bin"
   "$DOTFILES_PATH/bin/external"
   "$GOBIN"
