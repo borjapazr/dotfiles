@@ -38,7 +38,7 @@ plugins=(
 )
 
 # Load completions
-fpath=("$DOTFILES_PATH/shell/zsh/completions" "$DOTFILES_PATH/modules/zsh-completions/src" $fpath)
+fpath=("$DOTFILES_PATH/shell/zsh/completions" "$DOTFILES_PATH/modules/zsh-completions/src" "$(brew --prefix)/share/zsh/site-functions" $fpath)
 
 # Load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
