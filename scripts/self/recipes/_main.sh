@@ -3,7 +3,7 @@ RECIPES="{brew,chrome,docker,tlp}.sh"
 source "$DOTFILES_PATH/scripts/core/_main.sh"
 
 recipes::install() {
-  for file in $DOTFILES_PATH/scripts/self/recipes/{brew,chrome,docker,tlp}.sh; do
+  for file in $DOTFILES_PATH/scripts/self/recipes/{brew,chrome,docker,sdkman,tlp}.sh; do
 
     local recipe=$(basename -- "$file" .sh)
 
