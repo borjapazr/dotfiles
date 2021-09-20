@@ -7,7 +7,7 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
     if [ -f "$HOME/.bashrc" ]; then
-        . "/home/borja/.bashrc"
+        . "$HOME/.bashrc"
     fi
 
     # source .zshenv (for $ZSH) and .zprofile (for $PATH) if they exist

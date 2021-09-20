@@ -48,5 +48,8 @@ source $DOTFILES_PATH/shell/init.sh
 source $DOTFILES_PATH/shell/zsh/key-bindings.zsh
 # Load z
 source $(brew --prefix)/etc/profile.d/z.sh
-# Load asdf
+# Load asdf and asdf plugins
 source $(brew --prefix)/opt/asdf/libexec/asdf.sh
+if [ -f "$HOME/.asdf/plugins/java/set-java-home.zsh" ]; then
+  source "$HOME/.asdf/plugins/java/set-java-home.zsh"
+fi
