@@ -8,7 +8,6 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?
 ##? Usage:
 ##?   ip
-
 docs::parse "$@"
 
 dig +short myip.opendns.com @resolver1.opendns.com

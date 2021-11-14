@@ -8,7 +8,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?
 ##? Usage:
 ##?    pull-all-dirs
-
 docs::parse "$@"
 
+# shellcheck disable=SC2011
 ls | xargs -I{} git -C {} pull

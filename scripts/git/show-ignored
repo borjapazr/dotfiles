@@ -8,7 +8,6 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?
 ##? Usage:
 ##?    show-ignored
-
 docs::parse "$@"
 
 git status --ignored -s | grep "\!\!"

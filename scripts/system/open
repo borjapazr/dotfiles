@@ -10,15 +10,16 @@ source "${DOTFILES_PATH}/scripts/core/_main.sh"
 ##?
 ##? Examples:
 ##?    open http://google.com
-
 docs::parse "$@"
 
 _open() {
-   if platform::is_macos; then
-      open "$@" & disown
-   else
-      xdg-open "$@" & disown
-   fi
+  if platform::is_macos; then
+    open "$@" &
+    disown
+  else
+    xdg-open "$@" &
+    disown
+  fi
 }
 
 _open "${args[@]:-}"

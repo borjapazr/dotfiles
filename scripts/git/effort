@@ -7,7 +7,6 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?
 ##? Usage:
 ##?    effort [--above <value>] [<path>...] [-- [<log options>...]]
-
 docs::parse "$@"
 
 git_extra_mktemp() {
@@ -111,7 +110,7 @@ effort() {
   [ $? -gt 0 ] && exit 255
 
   # Ensure it's not just an empty line
-  if [ -z "$(head -c 1 <<<$(echo $commit_dates))" ]; then
+  if [ -z "$(head -c 1 <<<"$(echo $commit_dates)")" ]; then
     exit 0
   fi
 
@@ -209,7 +208,7 @@ export columns
 if test "${#paths}" -eq 0; then
   save_ifs=$IFS
   IFS=$(echo -en "\n\b")
-  paths=($(git ls-files))
+  paths=("$(git ls-files)")
   IFS=$save_ifs
   unset save_ifs
 fi

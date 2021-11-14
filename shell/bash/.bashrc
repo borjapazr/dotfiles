@@ -1,3 +1,4 @@
+# TODO: Change this
 export DOTFILES_PATH="/usr/local/share/.dotfiles"
 
 if [[ "$(ps -p $$ -ocomm=)" =~ (bash$) ]]; then

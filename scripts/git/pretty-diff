@@ -8,7 +8,6 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?
 ##? Usage:
 ##?    pretty-diff
-
 docs::parse "$@"
 
 if (! git::is_in_repo); then

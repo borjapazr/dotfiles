@@ -8,7 +8,6 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?
 ##? Usage:
 ##?    meteo_in <city>
-
 docs::parse "$@"
 
 curl -4 http://wttr.in/$1

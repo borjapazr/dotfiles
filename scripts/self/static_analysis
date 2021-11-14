@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Static analysis of all dotfiles related bash files
+##?
+##? Usage:
+##?    lint
+if [ "$1" == "-h" ] || [ "$1" = "--help" ]; then
+  docs::parse "$@"
+fi
+
+dot::list_bash_files | xargs shellcheck -s bash -S warning -e SC1090 -e SC2010 -e SC2154

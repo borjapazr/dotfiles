@@ -8,3 +8,6 @@ shell/zsh/**/**.zwc.old
 # External bin
 bin/external/*
 !bin/external/.gitkeep
+
+# Brew
+Brewfile.lock.json

@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+symlinks::apply() {
+  local -r CONFIG="$DOTFILES_PATH/symlinks/$1"
+  shift
+
+  echo
+  "$DOTFILES_PATH/modules/dotbot/bin/dotbot" -d "$DOTFILES_PATH" -c "$CONFIG" "$@"
+  echo
+}
+
+##? Apply all symlinks
+##?
+##? Usage:
+##?    apply
+##?
+docs::parse "$@"
+
+symlinks::apply "common.yml"
+
+if platform::is_macos; then
+  if platform::is_macos_arm; then
+    symlinks::apply "macos.yml"
+  else
+    symlinks::apply "macos-intel.yml"
+  fi
+else
+  if platform::is_linux_desktop; then
+    symlinks::apply "linux-desktop.yml"
+  fi
+  symlinks::apply "linux.yml"
+fi
+
+log::success "Done!"

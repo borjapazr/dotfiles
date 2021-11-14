@@ -1,11 +1,9 @@
 [submodule "modules/dotbot"]
-	path = modules/dotbot
-	url = git@github.com:anishathalye/dotbot.git
+  path = modules/dotbot
+  url = https://github.com/anishathalye/dotbot
+  ignore = dirty
 
 [submodule "modules/oh-my-zsh"]
-	path = modules/oh-my-zsh
-	url = git@github.com:ohmyzsh/ohmyzsh.git
-
-[submodule "modules/zsh-completions"]
-	path = modules/zsh-completions
-	url = git@github.com:zsh-users/zsh-completions.git
+  path = modules/oh-my-zsh
+  url = https://github.com/ohmyzsh/ohmyzsh.git
+  ignore = dirty

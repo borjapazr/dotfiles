@@ -1,39 +1,40 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
-
 source "$DOTFILES_PATH/scripts/core/_main.sh"
-source "$DOTFILES_PATH/scripts/self/utils/generic.sh"
-source "$DOTFILES_PATH/scripts/self/utils/ubuntu.sh"
+source "$DOTFILES_PATH/scripts/self/utils/install.sh"
+source "$DOTFILES_PATH/scripts/self/utils/update.sh"
 
 ##? Install the dotfiles
 ##?
 ##? Usage:
 ##?    install
-
 docs::parse "$@"
 
-log::note "🔴🟢🔵 Installing .dotfiles..."
-generic::self_update
-generic::update_submodules
+update_system
 
-"$DOTFILES_PATH/bin/dot" self link
-generic::create_private_files
+install_requirements
 
-if platform::is_linux; then
-  log::note "🐧 Installing Linux custom packages..."
-  ubuntu::update_system
-  ubuntu::add_repositories
-  ubuntu::install_tools
+log::info "🔗 Aplying symlinks"
+"$DOTFILES_PATH/bin/dot" symlinks apply | log::file "🔗 Aplying symlinks" || true
+
+if ! str::contains zsh "$SHELL"; then
+  log::info "💻 Setting ZSH as the default shell"
+  sudo chsh -s "$(command -v zsh)" "${USER}" | log::file "💻 Setting ZSH as default shell"
 fi
 
-log::note "💚 Installing npm packages..."
-generic::install_npm_packages
+install_ohmyzsh_plugins
 
-log::note "💻 Setting ZSH as the default shell..."
-chsh -s $(which zsh)
+log::info "📥 Importing packages"
+"$DOTFILES_PATH/bin/dot" package import 2>&1 | log::file "📥 Importing packages"
 
-log::note "💄 Installing oh-my-zsh plugins..."
-generic::install_ohmyzsh_plugins
-
-log::success ".dotfiles installed successfully!"
+log::info "🔙 Executing custom restoration scripts"
+install_scripts_path="$DOTFILES_PATH/restoration_scripts"
+if [ -d "$install_scripts_path" ]; then
+  find "$install_scripts_path" -mindepth 1 -maxdepth 1 -type l,f -name '*.sh' |
+    sort |
+    while read -r install_script; do
+      { [[ -x "$install_script" ]] && . "$install_script" | log::file "🔙 Executing afterinstall: $(basename "$install_script")"; } || {
+        log::error "Install script error in $(basename "$install_script")"
+      }
+    done
+fi

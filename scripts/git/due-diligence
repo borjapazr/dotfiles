@@ -8,7 +8,6 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?
 ##? Usage:
 ##?    due-diligence
-
 docs::parse "$@"
 
 first_commit=$(git rev-list --max-parents=0 HEAD)

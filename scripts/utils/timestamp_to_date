@@ -8,7 +8,6 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?
 ##? Usage:
 ##?    timestamp_to_date
-
 docs::parse "$@"
 
 let DATE_FORMATTED=$1/1000

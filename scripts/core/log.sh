@@ -1,8 +1,4 @@
-#!/usr/bin/env bash
-
-echoerr() {
-  echo "$@" 1>&2
-}
+DOTFILES_LOG_FILE=${DOTFILES_LOG_FILE:-$HOME/dotfiles.log}
 
 log::ansi() {
   local bg=false
@@ -37,38 +33,25 @@ log::ansi() {
   fi
 }
 
-if [ -z ${DOT_LOG_FILE+x} ]; then
-  readonly DOT_LOG_FILE="/tmp/$(basename "$0").log"
-fi
-
 _log() {
   local template=$1
   shift
-  if ${log_to_file:-false}; then
-    echoerr -e $(printf "$template" "$@") | tee -a "$DOT_LOG_FILE" >&2
-  else
-    echoerr -e $(printf "$template" "$@")
-  fi
+  echo -e "$(printf "$template" "$@")"
 }
 
-_header() {
-  local TOTAL_CHARS=60
-  local total=$TOTAL_CHARS-2
-  local size=${#1}
-  local left=$((($total - $size) / 2))
-  local right=$(($total - $size - $left))
-  printf "%${left}s" '' | tr ' ' =
-  printf " $1 "
-  printf "%${right}s" '' | tr ' ' =
-}
-
-log::header() { _log "\n$(log::ansi bold purple)$(_header "$1")$(log::ansi reset)\n"; }
 log::success() { _log "$(log::ansi green)✔ %s$(log::ansi reset)\n" "$@"; }
 log::error() { _log "$(log::ansi red)✖ %s$(log::ansi reset)\n" "$@"; }
-log::warning() { _log "$(log::ansi yellow)➜ %s$(log::ansi reset)\n" "$@"; }
-log::note() { _log "$(log::ansi blue)%s$(log::ansi reset)\n" "$@"; }
+log::info() { _log "➜ $(log::ansi cyan)%s$(log::ansi reset)\n" "$@"; }
+log::file() {
+  local -r log_name="$1"
+  local -r current_date=$(date "+%Y-%m-%d %H:%M:%S")
 
-die() {
-  log::error "$@"
-  exit 42
+  touch "$DOTFILES_LOG_FILE"
+  echo "----- $current_date - $log_name -----" >>"$DOTFILES_LOG_FILE"
+
+  while IFS= read -r log_message; do
+    echo "$log_message" >>"$DOTFILES_LOG_FILE"
+  done
+
+  echo "" >>"$DOTFILES_LOG_FILE"
 }

@@ -7,6 +7,17 @@ set -euo pipefail
 ##? Usage:
 ##?    install
 
+REPOSITORY="https://github.com/borjapazr/.dotfiles.git"
+DOTFILES_LOG_FILE=${DOTFILES_LOG_FILE:-$HOME/dotfiles.log}
+
+case "${1:-}" in
+-h | --help | --version)
+  grep "^##?" "$0" | cut -c 5-
+  exit 0
+  ;;
+esac
+
+# Colors, print and prompt
 red='\033[0;31m'
 green='\033[0;32m'
 purple='\033[0;35m'
@@ -16,20 +27,140 @@ _w() {
   local -r text="${1:-}"
   echo -e "$text"
 }
-_a() { _w " > $1"; }
+_a() { _w "➜ $1"; }
 _e() { _a "${red}$1${normal}"; }
 _s() { _a "${green}$1${normal}"; }
 _q() { read -rp "🤔 $1: " "$2"; }
 
-current_timestamp() { date +%s; }
+_log() {
+  log_name="$1"
+  current_date=$(date "+%Y-%m-%d %H:%M:%S")
 
-_w
-_w "┌─────────────────────────────────────┐"
-_w "│   🚀 Mr. Mars ${green}.dotfiles${normal} installer   │"
-_w "└─────────────────────────────────────┘"
-_w
+  touch "$DOTFILES_LOG_FILE"
+  echo "----- $current_date - $log_name -----" >>"$DOTFILES_LOG_FILE"
 
-export DOTFILES_PATH="/usr/local/share/.dotfiles"
-source "$DOTFILES_PATH/scripts/core/_main.sh"
+  while IFS= read -r log_message; do
+    echo "$log_message" >>"$DOTFILES_LOG_FILE"
+  done
 
-"$DOTFILES_PATH/bin/dot" self install
+  echo "" >>"$DOTFILES_LOG_FILE"
+}
+
+_current_timestamp() { date +%s; }
+
+_command_exists() {
+  type "$1" >/dev/null 2>&1
+}
+
+clone_repository() {
+  if [ -d "$1" ]; then
+    local -r backup_path="$1.$(_current_timestamp).back"
+
+    _e "The path '$1' already exist"
+    _s "Creating a backup in '$backup_path'"
+
+    mv "$1" "$backup_path"
+  else
+    _a "👌 Ok! dotfiles will be located in: ${purple}$DOTFILES_PATH${normal}"
+  fi
+
+  git clone "$REPOSITORY" "$DOTFILES_PATH" --depth 1 2>&1 | _log "🐙 Cloning repository"
+}
+
+install_git() {
+  if ! _command_exists git; then
+    _e "❌ git not installed, trying to install"
+
+    if _command_exists apt; then
+      _a "📥 Installing using apt"
+      sudo apt -y install git 2>&1 | _log "📥 Installing git"
+    elif _command_exists dnf; then
+      _a "📥 Installing using dnf"
+      sudo dnf -y install git 2>&1 | _log "📥 Installing git"
+    elif _command_exists yum; then
+      _a "📥 Installing using yum"
+      yes | sudo yum install git 2>&1 | _log "📥 Installing git"
+    elif _command_exists brew; then
+      _a "📥 Installing using brew"
+      yes | brew install git 2>&1 | _log "📥 Installing git"
+    elif _command_exists pacman; then
+      _a "📥 Installing using pacman"
+      sudo pacman -S --noconfirm git 2>&1 | _log "📥 Installing git"
+    else
+      case "$OSTYPE" in
+      darwin*)
+        _a "👀 Checking if Command Line Tools are installed 🕵️‍♂️"
+
+        xcode-select --install 2>&1 | grep installed >/dev/null
+        if [[ $? ]]; then
+          _a "📥 Installing Command Line Tools 📺"
+          xcode-select --install
+          _q "🎹 Press a key after command line tools has finished to continue...👇" "CLT_INSTALLED"
+        fi
+        ;;
+      *)
+        _e "❌ Could not install git, no package provider found"
+        exit 1
+        ;;
+      esac
+    fi
+  fi
+}
+
+install_curl() {
+  if ! _command_exists curl; then
+    _e "❌ curl not installed, trying to install"
+
+    if _command_exists apt; then
+      _a "📥 Installing using apt"
+      sudo apt -y install curl 2>&1 | _log "📥 Installing curl"
+    elif _command_exists dnf; then
+      _a "📥 Installing using dnf"
+      sudo dnf -y install curl 2>&1 | _log "📥 Installing curl"
+    elif _command_exists yum; then
+      _a "📥 Installing using yum"
+      yes | sudo yum install curl 2>&1 | _log "📥 Installing curl"
+    elif _command_exists brew; then
+      _a "📥 Installing using brew"
+      yes | brew install curl 2>&1 | _log "📥 Installing curl"
+    elif _command_exists pacman; then
+      _a "📥 Installing using pacman"
+      sudo pacman -S --noconfirm curl 2>&1 | _log "📥 Installing curl"
+    else
+      _e "❌ Could not install curl, no package provider found"
+      exit 1
+    fi
+  fi
+}
+
+main() {
+  _w
+  _w "┌─────────────────────────────┐"
+  _w "│   🔥 ${green}.dotfiles${normal} installer!   │"
+  _w "└─────────────────────────────┘"
+  _w
+  _q "❓ Where do you want your dotfiles to be located? (default ~/.dotfiles)" "DOTFILES_PATH"
+  DOTFILES_PATH="${DOTFILES_PATH:-$HOME/.dotfiles}"
+  DOTFILES_PATH="$(eval echo "$DOTFILES_PATH")"
+  export DOTFILES_PATH="$DOTFILES_PATH"
+
+  install_curl
+  install_git
+
+  _a "🐙 Cloning .dotfiles"
+  clone_repository "$DOTFILES_PATH"
+
+  _a "📥 Installing dependencies"
+  cd $DOTFILES_PATH
+  git submodule update --init --recursive 2>&1 | _log "Installing .dotfiles dependencies"
+
+  "$DOTFILES_PATH/bin/dot" self install
+
+  _s "🎉 .dotfiles installed correctly! 🎉"
+  _s "🙏 Please, restart your terminal to see the changes"
+
+  _a "📋 Check the installation logs"
+  cat "$DOTFILES_LOG_FILE"
+}
+
+main "$@"

@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Lint all dotfiles related bash files
+##?
+##? Usage:
+##?    lint
+if [ "$1" == "-h" ] || [ "$1" = "--help" ]; then
+  docs::parse "$@"
+fi
+
+dot::list_bash_files | xargs shfmt -i 2 -d

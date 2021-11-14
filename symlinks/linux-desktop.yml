@@ -1,0 +1,11 @@
+- clean: ['~']
+
+- defaults:
+    link:
+      create: true
+      force: true
+
+- link:
+    ~/.config/tilix/schemes/nord.json: terminal/tilix/schemes/nord.json
+    ~/.config/rofi/config.rasi: os/ubuntu/rofi/config.rasi
+    ~/.config/rofi/mars-theme.rasi: os/ubuntu/rofi/mars-theme.rasi

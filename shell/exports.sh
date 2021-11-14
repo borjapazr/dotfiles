@@ -25,6 +25,10 @@ export GOBIN="${GOPATH}/bin"
 GPG_TTY=$(tty)
 export GPG_TTY
 
+# Homebrew
+export HOMEBREW_AUTO_UPDATE_SECS=604800 # 1 week
+export HOMEBREW_NO_ANALYTICS=true
+
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS"
   --color=fg:#e5e9f0,hl:#81a1c1
   --color=fg+:#e5e9f0,bg+:#3b4252,hl+:#81a1c1,border:#3c6e71
@@ -43,11 +47,14 @@ export FORGIT_FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS$FORGIT_FZF_DEFAULT_OPTS
 CUSTOM_PATH_LIST=(
   "/home/linuxbrew/.linuxbrew/bin"
   "/home/linuxbrew/.linuxbrew/sbin"
+  "/opt/homebrew/bin"
+  "/opt/homebrew/sbin"
+  "/usr/local/bin"
   "$DOTFILES_PATH/bin"
   "$DOTFILES_PATH/bin/external"
   "$GOBIN"
 )
 
-for val in ${CUSTOM_PATH_LIST[@]}; do
-   _pathadd $val
+for val in "${CUSTOM_PATH_LIST[@]}"; do
+  _pathadd $val
 done

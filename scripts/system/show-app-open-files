@@ -13,7 +13,6 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##? Options:
 ##?   -h --help   Show this screen.
 ##?   -w --watch  Watch the changes
-
 docs::parse "$@"
 
 selected=$(dot system list-opened-apps | fzf)

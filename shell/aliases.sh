@@ -31,7 +31,6 @@ alias dc="dot docker connect"
 
 # IDEs and editors
 alias vim="nvim"
-alias i.='(intellij-idea-ultimate $PWD &>/dev/null &)'
 alias c.='(code $PWD &>/dev/null &)'
 
 # Utils

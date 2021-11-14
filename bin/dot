@@ -13,15 +13,16 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 
 while :; do
   case "${1-}" in
-    -h | --help) docs::parse "$@" ;;
-    -p | --print) PRINT=true ;;
-    *) break ;;
+  -h | --help) docs::parse "$@" ;;
+  -p | --print) PRINT=true ;;
+  *) break ;;
   esac
   shift
 done
 
 fzf_prompt() {
   local paths="$1"
+
   script="$(
     echo "$paths" |
       xargs -I % sh -c 'echo "$(basename $(dirname %)) $(basename %)"' |
@@ -29,8 +30,9 @@ fzf_prompt() {
         --height 50% \
         --preview '"$DOTFILES_PATH/bin/dot" $(echo {} | cut -d" " -f 1) $(echo {} | cut -d" " -f 2) -h'
   )"
+
   if [ -n "$script" ]; then
-    if [ "$PRINT" = true ] ; then
+    if [ "$PRINT" = true ]; then
       echo "dot $script"
     else
       printf "%s" "$script"
@@ -50,8 +52,8 @@ else
 
   shift 2
 
-  if ! dot::script_exist "$DOTFILES_PATH" "$context" "$script"; then
-    output::error "The script <$context / $script> doesn't exist"
+  if ! dot::script_exists "$DOTFILES_PATH" "$context" "$script"; then
+    log::error "The script <$context / $script> doesn't exist"
     exit 1
   fi
 

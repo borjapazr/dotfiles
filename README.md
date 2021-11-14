@@ -1,42 +1,80 @@
-## 🚀 Installation
+<div align="center">
+ <img
+  width="500"
+ alt=".dotfiles"
+ src="https://i.imgur.com/SzBeVhB.png">
+<br>
+<h4>
+  💻🚀 Custom dotfiles for UNIX based systems
+</h4>
+
+<a href="#ℹ️-about">ℹ️ About</a> •
+<a href="#-installation">📥 Installation</a> •
+<a href="#-features">📋 Features</a> •
+<a href="#-contributing">👥 Contributing</a> •
+<a href="#-credits">🎯 Credits</a> •
+<a href="#-license">🚩 License</a>
+
+</div>
+
+---
+
+## ℹ️ About
+
+Personal .dotfiles for quick configuration of my UNIX-based devices. They are tailored to my needs and do not claim to be the right solution for ideal .dotfiles.
+
+> 💡 As a starting point to get all your configuration files and scripts organised I recommend you to use [dotly](https://github.com/CodelyTV/dotly), which is a project that describes itself as a simple and fast dotfiles framework.
+
+## 📥 Installation
+
+Using `wget`:
 
 ```bash
-git clone https://github.com/borjapazr/dotfiles.git /usr/local/share/.dotfiles
-/usr/local/share/.dotfiles/installer
+bash <(wget -qO- https://raw.githubusercontent.com/borjapazr/dotfiles/HEAD/installer)
 ```
-## 🔮 Migrating from a legacy computer with Ubuntu
 
-This is an installation guide to migrate from a legacy computer with **Ubuntu** to a new one.
+Or using `curl`:
 
-### ➜ Steps
+```bash
+bash <(curl -s https://raw.githubusercontent.com/borjapazr/dotfiles/HEAD/installer)
+```
 
-1. Backup **~/.ssh** and **~/.gnupg** from the previous computer to the new one
-    - `chmod -R 700 ~/.ssh`
-    - `chmod -R 700 ~/.gnupg`
-2. Execute the dotfiles installer
-    - `~/.dotfiles/installer`
-3. Configure, customize and set **Tilix** terminal as default terminal
-    - Load configuration: `dconf load /com/gexperts/Tilix/ < tilix.dconf`
-    - Backup configuration: `dconf dump /com/gexperts/Tilix/ > tilix.dconf`
-4. Install **Mars Mono** font
-5. Configure tweaks
-    - **Install Gnome Shell Extensions**
-        - User Themes
-        - Dash to Panel
-        - Arc Menu
-    - **Shell theme**: [https://www.gnome-look.org/p/1267246](https://www.gnome-look.org/p/1267246/)
+### 🧸 Configuration
 
-      💡 Remember to edit the font size
+Read [this](doc/installation-guide.md) page.
 
-    - **Icon Theme**: [https://www.snwh.org/paper/download](https://www.snwh.org/paper/download)
-6. **Configure JetBrains products** and synchronize them with Jetbrains account
-7. **Configure VS Code** and synchronize plugins
-8. **Set INTEL graphic card as default** `sudo prime-select intel`
+## 📋 Features
 
-## 🤩 Inspiration
+### ⚒️ Built with
 
-* <https://github.com/rgomezcasas/dotfiles> Thank you very much for your great work!
+- [Oh My Zsh](https://ohmyz.sh/) Oh My Zsh is a delightful, open source, community-driven framework for managing your Zsh configuration. It comes bundled with thousands of helpful functions, helpers, plugins, themes, and a few things that make you shout...
+- [fzf](https://github.com/junegunn/fzf) A general-purpose command-line fuzzy finder.
+- [dotbot](https://github.com/anishathalye/dotbot) Dotbot is a tool that bootstraps your dotfiles (it's a [Dot]files [bo]o[t]strapper, get it?). It does less than you think, because version control systems do more than you think.
 
-## ⚖️ License
+### 🌚 The `dot` command
 
-The MIT License (MIT). Please see [License](LICENSE) for more information.
+`dot` is the core command my .dotfiles. If you execute it, you'll see all your scripts.
+
+```bash
+[mars] ~ dot -h
+Usage:
+   dot
+   dot <context>
+   dot <context> <script> [<args>...]
+   dot -h | --help
+   dot -p | --print
+```
+
+## 👥 Contributing
+
+Just fork and open a pull request. All contributions are welcome 🤗
+
+## 🎯 Credits
+
+These .dotfiles are largely based on @rgomezcasas [personal .dotfiles](https://github.com/rgomezcasas/dotfiles) and the [dotly](https://github.com/CodelyTV/dotly) framework. They have been adapted to suit my personal needs.
+
+🙏 Thank you very much for these wonderful creations.
+
+## 🚩 License
+
+MIT @ [borjapazr](https://me.marsmachine.space). Please see [License](LICENSE) for more information.

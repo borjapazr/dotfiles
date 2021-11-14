@@ -1,0 +1,14 @@
+code --classic
+intellij-idea-ultimate --classic
+postman
+dbeaver-ce
+robo3t-snap
+telegram-desktop
+skype --classic
+whatsdesk
+slack --classic
+spotify
+pick-colour-picker
+colorpicker-app
+color-picker
+insomnia

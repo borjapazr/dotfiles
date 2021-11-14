@@ -1,27 +1,18 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
-
 source "$DOTFILES_PATH/scripts/core/_main.sh"
-source "$DOTFILES_PATH/scripts/self/utils/generic.sh"
-source "$DOTFILES_PATH/scripts/self/utils/ubuntu.sh"
+source "$DOTFILES_PATH/scripts/self/utils/update.sh"
 
-##? Updates submodules, dotfiles and attempts to do some setup
+##? Update system
 ##?
 ##? Usage:
 ##?    update
-
 docs::parse "$@"
 
-if platform::is_linux; then
-  log::note "🔄 Updating system..."
-  ubuntu::update_system
-fi
+update_system
 
-log::note "🐙 Updating .dotfiles..."
-generic::self_update
+log::info "🔃 Updating dotfiles and submodules"
+update_dotfiles 2>&1 | log::file "🔃 Updating dotfiles and submodules"
 
-log::note "🐙 Updating submodules..."
-generic::update_submodules
-
-"$DOTFILES_PATH/bin/dot" self link
+log::info "🔗 Aplying symlinks"
+"$DOTFILES_PATH/bin/dot" symlinks apply | log::file "🔗 Aplying symlinks" || true

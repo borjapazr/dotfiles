@@ -1,0 +1,27 @@
+- clean: ["~"]
+
+- defaults:
+    link:
+      create: true
+      force: true
+
+- link:
+    ~/.bashrc: shell/bash/.bashrc
+    ~/.bash_profile: shell/bash/.profile
+    ~/.profile: shell/bash/.profile
+    ~/.zshrc: shell/zsh/.zshrc
+    ~/.zlogin: shell/zsh/.zlogin
+    ~/.zshenv: shell/zsh/.zshenv
+    ~/.zprofile: shell/zsh/.zprofile
+    $DOTFILES_PATH/modules/oh-my-zsh/custom/themes/mrmars.zsh-theme: shell/zsh/themes/mrmars.zsh-theme
+    ~/.gitconfig: git/.gitconfig
+    ~/.gitattributes: git/.gitattributes
+    ~/.gitignore_global: git/.gitignore_global
+    ~/.vimrc: editors/vim/.vimrc
+
+- create:
+    - $DOTFILES_PATH/bin/external
+    - $DOTFILES_PATH/shell/private-stuff.sh
+
+- shell:
+    - touch $HOME/.z

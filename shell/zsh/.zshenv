@@ -1,4 +1,5 @@
 # Exports
+# TODO: Change this
 export DOTFILES_PATH="/usr/local/share/.dotfiles"
 export ZSH="$DOTFILES_PATH/modules/oh-my-zsh"
 

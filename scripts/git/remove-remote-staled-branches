@@ -8,7 +8,6 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?
 ##? Usage:
 ##?    remove-remote-staled-branches
-
 docs::parse "$@"
 
-git branch -r --merged | egrep -v "origin/HEAD|origin/master" | sed 's/origin\///g' | xargs git push --no-verify origin --delete
+git branch -r --merged | egrep -v "origin/HEAD|origin/main" | sed 's/origin\///g' | xargs git push --no-verify origin --delete

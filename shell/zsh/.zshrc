@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # Options
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FCNTL_LOCK
@@ -12,7 +14,7 @@ COMPLETION_WAITING_DOTS="false"
 ZSH_AUTOSUGGEST_USE_ASYNC=true
 ZSH_HIGHLIGHT_MAXLENGTH=300
 ZSH_DISABLE_COMPFIX="true"
-DEFAULT_USER=borja
+DEFAULT_USER=$(whoami)
 
 # Plugins
 plugins=(
@@ -32,13 +34,14 @@ plugins=(
   safe-paste
   you-should-use
   zsh-autosuggestions
-  fast-syntax-highlighting
+  zsh-syntax-highlighting
   asdf
   brew
+  zsh-completions
 )
 
 # Load completions
-fpath=("$DOTFILES_PATH/shell/zsh/completions" "$DOTFILES_PATH/modules/zsh-completions/src" "/home/linuxbrew/.linuxbrew/share/zsh/site-functions" $fpath)
+fpath=("$DOTFILES_PATH/shell/zsh/completions" "$(brew --prefix)/share/zsh/site-functions" $fpath)
 
 # Load oh-my-zsh
 source $ZSH/oh-my-zsh.sh

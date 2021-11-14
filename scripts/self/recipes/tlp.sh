@@ -2,7 +2,7 @@ tlp::install() {
   :
 }
 
-tlp::configure() {
+tlp::post_install() {
   sudo systemctl enable tlp
   sudo tlp start
 }

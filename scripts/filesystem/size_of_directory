@@ -8,7 +8,6 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?
 ##? Usage:
 ##?    size_of_directory
-
 docs::parse "$@"
 
 ncdu --color dark -rr -x
