@@ -7,7 +7,7 @@ set -euo pipefail
 ##? Usage:
 ##?    install
 
-REPOSITORY="https://github.com/borjapazr/.dotfiles.git"
+REPOSITORY="https://github.com/borjapazr/dotfiles.git"
 DOTFILES_LOG_FILE=${DOTFILES_LOG_FILE:-$HOME/dotfiles.log}
 
 case "${1:-}" in
