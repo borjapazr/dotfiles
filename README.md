@@ -71,7 +71,7 @@ Just fork and open a pull request. All contributions are welcome 🤗
 
 ## 🎯 Credits
 
-These .dotfiles are largely based on @rgomezcasas [personal .dotfiles](https://github.com/rgomezcasas/dotfiles) and the [dotly](https://github.com/CodelyTV/dotly) framework. They have been adapted to suit my personal needs.
+These .dotfiles are largely based on [@rgomezcasas](https://github.com/rgomezcasas) [personal .dotfiles](https://github.com/rgomezcasas/dotfiles) and the [dotly](https://github.com/CodelyTV/dotly) framework. They have been adapted to suit my personal needs.
 
 🙏 Thank you very much for these wonderful creations.
 
