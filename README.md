@@ -6,7 +6,7 @@
 <br>
 <br>
   
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/borjapazr/dotfiles/CI?style=flat-square)
+![GitHub CI Workflow Status](https://img.shields.io/github/workflow/status/borjapazr/dotfiles/CI?style=flat-square)
 
 <h4>
   💻🚀 Custom dotfiles for UNIX based systems
