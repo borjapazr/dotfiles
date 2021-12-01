@@ -2,3 +2,5 @@
 dockly
 gitmoji-cli
 http-server
+commitizen
+cz-conventional-changelog

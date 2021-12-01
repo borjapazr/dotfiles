@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+EDITORCONFIG_TEMPLATE="$DOTFILES_PATH/resources/templates/.editorconfig.template"
+
+##? Create a .editorconfig file from a base template
+##?
+##? Usage:
+##?    editorconfig
+docs::parse "$@"
+
+cp "$EDITORCONFIG_TEMPLATE" "$PWD"/.editorconfig

@@ -3,6 +3,7 @@ root = true
 [*]
 indent_style = space
 indent_size = 2
+tab_width = 2
 end_of_line = lf
 charset = utf-8
 trim_trailing_whitespace = true
@@ -14,7 +15,7 @@ continuation_indent_size = 8
 
 [*.py]
 indent_size = 4
-max_line_length = 80
+max_line_length = 120
 
 [{go.mod,go.sum,*.go}]
 indent_style = tab
@@ -23,6 +24,11 @@ indent_size = 4
 [*.php]
 indent_size = 4
 
+[*.js]
+block_comment_start = /**
+block_comment = *
+block_comment_end = */
+
 [*.min.js]
 indent_style = ignore
 insert_final_newline = ignore
@@ -30,10 +36,11 @@ insert_final_newline = ignore
 [{Makefile,*.mk}]
 indent_style = tab
 
-[*.bat]
+[*.{cmd,bat}]
 indent_style = tab
+end_of_line = crlf
 
-[*.json]
+[*.{json,json5}]
 insert_final_newline = ignore
 
 [*.md]

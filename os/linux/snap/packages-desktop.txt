@@ -12,3 +12,4 @@ pick-colour-picker
 colorpicker-app
 color-picker
 insomnia
+emote

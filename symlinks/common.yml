@@ -17,6 +17,7 @@
     ~/.gitconfig: git/.gitconfig
     ~/.gitattributes: git/.gitattributes
     ~/.gitignore_global: git/.gitignore_global
+    ~/.czrc: git/.czrc
     ~/.vimrc: editors/vim/.vimrc
 
 - create:
