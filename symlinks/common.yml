@@ -22,7 +22,8 @@
 
 - create:
     - $DOTFILES_PATH/bin/external
-    - $DOTFILES_PATH/shell/private-stuff.sh
 
 - shell:
+    - touch $DOTFILES_PATH/shell/private-stuff.sh
+    - chmod +x $DOTFILES_PATH/shell/private-stuff.sh
     - touch $HOME/.z
