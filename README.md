@@ -79,6 +79,10 @@ These .dotfiles are largely based on [@rgomezcasas](https://github.com/rgomezcas
 
 🙏 Thank you very much for these wonderful creations.
 
+### ⭐ Stargazers
+
+[![Stargazers repo roster for @borjapazr/dotfiles](https://reporoster.com/stars/borjapazr/dotfiles)](https://github.com/borjapazr/dotfiles/stargazers)
+
 ## 🚩 License
 
 MIT @ [borjapazr](https://me.marsmachine.space). Please see [License](LICENSE) for more information.
