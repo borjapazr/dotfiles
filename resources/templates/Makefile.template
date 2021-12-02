@@ -1,4 +1,4 @@
-## Makefile directory ##
+## Root directory
 ROOT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 
 ## Set 'bash' as default shell
