@@ -1,6 +1,6 @@
 {
   "breadcrumbs.enabled": true,
-  "codesnap.backgroundColor": "transparent",
+  "codesnap.backgroundColor": "#21252b",
   "codesnap.boxShadow": "0 0 0",
   "codesnap.transparentBackground": true,
   "debug.console.fontSize": 18,
@@ -11,7 +11,7 @@
   "editor.fontLigatures": true,
   "editor.fontSize": 18,
   "editor.formatOnPaste": true,
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "editor.lineHeight": 30,
   "editor.minimap.enabled": true,
   "editor.quickSuggestions": {
@@ -133,5 +133,11 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "remote.SSH.remotePlatform": {
     "192.168.1.21": "linux"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
