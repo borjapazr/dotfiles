@@ -11,7 +11,7 @@
   "editor.fontLigatures": true,
   "editor.fontSize": 18,
   "editor.formatOnPaste": true,
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   "editor.lineHeight": 30,
   "editor.minimap.enabled": true,
   "editor.quickSuggestions": {
