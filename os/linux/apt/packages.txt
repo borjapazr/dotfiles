@@ -1,7 +1,6 @@
 golang-go
 nodejs
 npm
-python
 zsh
 tldr
 prettyping

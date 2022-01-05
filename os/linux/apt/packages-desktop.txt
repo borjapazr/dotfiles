@@ -3,7 +3,6 @@ tilix
 font-manager
 synaptic
 tlp tlp-rdw
-python-nautilus
 visualvm
 arc-theme
 chrome-gnome-shell

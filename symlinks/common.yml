@@ -19,6 +19,7 @@
     ~/.gitignore_global: git/.gitignore_global
     ~/.czrc: git/.czrc
     ~/.vimrc: editors/vim/.vimrc
+    ~/.config/Code/User/settings.json: editors/vscode/settings.json
 
 - create:
     - $DOTFILES_PATH/bin/external

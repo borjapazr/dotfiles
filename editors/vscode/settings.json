@@ -1,8 +1,7 @@
 {
   "breadcrumbs.enabled": true,
   "codesnap.backgroundColor": "#21252b",
-  "codesnap.boxShadow": "0 0 0",
-  "codesnap.transparentBackground": true,
+  "codesnap.boxShadow": "#21252b",
   "debug.console.fontSize": 18,
   "editor.cursorBlinking": "smooth",
   "editor.cursorSmoothCaretAnimation": true,
@@ -78,8 +77,6 @@
   "tabnine.experimentalAutoImports": true,
   "terminal.integrated.fontFamily": "'Cascadia Code PL', 'Mars Mono'",
   "terminal.integrated.fontSize": 18,
-  "window.menuBarVisibility": "visible",
-  "window.zoomLevel": 0,
   "workbench.activityBar.visible": true,
   "workbench.colorCustomizations": {
     "terminal.ansiBlack": "#3b4252",
@@ -139,5 +136,7 @@
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "editor.bracketPairColorization.enabled": true,
+  "window.menuBarVisibility": "toggle"
 }

@@ -35,7 +35,6 @@ plugins=(
   you-should-use
   zsh-autosuggestions
   zsh-syntax-highlighting
-  asdf
   brew
   zsh-completions
 )
