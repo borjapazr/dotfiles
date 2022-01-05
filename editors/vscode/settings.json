@@ -138,5 +138,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.bracketPairColorization.enabled": true,
-  "window.menuBarVisibility": "toggle"
+  "window.menuBarVisibility": "toggle",
+  "git.autofetch": true
 }
