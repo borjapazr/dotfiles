@@ -21,3 +21,7 @@ docker-compose
 build-essential
 gcc
 xclip
+procps
+curl
+file
+git
