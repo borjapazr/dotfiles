@@ -26,6 +26,8 @@ NPM_FILE_PATH="$DOTFILES_PATH/langs/js/global_modules.txt"
 
 _brew_import() {
   if [ -f "$HOMEBREW_FILE_PATH" ]; then
+    # This line is 2 times because there are dependencies between brew cask and brew
+    brew bundle install --file="$HOMEBREW_FILE_PATH" || true
     brew bundle install --file="$HOMEBREW_FILE_PATH"
   fi
 }
