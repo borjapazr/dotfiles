@@ -13,15 +13,15 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?   import
 docs::parse "$@"
 
+APT_FILE_PATH="$DOTFILES_PATH/os/linux/apt/packages.txt"
+APT_DESKTOP_FILE_PATH="$DOTFILES_PATH/os/linux/apt/packages-desktop.txt"
+SNAP_FILE_PATH="$DOTFILES_PATH/os/linux/snap/packages.txt"
+SNAP_DESKTOP_FILE_PATH="$DOTFILES_PATH/os/linux/snap/packages-desktop.txt"
 if platform::is_macos; then
   HOMEBREW_FILE_PATH="$DOTFILES_PATH/os/mac/brew/Brewfile"
 elif platform::is_linux; then
   HOMEBREW_FILE_PATH="$DOTFILES_PATH/os/linux/brew/Brewfile"
 fi
-APT_FILE_PATH="$DOTFILES_PATH/os/linux/apt/packages.txt"
-APT_DESKTOP_FILE_PATH="$DOTFILES_PATH/os/linux/apt/packages-desktop.txt"
-SNAP_FILE_PATH="$DOTFILES_PATH/os/linux/snap/packages.txt"
-SNAP_DESKTOP_FILE_PATH="$DOTFILES_PATH/os/linux/snap/packages-desktop.txt"
 NPM_FILE_PATH="$DOTFILES_PATH/langs/js/global_modules.txt"
 
 _brew_import() {
@@ -62,11 +62,6 @@ _npm_import() {
 
 log::info "🎩 Let's import your packages (this could take a while)"
 
-if platform::command_exists brew; then
-  log::info "📥 Installing brew packages"
-  _brew_import
-fi
-
 if platform::command_exists apt-mark; then
   log::info "📥 Installing apt packages"
   _apt_import
@@ -75,6 +70,11 @@ fi
 if ! platform::is_wsl && platform::command_exists snap; then
   log::info "📥 Installing snap packages"
   _snap_import
+fi
+
+if platform::command_exists brew; then
+  log::info "📥 Installing brew packages"
+  _brew_import
 fi
 
 if platform::command_exists npm; then
