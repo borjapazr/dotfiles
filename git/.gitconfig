@@ -1,84 +1,84 @@
 [user]
-  name = Borja Paz Rodríguez
-  email = borjapazr@gmail.com
-  signingkey = 158DD7B288CEA651
+	name = Borja Paz Rodríguez
+	email = borjapazr@gmail.com
+	signingkey = 158DD7B288CEA651
 
 [core]
-  excludesfile = ~/.gitignore_global
-  attributesfile = ~/.gitattributes
-  editor = vim
-  autocrlf = input
-  trustctime = false
-  precomposeunicode = false
-  pager = delta --dark
-  ignorecase = false
+	excludesfile = ~/.gitignore_global
+	attributesfile = ~/.gitattributes
+	editor = vim
+	autocrlf = input
+	trustctime = false
+	precomposeunicode = false
+	pager = delta --dark
+	ignorecase = false
 
 [delta]
-    features = line-numbers decorations
-    whitespace-error-style = 22 reverse
+	features = line-numbers decorations
+	whitespace-error-style = 22 reverse
 
 [delta "decorations"]
-    commit-decoration-style = bold yellow box ul
-    file-style = bold yellow ul
-    file-decoration-style = none
+	commit-decoration-style = bold yellow box ul
+	file-style = bold yellow ul
+	file-decoration-style = none
 
 [fetch]
-  prune = true
+	prune = true
 
 [push]
-  default = simple
+	default = simple
 
 [apply]
-  whitespace = fix
+	whitespace = fix
 
 [diff]
-  tool = vimdiff
-  compactionHeuristic = true
-  indentHeuristic = true
+	tool = vimdiff
+	compactionHeuristic = true
+	indentHeuristic = true
 
 [help]
-  autocorrect = 1
+	autocorrect = 1
 
 [difftool]
-  prompt = false
+	prompt = false
 
 [color]
-  branch = auto
-  diff = auto
-  interactive = auto
-  pager = true
-  status = auto
-  ui = true
+	branch = auto
+	diff = auto
+	interactive = auto
+	pager = true
+	status = auto
+	ui = true
 
 [color "diff"]
-  meta = yellow bold
-  commit = green bold
-  frag = magenta bold
-  old = red bold
-  new = green bold
-  whitespace = red reverse
+	meta = yellow bold
+	commit = green bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
 
 [color "diff-highlight"]
-  oldNormal = red bold
-  oldHighlight = "red bold 52"
-  newNormal = green bold
-  newHighlight = "green bold 22"
+	oldNormal = red bold
+	oldHighlight = "red bold 52"
+	newNormal = green bold
+	newHighlight = "green bold 22"
 
 [color "branch"]
-  current = yellow reverse
-  local = yellow
-  remote = green
+	current = yellow reverse
+	local = yellow
+	remote = green
 
 [color "status"]
-  added = yellow
-  changed = green
-  untracked = cyan
+	added = yellow
+	changed = green
+	untracked = cyan
 
 [commit]
-  gpgsign = true
+	gpgsign = true
 
 [tag]
-  gpgsign = true
+	gpgsign = true
 
 [pull]
-  rebase = true
+	rebase = true

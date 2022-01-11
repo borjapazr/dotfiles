@@ -71,7 +71,7 @@ _install_linux_requirements() {
 
   if platform::command_exists apt-mark; then
     _install_apt_package zsh
-    _install_apt_package gcc
+    _install_apt_package build-essential
   fi
 }
 
@@ -82,6 +82,6 @@ _install_wsl_requirements() {
 
   if platform::command_exists apt-mark; then
     _install_apt_package zsh
-    _install_apt_package gcc
+    _install_apt_package build-essential
   fi
 }
