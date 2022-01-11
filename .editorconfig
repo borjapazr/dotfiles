@@ -9,6 +9,12 @@ charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
 
+[.gitconfig]
+indent_style = tab
+
+[*.gitconfig]
+indent_style = tab
+
 [*.{java,gradle,xml}]
 indent_size = 4
 continuation_indent_size = 8
