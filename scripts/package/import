@@ -5,32 +5,24 @@ set -euo pipefail
 source "$DOTFILES_PATH/scripts/core/_main.sh"
 
 ##? Import previously dumped packages from:
-##?  * Brew
 ##?  * Apt
+##?  * Brew
 ##?  * NPM
 ##?
 ##? Usage:
 ##?   import
 docs::parse "$@"
 
+APT_FILE_PATH="$DOTFILES_PATH/os/linux/apt/packages.txt"
+APT_DESKTOP_FILE_PATH="$DOTFILES_PATH/os/linux/apt/packages-desktop.txt"
+SNAP_FILE_PATH="$DOTFILES_PATH/os/linux/snap/packages.txt"
+SNAP_DESKTOP_FILE_PATH="$DOTFILES_PATH/os/linux/snap/packages-desktop.txt"
 if platform::is_macos; then
   HOMEBREW_FILE_PATH="$DOTFILES_PATH/os/mac/brew/Brewfile"
 elif platform::is_linux; then
   HOMEBREW_FILE_PATH="$DOTFILES_PATH/os/linux/brew/Brewfile"
 fi
-APT_FILE_PATH="$DOTFILES_PATH/os/linux/apt/packages.txt"
-APT_DESKTOP_FILE_PATH="$DOTFILES_PATH/os/linux/apt/packages-desktop.txt"
-SNAP_FILE_PATH="$DOTFILES_PATH/os/linux/snap/packages.txt"
-SNAP_DESKTOP_FILE_PATH="$DOTFILES_PATH/os/linux/snap/packages-desktop.txt"
 NPM_FILE_PATH="$DOTFILES_PATH/langs/js/global_modules.txt"
-
-_brew_import() {
-  if [ -f "$HOMEBREW_FILE_PATH" ]; then
-    # This line is 2 times because there are dependencies between brew cask and brew
-    brew bundle install --file="$HOMEBREW_FILE_PATH" || true
-    brew bundle install --file="$HOMEBREW_FILE_PATH"
-  fi
-}
 
 _apt_import() {
   if [ -f "$APT_FILE_PATH" ]; then
@@ -56,6 +48,14 @@ _snap_import() {
   fi
 }
 
+_brew_import() {
+  if [ -f "$HOMEBREW_FILE_PATH" ]; then
+    # This line is 2 times because there are dependencies between brew cask and brew
+    brew bundle install --file="$HOMEBREW_FILE_PATH" || true
+    brew bundle install --file="$HOMEBREW_FILE_PATH"
+  fi
+}
+
 _npm_import() {
   if [ -f "$NPM_FILE_PATH" ]; then
     xargs -I_ sudo npm install -g "_" <"$NPM_FILE_PATH"
@@ -63,11 +63,6 @@ _npm_import() {
 }
 
 log::info "🎩 Let's import your packages (this could take a while)"
-
-if platform::command_exists brew; then
-  log::info "📥 Installing brew packages"
-  _brew_import
-fi
 
 if platform::command_exists apt-mark; then
   log::info "📥 Installing apt packages"
@@ -77,6 +72,11 @@ fi
 if ! platform::is_wsl && platform::command_exists snap; then
   log::info "📥 Installing snap packages"
   _snap_import
+fi
+
+if platform::command_exists brew; then
+  log::info "📥 Installing brew packages"
+  _brew_import
 fi
 
 if platform::command_exists npm; then
