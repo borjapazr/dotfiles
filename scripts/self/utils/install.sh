@@ -46,22 +46,22 @@ _install_common_requirements() {
 }
 
 _install_macos_requirements() {
-  _install_package() {
+  _install_brew_package() {
     brew install $1 2>&1 | log::file "📦 Installing brew $1"
   }
 
   log::info "🐐 Installing needed GNU packages"
-  _install_package bash
-  _install_package zsh
-  _install_package coreutils
-  _install_package make
-  _install_package gnu-sed
-  _install_package findutils
-  _install_package bat
-  _install_package hyperfine
+  _install_brew_package bash
+  _install_brew_package zsh
+  _install_brew_package coreutils
+  _install_brew_package make
+  _install_brew_package gnu-sed
+  _install_brew_package findutils
+  _install_brew_package bat
+  _install_brew_package hyperfine
 
   log::info "🍎 Installing mas"
-  _install_package mas
+  _install_brew_package mas
 }
 
 _install_linux_requirements() {
