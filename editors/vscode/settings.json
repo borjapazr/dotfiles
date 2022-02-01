@@ -71,13 +71,14 @@
   "gitlens.statusBar.enabled": true,
   "markdown.preview.fontSize": 18,
   "oneDarkPro.italic": true,
-  "oneDarkPro.vivid": false,
-  "oneDarkPro.bold": false,
+  "oneDarkPro.vivid": true,
+  "oneDarkPro.bold": true,
   "sync.gist": "fcef1435c5494b1f0415dd73fdb8e40f",
   "tabnine.experimentalAutoImports": true,
   "terminal.integrated.fontFamily": "'Cascadia Code PL', 'Mars Mono'",
   "terminal.integrated.fontSize": 18,
   "workbench.activityBar.visible": true,
+  "workbench.editor.languageDetection": true,
   "workbench.colorCustomizations": {
     "terminal.ansiBlack": "#3b4252",
     "terminal.ansiBlue": "#81a1c1",
@@ -138,6 +139,10 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.bracketPairColorization.enabled": true,
-  "window.menuBarVisibility": "toggle",
-  "git.autofetch": true
+  "editor.guides.bracketPairs": true,
+  "git.autofetch": true,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "window.titleBarStyle": "custom",
+  "telemetry.telemetryLevel": "off",
+  "window.zoomLevel": 1
 }
