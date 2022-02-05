@@ -1,8 +1,18 @@
 {
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "breadcrumbs.enabled": true,
   "codesnap.backgroundColor": "#21252b",
   "codesnap.boxShadow": "#21252b",
   "debug.console.fontSize": 18,
+  "editor.bracketPairColorization.enabled": true,
   "editor.cursorBlinking": "smooth",
   "editor.cursorSmoothCaretAnimation": true,
   "editor.cursorStyle": "line",
@@ -11,6 +21,8 @@
   "editor.fontSize": 18,
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
+  "editor.guides.bracketPairs": true,
+  "editor.inlineSuggest.enabled": true,
   "editor.lineHeight": 30,
   "editor.minimap.enabled": true,
   "editor.quickSuggestions": {
@@ -67,18 +79,42 @@
   },
   "editor.wordWrap": "on",
   "explorer.confirmDelete": false,
+  "git.autofetch": true,
+  "github.copilot.enable": {
+    "*": true,
+    "markdown": true,
+    "plaintext": true,
+    "yaml": true
+  },
   "gitlens.defaultDateStyle": "absolute",
   "gitlens.statusBar.enabled": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
   "markdown.preview.fontSize": 18,
+  "oneDarkPro.bold": true,
   "oneDarkPro.italic": true,
   "oneDarkPro.vivid": true,
-  "oneDarkPro.bold": true,
+  "remote.SSH.remotePlatform": {
+    "192.168.1.21": "linux"
+  },
   "sync.gist": "fcef1435c5494b1f0415dd73fdb8e40f",
   "tabnine.experimentalAutoImports": true,
+  "telemetry.telemetryLevel": "off",
   "terminal.integrated.fontFamily": "'Cascadia Code PL', 'Mars Mono'",
   "terminal.integrated.fontSize": 18,
+  "todo-tree.general.tags": [
+    "BUG",
+    "HACK",
+    "FIXME",
+    "TODO",
+    "XXX",
+    "[ ]",
+    "[x]"
+  ],
+  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "window.titleBarStyle": "custom",
+  "window.zoomLevel": 1,
   "workbench.activityBar.visible": true,
-  "workbench.editor.languageDetection": true,
   "workbench.colorCustomizations": {
     "terminal.ansiBlack": "#3b4252",
     "terminal.ansiBlue": "#81a1c1",
@@ -100,49 +136,12 @@
   },
   "workbench.colorTheme": "One Dark Pro",
   "workbench.editor.labelFormat": "short",
-  "workbench.iconTheme": "material-icon-theme",
-  "workbench.settings.editor": "json",
-  "workbench.startupEditor": "newUntitledFile",
-  "workbench.statusBar.visible": true,
+  "workbench.editor.languageDetection": true,
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter.notebook.ipynb"
   },
-  "editor.inlineSuggest.enabled": true,
-  "todo-tree.general.tags": [
-    "BUG",
-    "HACK",
-    "FIXME",
-    "TODO",
-    "XXX",
-    "[ ]",
-    "[x]"
-  ],
-  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
-  "github.copilot.enable": {
-    "*": true,
-    "yaml": true,
-    "plaintext": true,
-    "markdown": true
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "remote.SSH.remotePlatform": {
-    "192.168.1.21": "linux"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "editor.bracketPairColorization.enabled": true,
-  "editor.guides.bracketPairs": true,
-  "git.autofetch": true,
-  "editor.multiCursorModifier": "ctrlCmd",
-  "window.titleBarStyle": "custom",
-  "telemetry.telemetryLevel": "off",
-  "window.zoomLevel": 1
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.settings.editor": "json",
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.statusBar.visible": true
 }
