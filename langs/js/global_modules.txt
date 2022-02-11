@@ -4,3 +4,4 @@ gitmoji-cli
 http-server
 commitizen
 cz-conventional-changelog
+git-open
