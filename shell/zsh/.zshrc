@@ -7,7 +7,13 @@ setopt +o nomatch
 unset zle_bracketed_paste
 
 # Theme
-ZSH_THEME="mrmars"
+ZSH_THEME="agkozak"
+AGKOZAK_BLANK_LINES=0
+AGKOZAK_MULTILINE=1
+AGKOZAK_LEFT_PROMPT_ONLY=0
+AGKOZAK_USER_HOST_DISPLAY=1
+AGKOZAK_PROMPT_CHAR=( '%B%F{yellow}%#%f%b' '%B%F{red}%#%f%b' '%B%F{yellow}:%f%b' )
+AGKOZAK_CUSTOM_SYMBOLS=( '⇣⇡' '⇣' '⇡' '+' 'x' '!' '>' '?' 'S')
 
 # Configuration
 COMPLETION_WAITING_DOTS="false"
@@ -36,7 +42,6 @@ plugins=(
   zsh-autosuggestions
   zsh-syntax-highlighting
   zsh-completions
-  fzf-tab
 )
 
 # Load completions

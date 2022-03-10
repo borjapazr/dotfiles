@@ -14,6 +14,9 @@ update_system
 
 install_requirements
 
+install_ohmyzsh_plugins
+install_ohmyzsh_themes
+
 log::info "🔗 Aplying symlinks"
 "$DOTFILES_PATH/bin/dot" symlinks apply | log::file "🔗 Aplying symlinks" || true
 
@@ -21,8 +24,6 @@ if ! str::contains zsh "$SHELL"; then
   log::info "💻 Setting ZSH as the default shell"
   sudo chsh -s "$(command -v zsh)" "${USER}" | log::file "💻 Setting ZSH as default shell"
 fi
-
-install_ohmyzsh_plugins
 
 log::info "📥 Importing packages"
 "$DOTFILES_PATH/bin/dot" package import 2>&1 | log::file "📥 Importing packages"

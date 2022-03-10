@@ -43,6 +43,13 @@ install_ohmyzsh_plugins() {
   git::clone_if_not_exists https://github.com/Aloxaf/fzf-tab.git "$OH_MY_ZSH_CUSTOM/plugins/fzf-tab" 2>&1 | log::file "💄 Installing fzf-tab"
 }
 
+install_ohmyzsh_themes() {
+  log::info "🎨 Installing oh-my-zsh themes"
+
+  rm -rf "$OH_MY_ZSH_CUSTOM/themes/agkozak" || true
+  git::clone_if_not_exists https://github.com/agkozak/agkozak-zsh-prompt.git "$OH_MY_ZSH_CUSTOM/themes/agkozak" 2>&1 | log::file "🎨 Installing agkozak-zsh-prompt"
+}
+
 _install_common_requirements() {
   recipes::install brew
   recipes::install docker
