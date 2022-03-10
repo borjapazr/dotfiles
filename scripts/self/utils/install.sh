@@ -38,6 +38,9 @@ install_ohmyzsh_plugins() {
 
   rm -rf "$OH_MY_ZSH_CUSTOM/plugins/forgit" || true
   git::clone_if_not_exists https://github.com/wfxr/forgit.git "$OH_MY_ZSH_CUSTOM/plugins/forgit" 2>&1 | log::file "💄 Installing forgit"
+
+  rm -rf "$OH_MY_ZSH_CUSTOM/plugins/fzf-tab" || true
+  git::clone_if_not_exists https://github.com/Aloxaf/fzf-tab.git "$OH_MY_ZSH_CUSTOM/plugins/fzf-tab" 2>&1 | log::file "💄 Installing fzf-tab"
 }
 
 _install_common_requirements() {

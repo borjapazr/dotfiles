@@ -6,12 +6,12 @@
       force: true
 
 - link:
-    ~/bin/bash: /usr/local/bin/bash
-    ~/bin/date: /usr/local/bin/gdate
-    ~/bin/find: /usr/local/opt/findutils/bin/gfind
-    ~/bin/make: /usr/local/opt/make/libexec/gnubin/make
-    ~/bin/sed: /usr/local/opt/gnu-sed/libexec/gnubin/sed
-    ~/bin/touch: /usr/local/bin/gtouch
+    $DOTFILES_PATH/bin/external/bash: /usr/local/bin/bash
+    $DOTFILES_PATH/bin/external/date: /usr/local/bin/gdate
+    $DOTFILES_PATH/bin/external/find: /usr/local/opt/findutils/bin/gfind
+    $DOTFILES_PATH/bin/external/make: /usr/local/opt/make/libexec/gnubin/make
+    $DOTFILES_PATH/bin/external/sed: /usr/local/opt/gnu-sed/libexec/gnubin/sed
+    $DOTFILES_PATH/bin/external/touch: /usr/local/bin/gtouch
 
 - create:
     - ~/.hushlogin

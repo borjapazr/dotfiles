@@ -1,7 +1,7 @@
 # Add directory to $PATH if it's not already there
 _pathadd() {
   if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
-    PATH="${PATH:+"$PATH:"}$1"
+    PATH="$1${PATH:+":$PATH"}"
   fi
 }
 
@@ -15,7 +15,7 @@ export BROWSER='google-chrome'
 export PAGER='less'
 
 # JVM
-export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=512M -Xdebug -Xrunjdwp:transport=dt_socket,address=8787,server=y,suspend=n"
+export MAVEN_OPTS="-Xmx1024m -Xdebug -Xrunjdwp:transport=dt_socket,address=8787,server=y,suspend=n"
 export JAVA_TOOLS_OPTIONS='-Dfile.encoding="UTF-8"'
 
 # Golang
@@ -35,11 +35,8 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS"
   --color=info:#eacb8a,prompt:#bf6069,pointer:#b48dac
   --color=marker:#a3be8b,spinner:#b48dac,header:#a3be8b
   --layout=reverse
-  --preview-window right:sharp:wrap
   --padding=0,0,0,0
-  --preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
   --pointer='▶' --marker='✓'
-  --bind '?:toggle-preview'
   --info=inline
 "
 export FORGIT_FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS$FORGIT_FZF_DEFAULT_OPTS

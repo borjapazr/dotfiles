@@ -6,13 +6,13 @@
       force: true
 
 - link:
-    ~/bin/bash: /opt/homebrew/bin/bash
-    ~/bin/date: /opt/homebrew/bin/gdate
-    ~/bin/find: /opt/homebrew/bin/gfind
-    ~/bin/make: /opt/homebrew/bin/gmake
-    ~/bin/sed: /opt/homebrew/bin/gsed
-    ~/bin/touch: /opt/homebrew/bin/gtouch
-    ~/bin/zsh: /opt/homebrew/bin/zsh
+    $DOTFILES_PATH/bin/external/bash: /opt/homebrew/bin/bash
+    $DOTFILES_PATH/bin/external/date: /opt/homebrew/bin/gdate
+    $DOTFILES_PATH/bin/external/find: /opt/homebrew/bin/gfind
+    $DOTFILES_PATH/bin/external/make: /opt/homebrew/bin/gmake
+    $DOTFILES_PATH/bin/external/sed: /opt/homebrew/bin/gsed
+    $DOTFILES_PATH/bin/external/touch: /opt/homebrew/bin/gtouch
+    $DOTFILES_PATH/bin/external/zsh: /opt/homebrew/bin/zsh
 
 - create:
     - ~/.hushlogin

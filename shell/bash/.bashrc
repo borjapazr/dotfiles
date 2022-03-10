@@ -1,5 +1,5 @@
 # TODO: Change this
-export DOTFILES_PATH="/usr/local/share/.dotfiles"
+export DOTFILES_PATH="$HOME/.dotfiles"
 
 if [[ "$(ps -p $$ -ocomm=)" =~ (bash$) ]]; then
   __right_prompt() {
