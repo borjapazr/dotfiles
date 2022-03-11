@@ -41,6 +41,9 @@ install_ohmyzsh_plugins() {
 
   rm -rf "$OH_MY_ZSH_CUSTOM/plugins/fzf-tab" || true
   git::clone_if_not_exists https://github.com/Aloxaf/fzf-tab.git "$OH_MY_ZSH_CUSTOM/plugins/fzf-tab" 2>&1 | log::file "💄 Installing fzf-tab"
+
+  rm -rf "$OH_MY_ZSH_CUSTOM/plugins/zsh-autocomplete" || true
+  git::clone_if_not_exists https://github.com/marlonrichert/zsh-autocomplete.git "$OH_MY_ZSH_CUSTOM/plugins/zsh-autocomplete" 2>&1 | log::file "💄 Installing zsh-autocomplete"
 }
 
 install_ohmyzsh_themes() {
@@ -48,6 +51,9 @@ install_ohmyzsh_themes() {
 
   rm -rf "$OH_MY_ZSH_CUSTOM/themes/agkozak" || true
   git::clone_if_not_exists https://github.com/agkozak/agkozak-zsh-prompt.git "$OH_MY_ZSH_CUSTOM/themes/agkozak" 2>&1 | log::file "🎨 Installing agkozak-zsh-prompt"
+
+  rm -rf "$OH_MY_ZSH_CUSTOM/themes/powerlevel10k" || true
+  git::clone_if_not_exists https://github.com/romkatv/powerlevel10k.git "$OH_MY_ZSH_CUSTOM/themes/powerlevel10k" 2>&1 | log::file "🎨 Installing powerlevel10k"
 }
 
 _install_common_requirements() {

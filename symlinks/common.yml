@@ -13,6 +13,7 @@
     ~/.zlogin: shell/zsh/.zlogin
     ~/.zshenv: shell/zsh/.zshenv
     ~/.zprofile: shell/zsh/.zprofile
+    ~/.p10k.zsh: shell/zsh/themes/powerlevel10k/.p10k.zsh
     $DOTFILES_PATH/modules/oh-my-zsh/custom/themes/mrmars.zsh-theme: shell/zsh/themes/mrmars.zsh-theme
     $DOTFILES_PATH/modules/oh-my-zsh/custom/themes/agkozak.zsh-theme: $DOTFILES_PATH/modules/oh-my-zsh/custom/themes/agkozak/agkozak-zsh-prompt.plugin.zsh
     ~/.gitconfig: git/.gitconfig
