@@ -8,7 +8,6 @@
 - link:
     ~/Library/Application Support/Code/User/settings.json: editors/vscode/settings.json
     ~/Library/Preferences/com.googlecode.iterm2.plist: os/mac/iterm/com.googlecode.iterm2.plist
-    ~/Library/Preferences/com.googlecode.iterm2.private.plist: os/mac/iterm/com.googlecode.iterm2.private.plist
     $DOTFILES_PATH/bin/external/bash: /opt/homebrew/bin/bash
     $DOTFILES_PATH/bin/external/date: /opt/homebrew/bin/gdate
     $DOTFILES_PATH/bin/external/find: /opt/homebrew/bin/gfind
