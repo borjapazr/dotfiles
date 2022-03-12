@@ -48,8 +48,7 @@ plugins=(
 )
 
 # Load completions
-# TODO: Change this
-fpath=("$DOTFILES_PATH/shell/zsh/completions" "/opt/homebrew/share/zsh/site-functions" $fpath)
+fpath=("$DOTFILES_PATH/shell/zsh/completions" "/opt/homebrew/share/zsh/site-functions" "/home/linuxbrew/.linuxbrew/share/zsh/site-functions" $fpath)
 
 # Load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
