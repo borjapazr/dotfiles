@@ -22,8 +22,7 @@ export JAVA_TOOLS_OPTIONS='-Dfile.encoding="UTF-8"'
 export GOPATH="${HOME}/.go"
 export GOBIN="${GOPATH}/bin"
 
-GPG_TTY=$(tty)
-export GPG_TTY
+export GPG_TTY=$TTY
 
 # Homebrew
 export HOMEBREW_AUTO_UPDATE_SECS=604800 # 1 week
