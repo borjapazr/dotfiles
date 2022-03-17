@@ -14,4 +14,6 @@
 # @raycast.authorURL https://github.com/borjapazr
 # @raycast.description Sets speakers as output audio device
 
-SwitchAudioSource -s "Auriculares externos"
+SwitchAudioSource -t system -s "Auriculares externos"
+SwitchAudioSource -t input -s "MacBook Pro (micrófono)"
+SwitchAudioSource -t output -s "Auriculares externos"
