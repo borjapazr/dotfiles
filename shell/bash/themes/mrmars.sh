@@ -11,7 +11,7 @@ if [[ $USER == 'root' ]]; then
   ROOT_EMOJI="✨"
 fi
 REMOTE_EMOJI=""
-if [[ -n $(last -n 1 ${TTY#/dev/} | sed -ne '1{p;q}' | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b") ]] || [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
+if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
   REMOTE_EMOJI="☁️ "
 fi
 
@@ -24,6 +24,6 @@ mrmars_theme() {
     STATUS_COLOR=$RED_COLOR
   fi
 
-  export PS1="\[\e[1m\]\[\e[${STATUS_COLOR}m\][\[\e[${YELLOW_COLOR}m\]s\[\e[${GREEN_COLOR}m\]r\[\e[${RED_COLOR}m\]a\[\e[${BLUE_COLOR}m\]m\[\e[${STATUS_COLOR}m\]]\[\e[m\]\[\e[m\]${REMOTE_EMOJI}${ROOT_EMOJI} \[\e[1m\]\[\e[${CYAN_COLOR}m\]${CURRENT_DIR}\[\e[m\]\[\e[m\] "
+  export PS1="\[\e[1m\]\[\e[${STATUS_COLOR}m\][\[\e[${YELLOW_COLOR}m\]m\[\e[${GREEN_COLOR}m\]a\[\e[${RED_COLOR}m\]r\[\e[${BLUE_COLOR}m\]s\[\e[${STATUS_COLOR}m\]]\[\e[m\]\[\e[m\]${REMOTE_EMOJI}${ROOT_EMOJI} \[\e[1m\]\[\e[${CYAN_COLOR}m\]${CURRENT_DIR}\[\e[m\]\[\e[m\] "
 
 }

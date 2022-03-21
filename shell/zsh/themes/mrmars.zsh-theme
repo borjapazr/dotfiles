@@ -3,7 +3,7 @@ if [[ $USER == 'root' ]]; then
   ROOT_EMOJI="✨"
 fi
 REMOTE_EMOJI=""
-if [[ -n $(last -n 1 ${TTY#/dev/} | sed -ne '1{p;q}' | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b") ]] || [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
+if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
   REMOTE_EMOJI="☁️ "
 fi
 
