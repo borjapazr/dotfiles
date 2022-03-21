@@ -98,7 +98,7 @@
   },
   "sync.gist": "fcef1435c5494b1f0415dd73fdb8e40f",
   "telemetry.telemetryLevel": "off",
-  "terminal.integrated.fontFamily": "'Deluge', 'Cascadia Code PL', 'Mars Mono'",
+  "terminal.integrated.fontFamily": "'Delugia', 'Cascadia Code PL', 'Mars Mono'",
   "terminal.integrated.fontSize": 18,
   "todo-tree.general.tags": [
     "BUG",
