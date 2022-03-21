@@ -27,6 +27,3 @@ fi
 source $(brew --prefix)/etc/profile.d/z.sh
 # Load asdf and asdf plugins
 source $(brew --prefix)/opt/asdf/libexec/asdf.sh
-if [ -f "$HOME/.asdf/plugins/java/set-java-home.bash" ]; then
-  source "$HOME/.asdf/plugins/java/set-java-home.bash"
-fi

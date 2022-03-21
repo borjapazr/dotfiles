@@ -61,9 +61,6 @@ source $DOTFILES_PATH/shell/zsh/key-bindings.zsh
 source $(brew --prefix)/etc/profile.d/z.sh
 # Load asdf and asdf plugins
 source $(brew --prefix)/opt/asdf/libexec/asdf.sh
-# if [ -f "$HOME/.asdf/plugins/java/set-java-home.zsh" ]; then
-#   source "$HOME/.asdf/plugins/java/set-java-home.zsh"
-# fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
