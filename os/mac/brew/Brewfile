@@ -78,4 +78,4 @@ cask "devutils"
 cask "devtoys"
 cask "cmake"
 cask "mos"
-
+cask "appcleaner"
