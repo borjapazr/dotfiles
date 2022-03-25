@@ -1556,9 +1556,7 @@
   typeset -g POWERLEVEL9K_TIME_PREFIX='%fat '
 
   function prompt_arch() {
-    if ! [[ $(arch) == "arm64" ]]; then
-      p10k segment -f 8 -t "$(arch)"
-    fi
+    p10k segment -f 8 -t "$(arch)"
   }
 
   function instant_prompt_arch() {}
