@@ -1557,7 +1557,7 @@
 
   function prompt_arch() {
     if ! [[ $(arch) == "arm64" ]]; then
-      p10k segment -f 8 -t "x86_64"
+      p10k segment -f 8 -t "$(arch)"
     fi
   }
 
