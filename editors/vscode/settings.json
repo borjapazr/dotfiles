@@ -12,6 +12,7 @@
   "codesnap.backgroundColor": "#21252b",
   "codesnap.boxShadow": "#21252b",
   "debug.console.fontSize": 18,
+  "editor.accessibilitySupport": "off",
   "editor.bracketPairColorization.enabled": true,
   "editor.cursorBlinking": "smooth",
   "editor.cursorSmoothCaretAnimation": true,
@@ -98,6 +99,9 @@
   },
   "sync.gist": "fcef1435c5494b1f0415dd73fdb8e40f",
   "telemetry.telemetryLevel": "off",
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  },
   "terminal.integrated.fontFamily": "'Delugia', 'Cascadia Code PL', 'Mars Mono'",
   "terminal.integrated.fontSize": 18,
   "todo-tree.general.tags": [
@@ -142,6 +146,5 @@
   "workbench.iconTheme": "material-icon-theme",
   "workbench.settings.editor": "json",
   "workbench.startupEditor": "newUntitledFile",
-  "workbench.statusBar.visible": true,
-  "tabnine.experimentalAutoImports": true
+  "workbench.statusBar.visible": true
 }

@@ -1,6 +1,9 @@
 # TODO: Change this
 export DOTFILES_PATH="$HOME/.dotfiles"
 
+# Fig pre block. Keep at the top of this file.
+eval "$($HOME/.local/bin/fig init bash pre)"
+
 if [[ "$(ps -p $$ -ocomm=)" =~ (bash$) ]]; then
   __right_prompt() {
     RIGHT_PROMPT=""
@@ -27,3 +30,6 @@ fi
 source $(brew --prefix)/etc/profile.d/z.sh
 # Load asdf and asdf plugins
 source $(brew --prefix)/opt/asdf/libexec/asdf.sh
+
+# Fig post block. Keep at the bottom of this file.
+eval "$($HOME/.local/bin/fig init bash post)"

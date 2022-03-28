@@ -41,6 +41,7 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS"
 export FORGIT_FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS$FORGIT_FZF_DEFAULT_OPTS
 
 CUSTOM_PATH_LIST=(
+  "$HOME/.local/bin"
   "/home/linuxbrew/.linuxbrew/bin"
   "/home/linuxbrew/.linuxbrew/sbin"
   "/opt/homebrew/bin"
