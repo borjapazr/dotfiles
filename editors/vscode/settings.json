@@ -99,6 +99,7 @@
   },
   "sync.gist": "fcef1435c5494b1f0415dd73fdb8e40f",
   "telemetry.telemetryLevel": "off",
+  "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.env.osx": {
     "FIG_NEW_SESSION": "1"
   },
