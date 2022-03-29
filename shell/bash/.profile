@@ -1,5 +1,3 @@
-ulimit -u 10000
-
 # Load Homebrew
 if [ -f "/home/linuxbrew/.linuxbrew/bin/brew" ]; then
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

@@ -19,7 +19,7 @@ source $DOTFILES_PATH/shell/init.sh
 
 source $DOTFILES_PATH/shell/bash/themes/mrmars.sh
 
-if [ -n "$(ls -A "$DOTFILES_PATH/shell/bash/completions/")" ]; then
+if [ -n "$(exa --all "$DOTFILES_PATH/shell/bash/completions/")" ]; then
   for bash_file in "$DOTFILES_PATH"/shell/bash/completions/_*; do
     source "$bash_file"
   done
