@@ -1,5 +1,5 @@
 # Fig pre block. Keep at the top of this file.
-eval "$($HOME/.local/bin/fig init zsh pre)"
+[[ ! -f $HOME/.local/bin/fig ]] || eval "$($HOME/.local/bin/fig init zsh pre)"
 
 # Load Homebrew
 if [ -f "/home/linuxbrew/.linuxbrew/bin/brew" ]; then
@@ -11,4 +11,4 @@ elif [ -f "/usr/local/bin/brew" ]; then
 fi
 
 # Fig post block. Keep at the bottom of this file.
-eval "$($HOME/.local/bin/fig init zsh post)"
+[[ ! -f $HOME/.local/bin/fig ]] || eval "$($HOME/.local/bin/fig init zsh post)"

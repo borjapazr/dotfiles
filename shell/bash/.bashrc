@@ -2,7 +2,7 @@
 export DOTFILES_PATH="$HOME/.dotfiles"
 
 # Fig pre block. Keep at the top of this file.
-eval "$($HOME/.local/bin/fig init bash pre)"
+[[ ! -f $HOME/.local/bin/fig ]] || eval "$($HOME/.local/bin/fig init bash pre)"
 
 if [[ "$(ps -p $$ -ocomm=)" =~ (bash$) ]]; then
   __right_prompt() {
@@ -32,4 +32,4 @@ source $(brew --prefix)/etc/profile.d/z.sh
 source $(brew --prefix)/opt/asdf/libexec/asdf.sh
 
 # Fig post block. Keep at the bottom of this file.
-eval "$($HOME/.local/bin/fig init bash post)"
+[[ ! -f $HOME/.local/bin/fig ]] || eval "$($HOME/.local/bin/fig init bash post)"

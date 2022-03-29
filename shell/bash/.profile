@@ -1,7 +1,7 @@
 ulimit -u 10000
 
 # Fig pre block. Keep at the top of this file.
-eval "$($HOME/.local/bin/fig init bash pre)"
+[[ ! -f $HOME/.local/bin/fig ]] || eval "$($HOME/.local/bin/fig init bash pre)"
 
 # Load Homebrew
 if [ -f "/home/linuxbrew/.linuxbrew/bin/brew" ]; then
@@ -37,4 +37,4 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 # Fig post block. Keep at the bottom of this file.
-eval "$($HOME/.local/bin/fig init bash post)"
+[[ ! -f $HOME/.local/bin/fig ]] || eval "$($HOME/.local/bin/fig init bash post)"
