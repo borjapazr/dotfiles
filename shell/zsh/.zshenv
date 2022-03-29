@@ -1,6 +1,5 @@
 # Exports
-# TODO: Change this
-export DOTFILES_PATH="$HOME/.dotfiles"
+export DOTFILES_PATH=$([[ -d "$HOME/.dotfiles" ]] && echo "$HOME/.dotfiles" || echo "/usr/local/share/.dotfiles")
 export ZSH="$DOTFILES_PATH/modules/oh-my-zsh"
 
 # Skip global compinit

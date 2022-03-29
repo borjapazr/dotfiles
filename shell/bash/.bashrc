@@ -1,5 +1,4 @@
-# TODO: Change this
-export DOTFILES_PATH="$HOME/.dotfiles"
+export DOTFILES_PATH=$([[ -d "$HOME/.dotfiles" ]] && echo "$HOME/.dotfiles" || echo "/usr/local/share/.dotfiles")
 
 # Fig pre block. Keep at the top of this file.
 [[ ! -f $HOME/.local/bin/fig ]] || eval "$($HOME/.local/bin/fig init bash pre)"
