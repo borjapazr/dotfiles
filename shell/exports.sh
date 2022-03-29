@@ -46,6 +46,7 @@ CUSTOM_PATH_LIST=(
   "/home/linuxbrew/.linuxbrew/sbin"
   "/opt/homebrew/bin"
   "/opt/homebrew/sbin"
+  "/opt/homebrew/opt/coreutils/libexec/gnubin"
   "/usr/local/bin"
   "$DOTFILES_PATH/bin"
   "$DOTFILES_PATH/bin/external"
