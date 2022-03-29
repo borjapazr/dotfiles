@@ -34,7 +34,7 @@
 	<key>ClosingHotkeySwitchesSpaces</key>
 	<true/>
 	<key>Command</key>
-	<string></string>
+	<string>/Users/borja/.dotfiles/bin/external/zsh</string>
 	<key>CommandSelection</key>
 	<true/>
 	<key>CompactMinimalTabBarHeight</key>
@@ -1969,7 +1969,7 @@
 			<key>Cursor Type</key>
 			<integer>1</integer>
 			<key>Custom Command</key>
-			<string>Custom Shell</string>
+			<string>No</string>
 			<key>Custom Directory</key>
 			<string>No</string>
 			<key>Default Bookmark</key>
