@@ -49,6 +49,7 @@ plugins=(
   zsh-autosuggestions
   zsh-syntax-highlighting
   zsh-completions
+  fzf-tab
 )
 
 # Load completions
@@ -66,7 +67,7 @@ source $(brew --prefix)/etc/profile.d/z.sh
 # Load asdf and asdf plugins
 source $(brew --prefix)/opt/asdf/libexec/asdf.sh
 # Load powerlevel10k theme
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+source ~/.p10k.zsh
 
 # Fig post block. Keep at the bottom of this file.
 eval "$($HOME/.local/bin/fig init zsh post)"
