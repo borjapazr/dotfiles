@@ -764,6 +764,8 @@
 	<true/>
 	<key>DimOnlyText</key>
 	<false/>
+	<key>DisableDocumentedEditedIndicator</key>
+	<true/>
 	<key>DisableFullscreenTransparency</key>
 	<true/>
 	<key>DisableWindowSizeSnap</key>
