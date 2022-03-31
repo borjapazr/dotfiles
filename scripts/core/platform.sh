@@ -7,7 +7,7 @@ platform::is_macos() {
 }
 
 platform::is_macos_arm() {
-  [[ $(uname -p) == "arm" ]]
+  [[ $(uname -p) == *"arm"* ]]
 }
 
 platform::is_linux() {
