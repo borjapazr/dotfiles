@@ -35,8 +35,6 @@ plugins=(
   colored-man-pages
   colorize
   command-not-found
-  copydir
-  copyfile
   cp
   extract
   forgit
