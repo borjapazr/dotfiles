@@ -10,5 +10,6 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?    prune
 docs::parse "$@"
 
-docker stop $(docker ps -a -q)
+containers="$(docker ps -a -q)"
+docker stop $containers
 yes | docker system prune -a
