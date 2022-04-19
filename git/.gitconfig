@@ -1,7 +1,7 @@
 [user]
 	name = Borja Paz Rodríguez
 	email = borjapazr@gmail.com
-	signingkey = 158DD7B288CEA651
+	signingkey = 5DBA4F4512483370
 
 [core]
 	excludesfile = ~/.gitignore_global
