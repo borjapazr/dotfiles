@@ -1,0 +1,354 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
+# GNU Make 4.3
+# Built for arm-apple-darwin21.1.0
+# Copyright (C) 1988-2020 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+ 
+
+# Make data base, printed on Mon May  9 18:36:06 2022
+
+# Variables
+
+# environment
+LC_TERMINAL = iTerm2
+# environment
+define FZF_DEFAULT_OPTS
+
+  --color=fg:#e5e9f0,hl:#81a1c1
+  --color=fg+:#e5e9f0,bg+:#3b4252,hl+:#81a1c1,border:#3c6e71
+  --color=info:#eacb8a,prompt:#bf6069,pointer:#b48dac
+  --color=marker:#a3be8b,spinner:#b48dac,header:#a3be8b
+  --layout=reverse
+  --padding=0,0,0,0
+  --pointer='▶' --marker='✓'
+  --info=inline
+
+endef
+# environment
+LC_ALL = C
+# environment
+HOMEBREW_PREFIX = /opt/homebrew
+# environment
+TMPDIR = /var/folders/jr/n6r69ppx3573g2x2p4g8v4tc0000gq/T/
+# environment
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.13185469.13185475.EE06F0A4-2839-4E9C-8C01-2AC63D5C6CD7
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/jr/n6r69ppx3573g2x2p4g8v4tc0000gq/T/vscode-ipc-e28c9c0b-8d01-4686-889f-24942617e18e.sock
+# environment
+FORGIT_GI_TEMPLATES = /Users/borja/.cache/forgit/gi/repos/dvcs/gitignore/templates
+# environment
+VSCODE_CWD = /Users/borja/.dotfiles
+# environment
+GPG_TTY = /dev/ttys002
+# environment
+LC_TERMINAL_VERSION = 3.5.20220506-nightly
+# default
+MAKE_COMMAND := make
+# environment
+GOPATH = /Users/borja/.go
+# environment
+__CFBundleIdentifier = com.microsoft.VSCode
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+TTY = not a tty
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# default
+ 
+.VARIABLES := 
+# environment
+COMMAND_MODE = unix2003
+# environment
+PWD = /Users/borja/.dotfiles
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+LSCOLORS = Gxfxcxdxbxegedabagacad
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+VSCODE_LOG_STACK = false
+# automatic
+%F = $(notdir $%)
+# environment
+VSCODE_CODE_CACHE_PATH = /Users/borja/Library/Application Support/Code/CachedData/57fd6d0195bb9b9d1b49f6da5db789060795de47
+# environment
+LANG = C
+# default
+.LOADED := 
+# environment
+HOMEBREW_REPOSITORY = /opt/homebrew
+# default
+.INCLUDE_DIRS = /opt/homebrew/Cellar/make/4.3/include /usr/local/include
+# environment
+COLORFGBG = 15;0
+# environment
+__CF_USER_TEXT_ENCODING = 0x1F7:0x0:0x8
+# makefile
+MAKEFLAGS = pqrR
+# makefile
+CURDIR := /Users/borja/.dotfiles
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# environment
+define FORGIT_FZF_DEFAULT_OPTS
+
+  --color=fg:#e5e9f0,hl:#81a1c1
+  --color=fg+:#e5e9f0,bg+:#3b4252,hl+:#81a1c1,border:#3c6e71
+  --color=info:#eacb8a,prompt:#bf6069,pointer:#b48dac
+  --color=marker:#a3be8b,spinner:#b48dac,header:#a3be8b
+  --layout=reverse
+  --padding=0,0,0,0
+  --pointer='▶' --marker='✓'
+  --info=inline
+
+
+--ansi
+--height='80%'
+--bind='alt-k:preview-up,alt-p:preview-up'
+--bind='alt-j:preview-down,alt-n:preview-down'
+--bind='ctrl-r:toggle-all'
+--bind='ctrl-s:toggle-sort'
+--bind='?:toggle-preview'
+--bind='alt-w:toggle-preview-wrap'
+--preview-window='right:60%'
++1
+
+
+endef
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+MFLAGS = -pqrR
+# environment
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.eKZhKYr4D6/Listeners
+# default
+.SHELLFLAGS := -c
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+P9K_SSH = 0
+# makefile
+MAKEFILE_LIST := 
+# automatic
+@F = $(notdir $@)
+# environment
+ZSH = /Users/borja/.dotfiles/modules/oh-my-zsh
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+VSCODE_PID = 12476
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# environment
+LEGO_HOME = /Users/borja/.lego
+# automatic
+*F = $(notdir $*)
+# environment
+MANPATH = /opt/homebrew/share/man:/usr/share/man:/usr/local/share/man:/opt/homebrew/share/man:
+# environment
+FIG_PID = 21643
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# environment
+ITERM_PROFILE = Mars
+# environment
+YSU_VERSION = 1.7.3
+# environment
+P9K_TTY = old
+# environment
+VSCODE_NLS_CONFIG = {"locale":"es","availableLanguages":{},"_languagePackSupport":true}
+# default
+MAKE_HOST := arm-apple-darwin21.1.0
+# environment
+INFOPATH = /opt/homebrew/share/info:/opt/homebrew/share/info:
+# makefile
+SHELL = /bin/sh
+# default
+MAKECMDGOALS := all
+# environment
+SHLVL = 3
+# environment
+MAKELEVEL := 0
+# environment
+FIG_TERM_VERSION = 4.3.0
+# environment
+ITERM_SESSION_ID = w0t0p0:C740381A-6262-4FEF-9298-D10F696BDE5E
+# default
+MAKE = $(MAKE_COMMAND)
+# environment
+PATH = /Users/borja/.asdf/shims:/opt/homebrew/opt/asdf/libexec/bin:/Users/borja/.dotfiles/bin/external:/Users/borja/.dotfiles/bin:/opt/homebrew/opt/coreutils/libexec/gnubin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/borja/.fig/bin:/Users/borja/.local/bin
+# default
+MAKEFILES := 
+# environment
+FIG_INTEGRATION_VERSION = 8
+# automatic
+^F = $(notdir $^)
+# environment
+HOMEBREW_NO_ANALYTICS = true
+# environment
+GOBIN = /Users/borja/.go/bin
+# environment
+FORGIT_GI_REPO_REMOTE = https://github.com/dvcs/gitignore
+# environment
+FIG_TERM = 1
+# environment
+DOTFILES_PATH = /Users/borja/.dotfiles
+# environment
+VSCODE_LOG_NATIVE = false
+# environment
+TERM_PROGRAM = iTerm.app
+# automatic
+?F = $(notdir $?)
+# environment
+LS_COLORS = no=00:rs=0:fi=00:di=01;34:ln=36:mh=04;36:pi=04;01;36:so=04;33:do=04;01;36:bd=01;33:cd=33:or=31:mi=01;37;41:ex=01;36:su=01;04;37:sg=01;04;37:ca=01;37:tw=01;37;44:ow=01;04;34:st=04;37;44:*.7z=01;32:*.ace=01;32:*.alz=01;32:*.arc=01;32:*.arj=01;32:*.bz=01;32:*.bz2=01;32:*.cab=01;32:*.cpio=01;32:*.deb=01;32:*.dz=01;32:*.ear=01;32:*.gz=01;32:*.jar=01;32:*.lha=01;32:*.lrz=01;32:*.lz=01;32:*.lz4=01;32:*.lzh=01;32:*.lzma=01;32:*.lzo=01;32:*.rar=01;32:*.rpm=01;32:*.rz=01;32:*.sar=01;32:*.t7z=01;32:*.tar=01;32:*.taz=01;32:*.tbz=01;32:*.tbz2=01;32:*.tgz=01;32:*.tlz=01;32:*.txz=01;32:*.tz=01;32:*.tzo=01;32:*.tzst=01;32:*.war=01;32:*.xz=01;32:*.z=01;32:*.Z=01;32:*.zip=01;32:*.zoo=01;32:*.zst=01;32:*.aac=32:*.au=32:*.flac=32:*.m4a=32:*.mid=32:*.midi=32:*.mka=32:*.mp3=32:*.mpa=32:*.mpeg=32:*.mpg=32:*.ogg=32:*.opus=32:*.ra=32:*.wav=32:*.3des=01;35:*.aes=01;35:*.gpg=01;35:*.pgp=01;35:*.doc=32:*.docx=32:*.dot=32:*.odg=32:*.odp=32:*.ods=32:*.odt=32:*.otg=32:*.otp=32:*.ots=32:*.ott=32:*.pdf=32:*.ppt=32:*.pptx=32:*.xls=32:*.xlsx=32:*.app=01;36:*.bat=01;36:*.btm=01;36:*.cmd=01;36:*.com=01;36:*.exe=01;36:*.reg=01;36:*~=02;37:*.bak=02;37:*.BAK=02;37:*.log=02;37:*.log=02;37:*.old=02;37:*.OLD=02;37:*.orig=02;37:*.ORIG=02;37:*.swo=02;37:*.swp=02;37:*.bmp=32:*.cgm=32:*.dl=32:*.dvi=32:*.emf=32:*.eps=32:*.gif=32:*.jpeg=32:*.jpg=32:*.JPG=32:*.mng=32:*.pbm=32:*.pcx=32:*.pgm=32:*.png=32:*.PNG=32:*.ppm=32:*.pps=32:*.ppsx=32:*.ps=32:*.svg=32:*.svgz=32:*.tga=32:*.tif=32:*.tiff=32:*.xbm=32:*.xcf=32:*.xpm=32:*.xwd=32:*.xwd=32:*.yuv=32:*.anx=32:*.asf=32:*.avi=32:*.axv=32:*.flc=32:*.fli=32:*.flv=32:*.gl=32:*.m2v=32:*.m4v=32:*.mkv=32:*.mov=32:*.MOV=32:*.mp4=32:*.mpeg=32:*.mpg=32:*.nuv=32:*.ogm=32:*.ogv=32:*.ogx=32:*.qt=32:*.rm=32:*.rmvb=32:*.swf=32:*.vob=32:*.webm=32:*.wmv=32:
+# environment
+MAVEN_OPTS = -Xmx1024m -Xdebug -Xrunjdwp:transport=dt_socket,address=8787,server=y,suspend=n
+# automatic
++F = $(notdir $+)
+# environment
+LESS = -R
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+BROWSER = google-chrome
+# environment
+HOMEBREW_AUTO_UPDATE_SECS = 604800
+# environment
+LOGNAME = borja
+# environment
+FORGIT_GI_REPO_LOCAL = /Users/borja/.cache/forgit/gi/repos/dvcs/gitignore
+# environment
+XPC_FLAGS = 0x0
+# environment
+ASDF_DIR = /opt/homebrew/opt/asdf/libexec
+# makefile
+.DEFAULT_GOAL := 
+# environment
+EDITOR = vim
+# environment
+USER = borja
+# default
+MAKE_VERSION := 4.3
+# environment
+TERM_SESSION_ID = w0t0p0:C740381A-6262-4FEF-9298-D10F696BDE5E
+# environment
+HOMEBREW_CELLAR = /opt/homebrew/Cellar
+# environment
+PAGER = less
+# environment
+FORGIT_INSTALL_DIR = /Users/borja/.dotfiles/modules/oh-my-zsh/custom/plugins/forgit
+# environment
+_ = /Users/borja/.dotfiles/bin/external/make
+# environment
+COLORTERM = truecolor
+# environment
+TERMINFO_DIRS = /Applications/iTerm.app/Contents/Resources/terminfo:/usr/share/terminfo
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /Users/borja
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+TERM = xterm-256color
+# environment
+VSCODE_IPC_HOOK = /Users/borja/Library/Application Support/Code/1.67.0-main.sock
+# default
+.RECIPEPREFIX := 
+# automatic
+<F = $(notdir $<)
+# default
+SUFFIXES := 
+# environment
+_P9K_TTY = not a tty
+# environment
+VSCODE_CLI = 1
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# environment
+JAVA_TOOLS_OPTIONS = -Dfile.encoding="UTF-8"
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
+# environment
+TERM_PROGRAM_VERSION = 3.5.20220506-nightly
+# variable set hash-table stats:
+# Load=116/1024=11%, Rehash=0, Collisions=14/141=10%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 16777232, inode 1017916): 24 files, no impossibilities.
+
+# 24 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+all:
+#  Command line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
+makefile:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+ 
+#  Failed to be updated.
+
+# Not a target:
+GNUmakefile:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
+
+# files hash-table stats:
+# Load=6/1024=1%, Rehash=0, Collisions=0/15=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 32 / storage = 301 B / avg = 9 B
+# current buf: size = 8162 B / used = 301 B / count = 32 / avg = 9 B
+
+# strcache performance: lookups = 34 / hit rate = 5%
+# hash-table stats:
+# Load=32/8192=0%, Rehash=0, Collisions=0/34=0%
+# Finished Make data base on Mon May  9 18:36:06 2022
+
+ 
