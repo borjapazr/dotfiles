@@ -11,3 +11,6 @@ bin/external/*
 
 # Brew
 Brewfile.lock.json
+
+# VSCode
+.vscode
