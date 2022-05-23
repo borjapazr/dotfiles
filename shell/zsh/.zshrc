@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 # Fig pre block. Keep at the top of this file.
-[[ ! -f $HOME/.local/bin/fig ]] || eval "$($HOME/.local/bin/fig init zsh pre)"
+[[ ! -f $HOME/.local/bin/fig ]] || . "$HOME/.fig/shell/zshrc.pre.zsh"
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -68,4 +68,4 @@ source $(brew --prefix)/opt/asdf/libexec/asdf.sh
 source ~/.p10k.zsh
 
 # Fig post block. Keep at the bottom of this file.
-[[ ! -f $HOME/.local/bin/fig ]] || eval "$($HOME/.local/bin/fig init zsh post)"
+[[ ! -f $HOME/.local/bin/fig ]] || . "$HOME/.fig/shell/zshrc.post.zsh"
