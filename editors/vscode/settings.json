@@ -151,5 +151,6 @@
   "workbench.settings.editor": "json",
   "workbench.startupEditor": "newUntitledFile",
   "workbench.statusBar.visible": true,
-  "tabnine.experimentalAutoImports": true
+  "tabnine.experimentalAutoImports": true,
+  "editor.experimental.stickyScroll.enabled": true
 }
