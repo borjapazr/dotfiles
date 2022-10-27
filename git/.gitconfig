@@ -3,6 +3,10 @@
 	email = borjapazr@gmail.com
 	signingkey = 5DBA4F4512483370
 
+# All Inditex git repositories are in a subdirectory of ~/Projects/work/inditex.
+[includeIf "gitdir:~/Projects/work/inditex/"]
+	path = .gitconfig.inditex
+
 [core]
 	excludesfile = ~/.gitignore_global
 	attributesfile = ~/.gitattributes

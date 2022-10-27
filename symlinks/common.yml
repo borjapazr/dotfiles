@@ -17,6 +17,7 @@
     $DOTFILES_PATH/modules/oh-my-zsh/custom/themes/mrmars.zsh-theme: shell/zsh/themes/mrmars.zsh-theme
     $DOTFILES_PATH/modules/oh-my-zsh/custom/themes/agkozak.zsh-theme: $DOTFILES_PATH/modules/oh-my-zsh/custom/themes/agkozak/agkozak-zsh-prompt.plugin.zsh
     ~/.gitconfig: git/.gitconfig
+    ~/.gitconfig.inditex: git/.gitconfig.inditex
     ~/.gitattributes: git/.gitattributes
     ~/.gitignore_global: git/.gitignore_global
     ~/.czrc: git/.czrc
