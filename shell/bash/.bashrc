@@ -1,7 +1,7 @@
-export DOTFILES_PATH=$([[ -d "$HOME/.dotfiles" ]] && echo "$HOME/.dotfiles" || echo "/usr/local/share/.dotfiles")
-
 # Fig pre block. Keep at the top of this file.
-[[ ! -f $HOME/.local/bin/fig ]] || . "$HOME/.fig/shell/bashrc.pre.bash"
+[[ -f "$HOME/.fig/shell/bashrc.pre.bash" ]] && builtin source "$HOME/.fig/shell/bashrc.pre.bash"
+
+export DOTFILES_PATH=$([[ -d "$HOME/.dotfiles" ]] && echo "$HOME/.dotfiles" || echo "/usr/local/share/.dotfiles")
 
 if [[ "$(ps -p $$ -ocomm=)" =~ (bash$) ]]; then
   __right_prompt() {
@@ -31,4 +31,4 @@ source $(brew --prefix)/etc/profile.d/z.sh
 source $(brew --prefix)/opt/asdf/libexec/asdf.sh
 
 # Fig post block. Keep at the bottom of this file.
-[[ ! -f $HOME/.local/bin/fig ]] || . "$HOME/.fig/shell/bashrc.post.bash"
+[[ -f "$HOME/.fig/shell/bashrc.post.bash" ]] && builtin source "$HOME/.fig/shell/bashrc.post.bash"

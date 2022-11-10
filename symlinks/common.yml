@@ -7,7 +7,7 @@
 
 - link:
     ~/.bashrc: shell/bash/.bashrc
-    ~/.bash_profile: shell/bash/.profile
+    ~/.bash_profile: shell/bash/.bash_profile
     ~/.profile: shell/bash/.profile
     ~/.zshrc: shell/zsh/.zshrc
     ~/.zlogin: shell/zsh/.zlogin
