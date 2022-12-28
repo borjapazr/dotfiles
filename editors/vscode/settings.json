@@ -218,5 +218,9 @@
   "rapidapi.terminalLink.enabled": false,
   "npm.keybindingsChangedWarningShown": true,
   "workbench.productIconTheme": "fluent-icons",
-  "editor.stickyScroll.enabled": true
+  "editor.stickyScroll.enabled": true,
+  "cSpell.userWords": ["Authelia", "marsmachine", "totp", "Traefik"],
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

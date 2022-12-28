@@ -34,6 +34,7 @@ plugins=(
   colorize
   command-not-found
   cp
+  deno
   extract
   forgit
   gitignore
