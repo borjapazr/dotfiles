@@ -94,8 +94,9 @@
   "gitlens.codeLens.recentChange.enabled": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "jest.autoRun": {
-    "onStartup": []
+    "jest.runAllTestsFirst": false
   },
+  "jest.showCoverageOnLoad": false,
   "markdown.preview.fontSize": 18,
   "oneDarkPro.bold": true,
   "oneDarkPro.italic": true,
@@ -219,7 +220,16 @@
   "npm.keybindingsChangedWarningShown": true,
   "workbench.productIconTheme": "fluent-icons",
   "editor.stickyScroll.enabled": true,
-  "cSpell.userWords": ["Authelia", "marsmachine", "totp", "Traefik"],
+  "cSpell.userWords": [
+    "Authelia",
+    "conta",
+    "marsmachine",
+    "openapi",
+    "pjsfiextr",
+    "projectkey",
+    "totp",
+    "Traefik"
+  ],
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   }

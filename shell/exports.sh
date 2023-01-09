@@ -51,6 +51,8 @@ CUSTOM_PATH_LIST=(
   "$DOTFILES_PATH/bin"
   "$DOTFILES_PATH/bin/external"
   "$GOBIN"
+  "$HOME/.composer/vendor/bin"
+  "$HOME/.config/composer/vendor/bin"
 )
 
 for val in "${CUSTOM_PATH_LIST[@]}"; do
