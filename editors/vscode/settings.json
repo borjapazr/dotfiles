@@ -15,7 +15,7 @@
   "editor.accessibilitySupport": "off",
   "editor.bracketPairColorization.enabled": true,
   "editor.cursorBlinking": "smooth",
-  "editor.cursorSmoothCaretAnimation": true,
+  "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorStyle": "line",
   "editor.fontFamily": "'Cascadia Code PL', 'Mars Mono', 'Fira Code'",
   "editor.fontLigatures": true,
