@@ -14,7 +14,11 @@
   "breadcrumbs.enabled": true,
   "cSpell.userWords": [
     "Authelia",
+    "Cascadia",
+    "codesnap",
     "conta",
+    "esbenp",
+    "Fira",
     "marsmachine",
     "openapi",
     "pjsfiextr",
@@ -30,7 +34,7 @@
   "editor.cursorBlinking": "smooth",
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorStyle": "line",
-  "editor.fontFamily": "'Cascadia Code PL', 'Mars Mono', 'Fira Code'",
+  "editor.fontFamily": "DankMono Nerd Font",
   "editor.fontLigatures": true,
   "editor.fontSize": 18,
   "editor.formatOnPaste": false,
@@ -55,42 +59,75 @@
   "editor.tokenColorCustomizations": {
     "textMateRules": [
       {
-        "name": "italic font",
+        "name": "italic font form special keywords",
         "scope": [
           "comment",
+          "punctuation.definition.comment",
           "keyword",
-          "storage",
-          "keyword.control",
-          "keyword.control.from",
-          "keyword.control.flow",
-          "keyword.operator.new",
-          "keyword.control.import",
-          "keyword.control.export",
-          "keyword.control.default",
-          "keyword.control.trycatch",
-          "keyword.control.conditional",
           "storage.type",
-          "storage.type.class",
-          "storage.modifier.tsx",
-          "storage.type.function",
-          "storage.modifier.async",
-          "variable.language",
+          "storage.modifier",
+          "meta.selector.css",
+          "support.constant",
+          "meta.property-value.css",
+          "keyword.other.special-method.dockerfile",
+          "entity.name.tag.yaml",
+          "string.quoted.docstring.multi.python",
+          "entity.name.function.decorator.python",
+          "variable.parameter.function.language.special.self.python",
+          "variable.language.special.self.python",
           "variable.language.this",
           "variable.language.super",
-          "meta.class",
-          "meta.var.expr",
-          "constant.language.null",
-          "support.type.primitive",
+          "support.function.builtin.python",
+          "source.python keyword.operator.logical.python",
+          "source.pip-requirements",
+          "source.pip-requirements entity.name.class",
+          "variable.language",
           "entity.name.method.js",
           "entity.other.attribute-name",
-          "punctuation.definition.comment",
-          "text.html.basic entity.other.attribute-name",
+          "entity.name.tag.structure.any.html",
+          "entity.name.tag",
+          "entity.name.tag.html",
+          "punctuation.definition.tag.end.html",
+          "punctuation.definition.tag.begin.html",
+          "entity.other.attribute-name.class",
           "tag.decorator.js entity.name.tag.js",
           "tag.decorator.js punctuation.definition.tag.js",
-          "source.js constant.other.object.key.js string.unquoted.label.js"
+          "source.js constant.other.object.key.js string.unquoted.label.js",
+          "source.js keyword.operator.expression.in.js",
+          "source.js keyword.operator.expression.of.js",
+          "source.js keyword.operator.new",
+          "source.css support.function",
+          "source.css keyword.other.unit.fr.css",
+          "source.json meta.structure.dictionary.json support.type.property-name.json",
+          "markdown.heading",
+          "markup.heading | markup.heading entity.name",
+          "markup.heading.markdown punctuation.definition.heading.markdown",
+          "markup.heading.markdown entity.name",
+          "markup.italic",
+          "markup.bold markup.italic",
+          "markup.italic markup.bold",
+          "markup.quote markup.bold",
+          "markup.bold markup.italic string",
+          "markup.italic markup.bold string",
+          "markup.quote markup.bold string",
+          "markup.quote"
         ],
         "settings": {
           "fontStyle": "italic"
+        }
+      },
+      {
+        "name": "normal font for colons",
+        "scope": [
+          "invalid",
+          "keyword.operator",
+          "constant.numeric.css",
+          "keyword.other.unit.px.css",
+          "constant.numeric.decimal.js",
+          "constant.numeric.json"
+        ],
+        "settings": {
+          "fontStyle": ""
         }
       }
     ]
@@ -197,7 +234,7 @@
   "terminal.integrated.env.osx": {
     "FIG_NEW_SESSION": "1"
   },
-  "terminal.integrated.fontFamily": "'Delugia', 'Cascadia Code PL', 'Mars Mono'",
+  "terminal.integrated.fontFamily": "DankMono Nerd Font",
   "terminal.integrated.fontSize": 18,
   "todo-tree.general.tags": [
     "BUG",

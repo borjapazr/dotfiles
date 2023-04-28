@@ -2108,11 +2108,11 @@
 			<key>Name</key>
 			<string>Mars</string>
 			<key>Non Ascii Font</key>
-			<string>Menlo-Regular 11</string>
+			<string>DankMonoNF-Regular 13</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Delugia-Regular 18</string>
+			<string>DankMonoNF-Regular 18</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<false/>
 			<key>Open Toolbelt</key>
@@ -2372,7 +2372,7 @@
 			<key>Use Italic Font</key>
 			<true/>
 			<key>Use Non-ASCII Font</key>
-			<false/>
+			<true/>
 			<key>Use Separate Colors for Light and Dark Mode</key>
 			<false/>
 			<key>Use Tab Color</key>
