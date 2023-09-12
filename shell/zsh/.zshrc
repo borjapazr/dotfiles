@@ -47,6 +47,7 @@ plugins=(
   zsh-syntax-highlighting
   zsh-completions
   fzf-tab
+  poetry
 )
 
 # Load completions
