@@ -3,11 +3,11 @@ dot::script_exists() {
 }
 
 dot::list_contexts() {
-  ls "$DOTFILES_PATH/scripts" | grep -v core | sort -u
+  /bin/ls "$DOTFILES_PATH/scripts" | grep -v core | sort -u
 }
 
 dot::list_context_scripts() {
-  ls -p "$DOTFILES_PATH/scripts/$1" 2>/dev/null | grep -v '/' | sort -u
+  /bin/ls -p "$DOTFILES_PATH/scripts/$1" 2>/dev/null | grep -v '/' | sort -u
 }
 
 dot::list_scripts() {

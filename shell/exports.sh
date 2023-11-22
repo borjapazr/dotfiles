@@ -1,8 +1,6 @@
 # Add directory to $PATH if it's not already there
 _pathadd() {
-  if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
-    PATH="$1${PATH:+":$PATH"}"
-  fi
+  PATH="$1${PATH:+":$PATH"}"
 }
 
 # Default editor
@@ -25,8 +23,14 @@ export GOBIN="${GOPATH}/bin"
 export GPG_TTY=$TTY
 
 # Homebrew
-export HOMEBREW_AUTO_UPDATE_SECS=604800 # 1 week
+export HOMEBREW_AUTO_UPDATE_SECS=604800
 export HOMEBREW_NO_ANALYTICS=true
+
+# asdf
+export ASDF_DATA_DIR="$HOME/.asdf"
+
+# Rancher
+export DOCKER_HOST="unix://${HOME}/.rd/docker.sock"
 
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS"
   --color=fg:#e5e9f0,hl:#81a1c1
@@ -53,6 +57,7 @@ CUSTOM_PATH_LIST=(
   "$GOBIN"
   "$HOME/.composer/vendor/bin"
   "$HOME/.config/composer/vendor/bin"
+  "$HOME/.rd/bin"
 )
 
 for val in "${CUSTOM_PATH_LIST[@]}"; do

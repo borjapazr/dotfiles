@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 
-os=$(uname)
-if [[ "$os" == "Linux" ]]; then
-  xclip -selection clipboard
-elif [[ "$os" == "Darwin" ]]; then
+set -o pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+if platform::is_macos; then
   /usr/bin/pbcopy
+elif platform::is_linux; then
+  xclip -selection clipboard
 fi

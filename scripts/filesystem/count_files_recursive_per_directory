@@ -11,6 +11,6 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?   count_files_recursive_per_directory
 docs::parse "$@"
 
-dirs=$(ls -d ./*/)
+dirs=$(/bin/ls -d ./*/)
 
 echo "$dirs" | xargs -I _ sh -c "find \"_\" -type f | wc -l | xargs echo \"_\""

@@ -29,6 +29,7 @@ DEFAULT_USER=$(whoami)
 
 # Plugins
 plugins=(
+  asdf
   brew
   colored-man-pages
   colorize
@@ -69,3 +70,7 @@ source ~/.p10k.zsh
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/borja/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)

@@ -36,9 +36,9 @@
   "editor.cursorBlinking": "smooth",
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorStyle": "line",
-  "editor.fontFamily": "DankMono Nerd Font",
+  "editor.fontFamily": "Delugia",
   "editor.fontLigatures": true,
-  "editor.fontSize": 18,
+  "editor.fontSize": 16,
   "editor.formatOnPaste": false,
   "editor.formatOnSave": true,
   "editor.guides.bracketPairs": true,
@@ -224,7 +224,7 @@
     "jest.runAllTestsFirst": false
   },
   "jest.showCoverageOnLoad": false,
-  "markdown.preview.fontSize": 18,
+  "markdown.preview.fontSize": 16,
   "oneDarkPro.bold": true,
   "oneDarkPro.italic": true,
   "oneDarkPro.vivid": true,
@@ -239,8 +239,8 @@
   "terminal.integrated.env.osx": {
     "FIG_NEW_SESSION": "1"
   },
-  "terminal.integrated.fontFamily": "DankMono Nerd Font",
-  "terminal.integrated.fontSize": 18,
+  "terminal.integrated.fontFamily": "Delugia",
+  "terminal.integrated.fontSize": 16,
   "todo-tree.general.tags": [
     "BUG",
     "HACK",
@@ -254,7 +254,6 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "where-am-i.colorful": false,
   "window.titleBarStyle": "custom",
-  "workbench.activityBar.visible": true,
   "workbench.colorCustomizations": {
     "terminal.ansiBlack": "#3b4252",
     "terminal.ansiBlue": "#81a1c1",

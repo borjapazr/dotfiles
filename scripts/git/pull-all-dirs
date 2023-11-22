@@ -11,4 +11,4 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 docs::parse "$@"
 
 # shellcheck disable=SC2011
-ls | xargs -I{} git -C {} pull
+/bin/ls | xargs -I{} git -C {} pull

@@ -1,5 +1,5 @@
 function cdd() {
-  cd "$(ls -d -- */ | fzf --height 50%)" || echo "Invalid directory"
+  cd "$(/bin/ls -d -- */ | fzf --height 50%)" || echo "Invalid directory"
 }
 
 function open() {

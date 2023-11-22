@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 source "$DOTFILES_PATH/scripts/core/_main.sh"
+source "$DOTFILES_PATH/scripts/self/utils/install.sh"
 source "$DOTFILES_PATH/scripts/self/utils/update.sh"
 
 ##? Update system
@@ -13,6 +14,9 @@ update_system
 
 log::info "🔃 Updating dotfiles and submodules"
 update_dotfiles 2>&1 | log::file "🔃 Updating dotfiles and submodules"
+
+install_ohmyzsh_plugins
+install_ohmyzsh_themes
 
 log::info "🔗 Aplying symlinks"
 "$DOTFILES_PATH/bin/dot" symlinks apply | log::file "🔗 Aplying symlinks" || true
