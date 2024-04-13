@@ -1,4 +1,13 @@
 {
+  "[dockercompose]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -11,40 +20,52 @@
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "breadcrumbs.enabled": true,
-  "cSpell.userWords": [
-    "Authelia",
-    "Cascadia",
-    "codesnap",
-    "conta",
-    "dotenv",
-    "esbenp",
-    "Fira",
-    "marsmachine",
-    "openapi",
-    "pjsfiextr",
-    "projectkey",
-    "totp",
-    "Traefik"
-  ],
+  "codeium.enableConfig": {
+    "*": true,
+    "dockercompose": true,
+    "markdown": true
+  },
+  "codeium.enableSearch": true,
   "codesnap.backgroundColor": "#21252b",
   "codesnap.boxShadow": "#21252b",
+  "console-ninja.featureSet": "Community",
   "debug.console.fontSize": 18,
-  "editor.accessibilitySupport": "off",
   "editor.acceptSuggestionOnEnter": "on",
+  "editor.accessibilitySupport": "off",
   "editor.bracketPairColorization.enabled": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "never"
+  },
   "editor.cursorBlinking": "smooth",
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorStyle": "line",
   "editor.fontFamily": "Delugia",
-  "editor.fontLigatures": true,
+  "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'zero', 'onum', 'calt', 'ss01'",
   "editor.fontSize": 16,
   "editor.formatOnPaste": false,
   "editor.formatOnSave": true,
   "editor.guides.bracketPairs": true,
   "editor.inlineSuggest.enabled": true,
+  "editor.language.colorizedBracketPairs": [
+    ["[", "]"],
+    ["(", ")"],
+    ["{", "}"]
+  ],
   "editor.lineHeight": 2.1,
-  "editor.minimap.enabled": false,
+  "editor.maxTokenizationLineLength": 50000,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.occurrencesHighlight": "multiFile",
   "editor.quickSuggestions": {
     "comments": true,
     "other": true,
@@ -139,6 +160,8 @@
     ]
   },
   "editor.wordWrap": "off",
+  "errorLens.excludeBySource": ["cSpell"],
+  "eslint.run": "onSave",
   "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
@@ -205,42 +228,67 @@
     "vite.config.*": "*.env, .babelrc*, .codecov, .cssnanorc*, .env.*, .envrc, .htmlnanorc*, .lighthouserc.*, .mocha*, .postcssrc*, .terserrc*, api-extractor.json, ava.config.*, babel.config.*, contentlayer.config.*, cssnano.config.*, cypress.*, env.d.ts, formkit.config.*, formulate.config.*, histoire.config.*, htmlnanorc.*, jasmine.*, jest.config.*, jsconfig.*, karma*, lighthouserc.*, playwright.config.*, postcss.config.*, puppeteer.config.*, svgo.config.*, tailwind.config.*, tsconfig.*, tsdoc.*, unocss.config.*, vitest.config.*, webpack.config.*, windi.config.*",
     "vue.config.*": "*.env, .babelrc*, .codecov, .cssnanorc*, .env.*, .envrc, .htmlnanorc*, .lighthouserc.*, .mocha*, .postcssrc*, .terserrc*, api-extractor.json, ava.config.*, babel.config.*, contentlayer.config.*, cssnano.config.*, cypress.*, env.d.ts, formkit.config.*, formulate.config.*, histoire.config.*, htmlnanorc.*, jasmine.*, jest.config.*, jsconfig.*, karma*, lighthouserc.*, playwright.config.*, postcss.config.*, puppeteer.config.*, svgo.config.*, tailwind.config.*, tsconfig.*, tsdoc.*, unocss.config.*, vitest.config.*, webpack.config.*, windi.config.*"
   },
+  "files.associations": {
+    ".env*": "dotenv"
+  },
   "files.autoSave": "onFocusChange",
   "files.eol": "\n",
+  "git-graph.tabIconColourTheme": "grey",
   "git.autofetch": true,
+  "git.openRepositoryInParentFolders": "never",
   "github.copilot.enable": {
     "*": true,
     "markdown": true,
     "plaintext": true,
     "yaml": true
   },
+  "githubPullRequests.pullBranch": "never",
   "gitlens.codeLens.authors.enabled": false,
   "gitlens.codeLens.recentChange.enabled": false,
   "gitlens.currentLine.enabled": false,
   "gitlens.defaultDateStyle": "absolute",
   "gitlens.statusBar.enabled": true,
+  "javascript.inlayHints.enumMemberValues.enabled": true,
+  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "javascript.inlayHints.parameterNames.enabled": "all",
+  "javascript.inlayHints.parameterTypes.enabled": true,
+  "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "javascript.inlayHints.variableTypes.enabled": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "jest.autoRun": {
-    "jest.runAllTestsFirst": false
-  },
-  "jest.showCoverageOnLoad": false,
+  "jest.runMode": "on-demand",
   "markdown.preview.fontSize": 16,
+  "multiDiffEditor.experimental.enabled": true,
   "oneDarkPro.bold": true,
   "oneDarkPro.italic": true,
   "oneDarkPro.vivid": true,
+  "playwright.env": {
+    "NODE_ENV": "test"
+  },
+  "playwright.reuseBrowser": true,
+  "powermode.shake.enabled": false,
+  "prettier.semi": true,
+  "prettier.withNodeModules": true,
+  "rapidapi.terminalLink.enabled": false,
   "redhat.telemetry.enabled": false,
   "remote.SSH.remotePlatform": {
     "192.168.1.21": "linux"
   },
   "search.useGlobalIgnoreFiles": true,
   "search.useIgnoreFiles": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "symbols.hidesExplorerArrows": false,
+  "terminal.integrated.confirmOnExit": "always",
+  "terminal.integrated.confirmOnKill": "always",
   "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.defaultProfile.linux": "zsh",
   "terminal.integrated.env.linux": {},
   "terminal.integrated.env.osx": {
-    "FIG_NEW_SESSION": "1"
+    "FIG_NEW_SESSION": "1",
+    "CW_NEW_SESSION": "1"
   },
   "terminal.integrated.fontFamily": "Delugia",
   "terminal.integrated.fontSize": 16,
+  "terminal.integrated.stickyScroll.enabled": true,
   "todo-tree.general.tags": [
     "BUG",
     "HACK",
@@ -251,7 +299,16 @@
     "[x]"
   ],
   "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+  "typescript.inlayHints.enumMemberValues.enabled": true,
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "typescript.inlayHints.parameterNames.enabled": "all",
+  "typescript.inlayHints.parameterTypes.enabled": true,
+  "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "typescript.inlayHints.variableTypes.enabled": true,
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.preferences.preferTypeOnlyAutoImports": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "where-am-i.colorful": false,
   "window.titleBarStyle": "custom",
   "workbench.colorCustomizations": {
@@ -276,29 +333,16 @@
   "workbench.colorTheme": "One Dark Pro",
   "workbench.editor.labelFormat": "short",
   "workbench.editor.languageDetection": true,
-  "workbench.editorAssociations": {
-    "*.md": "vscode.markdown.preview.editor"
-  },
-  "workbench.iconTheme": "symbols",
+  "workbench.editor.pinnedTabsOnSeparateRow": true,
+  "workbench.iconTheme": "material-icon-theme",
   "workbench.list.horizontalScrolling": true,
   "workbench.list.smoothScrolling": true,
   "workbench.productIconTheme": "fluent-icons",
   "workbench.settings.editor": "json",
-  "workbench.startupEditor": "newUntitledFile",
+  "workbench.sideBar.location": "left",
+  "workbench.startupEditor": "none",
   "workbench.statusBar.visible": true,
+  "workbench.tree.enableStickyScroll": true,
   "workbench.tree.indent": 20,
-  "codeium.enableConfig": {
-    "*": true,
-    "dockercompose": true,
-    "markdown": true
-  },
-  "[python]": {
-    "editor.formatOnType": true
-  },
-  "symbols.hidesExplorerArrows": false,
-  "markdown-pdf.displayHeaderFooter": false,
-  "hediet.vscode-drawio.resizeImages": null,
-  "hediet.vscode-drawio.theme": "sketch",
-  "pieces.setCopilotLocation": true,
-  "isort.check": true
+  "editor.minimap.enabled": false
 }
