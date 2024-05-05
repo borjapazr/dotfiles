@@ -1,0 +1,28 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = '$all'
+right_format = ''
+scan_timeout = 30
+command_timeout = 1000
+add_newline = true
+follow_symlinks = true
+
+[line_break]
+disabled = true
+
+[character]
+success_symbol = '[➜](bold green)'
+error_symbol = '[✗](bold red)'
+
+[directory]
+truncation_length = 2
+fish_style_pwd_dir_length = 3
+
+[git_branch]
+always_show_remote = false
+
+[git_commit]
+tag_disabled = false
+
+[shell]
+disabled = true

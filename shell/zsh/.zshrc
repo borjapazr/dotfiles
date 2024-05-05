@@ -1,5 +1,5 @@
-# CodeWhisperer pre block. Keep at the top of this file.
-[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh"
+# Amazon Q pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -36,6 +36,8 @@ plugins=(
   command-not-found
   cp
   deno
+  docker
+  docker-compose
   extract
   forgit
   gitignore
@@ -44,6 +46,7 @@ plugins=(
   node
   npm
   safe-paste
+  sudo
   you-should-use
   zsh-autosuggestions
   zsh-syntax-highlighting
@@ -53,7 +56,6 @@ plugins=(
 )
 
 # Load completions
-# TODO: Change this
 fpath=("$DOTFILES_PATH/shell/zsh/completions" "$(brew --prefix)/share/zsh/site-functions" $fpath)
 
 # Load oh-my-zsh
@@ -67,7 +69,7 @@ source $(brew --prefix)/etc/profile.d/z.sh
 # Load asdf and asdf plugins
 source $(brew --prefix)/opt/asdf/libexec/asdf.sh
 # Load powerlevel10k theme
-source ~/.p10k.zsh
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# CodeWhisperer post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh"
+# Amazon Q post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"

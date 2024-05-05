@@ -64,6 +64,7 @@
   ],
   "editor.lineHeight": 2.1,
   "editor.maxTokenizationLineLength": 50000,
+  "editor.minimap.enabled": false,
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.occurrencesHighlight": "multiFile",
   "editor.quickSuggestions": {
@@ -273,6 +274,7 @@
   "remote.SSH.remotePlatform": {
     "192.168.1.21": "linux"
   },
+  "remoteHub.uncommittedChangesOnEntry": "none",
   "search.useGlobalIgnoreFiles": true,
   "search.useIgnoreFiles": true,
   "security.workspace.trust.untrustedFiles": "open",
@@ -283,8 +285,9 @@
   "terminal.integrated.defaultProfile.linux": "zsh",
   "terminal.integrated.env.linux": {},
   "terminal.integrated.env.osx": {
+    "CW_NEW_SESSION": "1",
     "FIG_NEW_SESSION": "1",
-    "CW_NEW_SESSION": "1"
+    "Q_NEW_SESSION": "1"
   },
   "terminal.integrated.fontFamily": "Delugia",
   "terminal.integrated.fontSize": 16,
@@ -343,6 +346,5 @@
   "workbench.startupEditor": "none",
   "workbench.statusBar.visible": true,
   "workbench.tree.enableStickyScroll": true,
-  "workbench.tree.indent": 20,
-  "editor.minimap.enabled": false
+  "workbench.tree.indent": 20
 }
