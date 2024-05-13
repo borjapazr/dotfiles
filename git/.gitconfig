@@ -31,6 +31,7 @@
 
 [push]
 	default = simple
+	autoSetupRemote = true
 
 [apply]
 	whitespace = fix
@@ -81,6 +82,9 @@
 [commit]
 	gpgsign = true
 
+[credential]
+	helper = osxkeychain
+
 [tag]
 	gpgsign = true
 
@@ -90,3 +94,6 @@
 [alias]
 	nah = "!f(){ git reset --hard; git clean -df; if [ -d ".git/rebase-apply" ] || [ -d ".git/rebase-merge" ]; then git rebase --abort; fi; }; f"
 	undo = "reset HEAD~1 --mixed"
+
+[init]
+	defaultBranch = main

@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - name: ⬇️ Checkout project
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: ⚪️ Set needed environment variables
         run: |
@@ -29,10 +29,10 @@ jobs:
 
     steps:
       - name: ⬇️ Checkout project
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: 🐿️ Setup go version
-        uses: actions/setup-go@v2
+        uses: actions/setup-go@v5
         with:
           go-version: "^1.16.1"
 
@@ -59,7 +59,7 @@ jobs:
 
     steps:
       - name: ⬇️ Checkout project
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: 📥 Install .dotfiles
         run: echo "$HOME/.dotfiles" | bash installer

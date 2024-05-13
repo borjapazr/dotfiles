@@ -11,8 +11,10 @@
 # Clojure
 .lein-repl-history
 .lein-failures
-completer.hist
+completer.histw
 .nrepl-port
+.lsp
+.clj-kondo
 
 # Scala
 libsigar-universal64-macosx.dylib
