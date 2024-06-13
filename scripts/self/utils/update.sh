@@ -39,7 +39,7 @@ _update_linux() {
     sudo snap refresh
   fi
   if platform::command_exists brew; then
-    brew update && brew upgrade && brew upgrade --cask && brew cleanup
+    brew update && brew upgrade && brew cleanup
   fi
 }
 
@@ -53,6 +53,6 @@ _update_wsl() {
     sudo snap refresh
   fi
   if platform::command_exists brew; then
-    brew update && brew upgrade && brew upgrade --cask && brew cleanup
+    brew update && brew upgrade && brew cleanup
   fi
 }

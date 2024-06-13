@@ -20,6 +20,7 @@ docker::post_install() {
   if platform::is_linux; then
     sudo groupadd docker 2>&1 | log::file "🎫 Creating docker group"
     sudo usermod -aG docker $USER 2>&1 | log::file "🎫 Adding user to docker group"
+    curl -fL https://raw.githubusercontent.com/docker/compose-switch/master/install_on_linux.sh | sudo sh | log::file "📥 Installing docker compose switch"
   fi
 }
 
