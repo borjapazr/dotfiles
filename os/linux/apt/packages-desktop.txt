@@ -2,7 +2,6 @@ rofi
 tilix
 font-manager
 synaptic
-tlp tlp-rdw
 visualvm
 arc-theme
 chrome-gnome-shell

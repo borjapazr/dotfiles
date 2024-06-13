@@ -1,5 +1,5 @@
 if ! ${DOT_RECIPES_SOURCED:-false}; then
-  for file in $DOTFILES_PATH/scripts/self/recipes/{brew,docker,tlp}.sh; do
+  for file in $DOTFILES_PATH/scripts/self/recipes/{brew,docker,podman}.sh; do
     source "$file"
   done
   unset file

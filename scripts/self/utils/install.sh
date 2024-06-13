@@ -59,6 +59,7 @@ install_ohmyzsh_themes() {
 _install_common_requirements() {
   recipes::install brew
   recipes::install docker
+  recipes::install podman
 }
 
 _install_macos_requirements() {
