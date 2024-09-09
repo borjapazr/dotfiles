@@ -32,7 +32,9 @@
   "breadcrumbs.enabled": true,
   "codeium.enableConfig": {
     "*": true,
+    "caddyfile": true,
     "dockercompose": true,
+    "java-properties": true,
     "markdown": true
   },
   "codeium.enableSearch": true,
@@ -44,12 +46,16 @@
   "editor.accessibilitySupport": "off",
   "editor.bracketPairColorization.enabled": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll": "explicit",
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.format": "explicit",
+    "source.fixAll.htmlhint": "explicit",
+    "source.fixAll.stylelint": "explicit",
     "source.organizeImports": "never"
   },
   "editor.cursorBlinking": "smooth",
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorStyle": "line",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "Delugia",
   "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'zero', 'onum', 'calt', 'ss01'",
   "editor.fontSize": 16,
@@ -275,6 +281,7 @@
     "192.168.1.21": "linux"
   },
   "remoteHub.uncommittedChangesOnEntry": "none",
+  "scm.experimental.showHistoryGraph": true,
   "search.useGlobalIgnoreFiles": true,
   "search.useIgnoreFiles": true,
   "security.workspace.trust.untrustedFiles": "open",
