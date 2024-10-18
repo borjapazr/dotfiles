@@ -31,11 +31,20 @@ alias lzd="lazydocker"
 alias dc="dot docker connect"
 
 # IDEs and editors
-alias vim="nvim"
 alias c.='(code $PWD &>/dev/null &)'
 
 # Utils
-alias ping="prettyping --nolegend"
+alias ping="gping"
 alias htop="btm"
 alias k="kill -9"
 alias df="pydf"
+
+# Networking
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en0"
+alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
+
+# Show/hide hidden files in Finder
+alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"

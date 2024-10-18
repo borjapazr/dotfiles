@@ -1,4 +1,4 @@
-- clean: ['~']
+- clean: ["~"]
 
 - defaults:
     link:
@@ -6,6 +6,7 @@
       force: true
 
 - link:
-    ~/.config/tilix/schemes/nord.json: terminal/tilix/schemes/nord.json
+    ~/.wezterm.lua: os/common/wezterm/.wezterm.lua
+    ~/.config/tilix/schemes/nord.json: os/linux/tilix/schemes/nord.json
     ~/.config/rofi/config.rasi: os/linux/rofi/config.rasi
     ~/.config/rofi/mars-theme.rasi: os/linux/rofi/mars-theme.rasi

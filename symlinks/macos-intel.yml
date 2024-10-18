@@ -1,4 +1,4 @@
-- clean: ['~']
+- clean: ["~"]
 
 - defaults:
     link:
@@ -6,6 +6,7 @@
       force: true
 
 - link:
+    ~/.wezterm.lua: os/common/wezterm/.wezterm.lua
     $DOTFILES_PATH/bin/external/bash: /usr/local/bin/bash
     $DOTFILES_PATH/bin/external/date: /usr/local/bin/gdate
     $DOTFILES_PATH/bin/external/find: /usr/local/opt/findutils/bin/gfind

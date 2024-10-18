@@ -9,13 +9,21 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Options
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=-1
+SAVEHIST=$HISTSIZE
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FCNTL_LOCK
 setopt HIST_SAVE_NO_DUPS
 setopt HIST_REDUCE_BLANKS
+setopt APPEND_HISTORY
 setopt INC_APPEND_HISTORY_TIME
 setopt EXTENDED_HISTORY
 setopt HIST_NO_STORE
+setopt SHARE_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
+setopt HIST_VERIFY
 setopt +o nomatch
 unset zle_bracketed_paste
 
@@ -81,6 +89,8 @@ source $(brew --prefix)/etc/profile.d/z.sh
 source $(brew --prefix)/opt/asdf/libexec/asdf.sh
 # Load powerlevel10k theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# Load thefuck
+eval "$(thefuck --alias)"
 
 # Amazon Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
