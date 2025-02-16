@@ -10,8 +10,6 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?    get <remote_service_url>
 docs::parse "$@"
 
-# openssl s_client -showcerts -connect $1:$2 </dev/null 2>&1 | sed -n -e '/-.BEGIN/,/-.END/ p' | tee >(pbcopy)
-
 step certificate inspect --insecure --bundle --short --format=text $1
 echo
 echo
