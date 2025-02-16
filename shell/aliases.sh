@@ -31,10 +31,12 @@ alias lzd="lazydocker"
 alias dc="dot docker connect"
 
 # IDEs and editors
+alias i.='(idea $PWD &>/dev/null &)'
 alias c.='(code $PWD &>/dev/null &)'
+alias o.='open .'
 
 # Utils
-alias ping="gping"
+alias ping="prettyping --nolegend"
 alias htop="btm"
 alias k="kill -9"
 alias df="pydf"

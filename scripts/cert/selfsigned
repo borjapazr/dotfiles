@@ -1,0 +1,118 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+COLOR_RED="\033[31m"
+COLOR_GREEN="\033[32m"
+COLOR_YELLOW="\033[33m"
+COLOR_BLUE="\033[34m"
+COLOR_CYAN="\033[36m"
+COLOR_RESET="\033[0m"
+
+_print_summary() {
+  echo -e "${COLOR_YELLOW}=== Summary of Input ===${COLOR_RESET}"
+  echo -e "${COLOR_CYAN}Certificate Name:${COLOR_RESET} $certificate_name"
+  echo -e "${COLOR_CYAN}Common Name (CN):${COLOR_RESET} $common_name"
+  echo -e "${COLOR_CYAN}Subject Alternative Names (SANs):${COLOR_RESET} ${subject_alternative_names[*]}"
+  echo -e "${COLOR_CYAN}Organizational Unit:${COLOR_RESET} $organizational_unit"
+  echo -e "${COLOR_CYAN}Organization:${COLOR_RESET} $organization"
+  echo -e "${COLOR_CYAN}Locality:${COLOR_RESET} $locality"
+  echo -e "${COLOR_CYAN}Province:${COLOR_RESET} $province"
+  echo -e "${COLOR_CYAN}Country:${COLOR_RESET} $country"
+  echo -e "${COLOR_CYAN}Certificate Duration (Not After):${COLOR_RESET} $certificate_duration hours"
+}
+
+_print_success() {
+  echo -e "${COLOR_GREEN}Certificate successfully created: ${COLOR_BLUE}${certificate_name}.crt ${COLOR_GREEN}and ${COLOR_BLUE}${certificate_name}.key${COLOR_RESET}"
+}
+
+read -p "$(echo -e "${COLOR_CYAN}Enter the Certificate Name (without extension): ${COLOR_RESET}")" certificate_name
+read -p "$(echo -e "${COLOR_CYAN}Enter the Common Name (CN): ${COLOR_RESET}")" common_name
+
+echo -e "${COLOR_CYAN}Enter the Subject Alternative Names (SANs), separated by commas (e.g., www.example.com, api.example.com):${COLOR_RESET}"
+read subject_alternative_names_input
+
+read -p "$(echo -e "${COLOR_CYAN}Enter the Organizational Unit [Default: Clancy]: ${COLOR_RESET}")" organizational_unit
+organizational_unit=${organizational_unit:-Clancy}
+
+read -p "$(echo -e "${COLOR_CYAN}Enter the Organization [Default: Dema]: ${COLOR_RESET}")" organization
+organization=${organization:-Dema}
+
+read -p "$(echo -e "${COLOR_CYAN}Enter the Locality [Default: Ordes]: ${COLOR_RESET}")" locality
+locality=${locality:-Ordes}
+
+read -p "$(echo -e "${COLOR_CYAN}Enter the Province [Default: A Coruña]: ${COLOR_RESET}")" province
+province=${province:-A Coruña}
+
+read -p "$(echo -e "${COLOR_CYAN}Enter the Country [Default: Spain]: ${COLOR_RESET}")" country
+country=${country:-Spain}
+
+read -p "$(echo -e "${COLOR_CYAN}Enter the Certificate Duration in hours [Default: 87600]: ${COLOR_RESET}")" certificate_duration
+certificate_duration=${certificate_duration:-87600}
+
+IFS=',' read -ra subject_alternative_names_raw <<<"$subject_alternative_names_input"
+subject_alternative_names=()
+san_arguments=()
+for san in "${subject_alternative_names_raw[@]}"; do
+  trimmed_san="$(echo "$san" | xargs)"
+  subject_alternative_names+=("$trimmed_san")
+  san_arguments+=(--san "$trimmed_san")
+done
+
+certificate_template=$(
+  cat <<EOF
+{
+  "subject": {
+    "commonName": "$common_name",
+    "organizationalUnit": "$organizational_unit",
+    "organization": "$organization",
+    "locality": "$locality",
+    "province": "$province",
+    "country": "$country"
+  },
+  "sans": {{ toJson .SANs }},
+{{- if typeIs "*rsa.PublicKey" .Insecure.CR.PublicKey }}
+  "keyUsage": ["keyEncipherment", "digitalSignature"],
+{{- else }}
+  "keyUsage": ["digitalSignature"],
+{{- end }}
+  "extKeyUsage": ["serverAuth", "clientAuth"],
+  "basicConstraints": {
+    "isCA": false
+  }
+}
+EOF
+)
+
+echo
+_print_summary
+echo
+
+read -p "$(echo -e "${COLOR_YELLOW}Confirm and generate the certificate? [y/N]: ${COLOR_RESET}")" confirm_generation
+if [[ "${confirm_generation,,}" != "y" ]]; then
+  echo -e "${COLOR_RED}Aborted.${COLOR_RESET}"
+  exit 0
+fi
+
+echo
+
+step certificate create "$common_name" "${certificate_name}.crt" "${certificate_name}.key" \
+  --subtle \
+  --insecure \
+  --no-password \
+  --kty RSA \
+  --size 2048 \
+  --not-before -1h \
+  --not-after "${certificate_duration}h" \
+  --template <(echo "$certificate_template") \
+  "${san_arguments[@]}"
+
+echo
+
+step certificate inspect --insecure --bundle --short --format=text "${certificate_name}.crt"
+
+echo
+
+_print_success

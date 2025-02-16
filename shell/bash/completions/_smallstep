@@ -1,0 +1,1 @@
+eval "$(step completion bash)"

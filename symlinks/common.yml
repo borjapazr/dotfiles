@@ -24,6 +24,7 @@
     ~/.czrc: git/.czrc
     ~/.vimrc: editors/vim/.vimrc
     ~/.config/Code/User/settings.json: editors/vscode/settings.json
+    ~/.config/ghostty/config: os/common/ghostty/config
 
 - create:
     - $DOTFILES_PATH/bin/external
