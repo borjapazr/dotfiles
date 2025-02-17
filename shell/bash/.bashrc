@@ -27,8 +27,6 @@ fi
 
 # Load z
 source $(brew --prefix)/etc/profile.d/z.sh
-# Load asdf and asdf plugins
-source $(brew --prefix)/opt/asdf/libexec/asdf.sh
 # Load thefuck
 eval "$(thefuck --alias)"
 

@@ -85,8 +85,6 @@ source $DOTFILES_PATH/shell/init.sh
 source $DOTFILES_PATH/shell/zsh/key-bindings.zsh
 # Load z
 source $(brew --prefix)/etc/profile.d/z.sh
-# Load asdf and asdf plugins
-source $(brew --prefix)/opt/asdf/libexec/asdf.sh
 # Load powerlevel10k theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # Load thefuck

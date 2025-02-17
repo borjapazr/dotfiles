@@ -55,6 +55,7 @@ CUSTOM_PATH_LIST=(
   "$HOME/.composer/vendor/bin"
   "$HOME/.config/composer/vendor/bin"
   "$HOME/.rd/bin"
+  "${ASDF_DATA_DIR:-$HOME/.asdf}/shims"
 )
 
 for val in "${CUSTOM_PATH_LIST[@]}"; do
