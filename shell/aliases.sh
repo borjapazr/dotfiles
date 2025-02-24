@@ -1,9 +1,9 @@
 # Navigation
 alias ..="cd .."
 alias ...="cd ../.."
-alias ls="eza"
-alias ll="eza -l"
-alias la="eza -la"
+alias ls="eza --icons --group-directories-first"
+alias ll="eza --icons --group-directories-first -l"
+alias la="eza --icons --group-directories-first -la"
 alias cdh="cd ~"
 alias cdp="cd ~/Projects"
 alias cdr="cd ~/Resources"
