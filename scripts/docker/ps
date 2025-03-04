@@ -1,0 +1,73 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? List all containers
+##?
+##? Usage:
+##?    ps
+docs::parse "$@"
+
+RESET="\e[0m"
+BOLD="\e[1m"
+CYAN="\e[36m"
+YELLOW="\e[33m"
+GREEN="\e[32m"
+MAGENTA="\e[35m"
+BLUE="\e[34m"
+UNDERLINE="\e[4m"
+
+declare -a headers=("Name" "Image" "Status" "Created")
+declare -a colors=("$CYAN" "$YELLOW" "$GREEN" "$MAGENTA" "$BLUE")
+
+get_column_widths() {
+  local data="$1"
+  local -a widths
+  for i in $(seq 0 $((${#headers[@]} - 1))); do
+    widths[$i]=$(echo "$data" | awk -F'|' -v col=$((i + 1)) '{print length($col)}' | sort -nr | head -n1)
+    widths[$i]=$((widths[$i] > ${#headers[$i]} ? widths[$i] : ${#headers[$i]}))
+  done
+  echo "${widths[@]}"
+}
+
+print_headers() {
+  local -a widths=("${!1}")
+  local num_headers=${#headers[@]}
+
+  for i in $(seq 0 $((num_headers - 1))); do
+    if [ "$i" -lt $((num_headers - 1)) ]; then
+      printf "${UNDERLINE}${BOLD}${colors[$i]}%-${widths[$i]}s  ${RESET}" "${headers[$i]}"
+    else
+      printf "${UNDERLINE}${BOLD}${colors[$i]}%-${widths[$i]}s${RESET}" "${headers[$i]}"
+    fi
+  done
+  printf "\n"
+}
+
+print_data_rows() {
+  local data="$1"
+  local -a widths=("${!2}")
+  local num_headers=${#headers[@]}
+
+  echo "$data" | while IFS='|' read -r "${headers[@]}"; do
+    for i in $(seq 0 $((num_headers - 1))); do
+      if [ "$i" -lt $((num_headers - 1)) ]; then
+        printf "${colors[$i]}%-${widths[$i]}s  ${RESET}" "${!headers[$i]}"
+      else
+        printf "${colors[$i]}%-${widths[$i]}s${RESET}" "${!headers[$i]}"
+      fi
+    done
+    printf "\n"
+  done
+}
+
+docker_data=$(docker ps -a --format "{{.Names}}|{{.Image}}|{{.Status}}|{{.CreatedAt}}" | sort)
+
+# shellcheck disable=SC2034
+IFS=' ' read -r -a column_widths <<<"$(get_column_widths "$docker_data")"
+
+# Print headers and data
+print_headers column_widths[@]
+print_data_rows "$docker_data" column_widths[@]
