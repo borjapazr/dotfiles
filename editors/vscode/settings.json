@@ -62,7 +62,7 @@
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorStyle": "line",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.fontFamily": "Delugia",
+  "editor.fontFamily": "Cascadia Code NF",
   "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'zero', 'onum', 'calt', 'ss01'",
   "editor.fontSize": 16,
   "editor.formatOnPaste": false,
@@ -241,7 +241,7 @@
     "FIG_NEW_SESSION": "1",
     "Q_NEW_SESSION": "1"
   },
-  "terminal.integrated.fontFamily": "Delugia",
+  "terminal.integrated.fontFamily": "Cascadia Code NF",
   "terminal.integrated.fontLigatures": true,
   "terminal.integrated.fontSize": 16,
   "terminal.integrated.stickyScroll.enabled": true,
