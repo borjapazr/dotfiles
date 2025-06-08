@@ -281,5 +281,6 @@
   "workbench.startupEditor": "none",
   "workbench.statusBar.visible": true,
   "workbench.tree.enableStickyScroll": true,
-  "workbench.tree.indent": 20
+  "workbench.tree.indent": 20,
+  "terminal.integrated.defaultProfile.osx": "zsh"
 }
