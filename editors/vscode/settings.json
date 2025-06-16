@@ -234,17 +234,12 @@
   "terminal.integrated.confirmOnExit": "always",
   "terminal.integrated.confirmOnKill": "always",
   "terminal.integrated.cursorStyle": "line",
-  "terminal.integrated.defaultProfile.linux": "zsh",
-  "terminal.integrated.env.linux": {},
-  "terminal.integrated.env.osx": {
-    "CW_NEW_SESSION": "1",
-    "FIG_NEW_SESSION": "1",
-    "Q_NEW_SESSION": "1"
-  },
   "terminal.integrated.fontFamily": "Cascadia Code NF",
-  "terminal.integrated.fontLigatures": true,
+  "terminal.integrated.fontLigatures.enabled": true,
   "terminal.integrated.fontSize": 16,
+  "terminal.integrated.shellIntegration.enabled": false,
   "terminal.integrated.stickyScroll.enabled": true,
+  "terminal.integrated.suggest.enabled": true,
   "todo-tree.general.tags": [
     "BUG",
     "HACK",
@@ -282,5 +277,8 @@
   "workbench.statusBar.visible": true,
   "workbench.tree.enableStickyScroll": true,
   "workbench.tree.indent": 20,
-  "terminal.integrated.defaultProfile.osx": "zsh"
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.env.osx": {
+    "Q_NEW_SESSION": "1"
+  }
 }
