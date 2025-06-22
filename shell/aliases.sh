@@ -4,6 +4,7 @@ alias ...="cd ../.."
 alias ls="eza --icons --group-directories-first"
 alias ll="eza --icons --group-directories-first -l"
 alias la="eza --icons --group-directories-first -la"
+alias lsa="eza --icons --group-directories-first -lah"
 alias cdh="cd ~"
 alias cdp="cd ~/Projects"
 alias cdr="cd ~/Resources"
@@ -36,6 +37,7 @@ alias c.='(code $PWD &>/dev/null &)'
 alias o.='open .'
 
 # Utils
+alias clear="precmd() { precmd() { echo } } && clear && printf '\e[3J'"
 alias ping="prettyping --nolegend"
 alias htop="btm"
 alias k="kill -9"

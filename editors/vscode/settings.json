@@ -237,7 +237,7 @@
   "terminal.integrated.fontFamily": "Cascadia Code NF",
   "terminal.integrated.fontLigatures.enabled": true,
   "terminal.integrated.fontSize": 16,
-  "terminal.integrated.shellIntegration.enabled": false,
+  "terminal.integrated.shellIntegration.enabled": true,
   "terminal.integrated.stickyScroll.enabled": true,
   "terminal.integrated.suggest.enabled": true,
   "todo-tree.general.tags": [
@@ -263,6 +263,7 @@
   "where-am-i.colorful": false,
   "window.nativeFullScreen": true,
   "window.titleBarStyle": "custom",
+  "workbench.activityBar.orientation": "vertical",
   "workbench.colorTheme": "Gruvbox Dark Medium",
   "workbench.editor.labelFormat": "short",
   "workbench.editor.languageDetection": true,
@@ -280,5 +281,7 @@
   "terminal.integrated.defaultProfile.osx": "zsh",
   "terminal.integrated.env.osx": {
     "Q_NEW_SESSION": "1"
-  }
+  },
+  "chat.commandCenter.enabled": false,
+  "docker.extension.enableComposeLanguageServer": false
 }

@@ -1,3 +1,6 @@
+# Zim Shell Framework
+shell/zsh/.zim
+
 # Compiled ZSH
 shell/zsh/**/**.zwc
 shell/zsh/**/**.zwc.old

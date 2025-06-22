@@ -1,0 +1,20 @@
+# If you modify this execute `zimfw uninstall & zimfw install`
+
+zmodule Aloxaf/fzf-tab
+zmodule wfxr/forgit
+zmodule zimfw/archive
+zmodule zimfw/completion
+zmodule zimfw/duration-info
+zmodule zimfw/environment
+zmodule zimfw/git
+zmodule zimfw/git-info
+zmodule zimfw/gitster
+zmodule zimfw/homebrew
+zmodule zimfw/input
+zmodule zimfw/prompt-pwd
+zmodule zimfw/run-help
+zmodule zimfw/ssh
+zmodule zimfw/utility
+zmodule zsh-users/zsh-autosuggestions
+zmodule zsh-users/zsh-completions
+zmodule zsh-users/zsh-syntax-highlighting

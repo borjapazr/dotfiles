@@ -1,6 +1,3 @@
-# Amazon Q pre block. Keep at the top of this file.
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/bashrc.pre.bash" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/bashrc.pre.bash"
-
 export DOTFILES_PATH=$([[ -d "$HOME/.dotfiles" ]] && echo "$HOME/.dotfiles" || echo "/usr/local/share/.dotfiles")
 
 if [[ "$(ps -p $$ -ocomm=)" =~ (bash$) ]]; then
@@ -27,11 +24,3 @@ fi
 
 # Load z
 source $(brew --prefix)/etc/profile.d/z.sh
-# Load thefuck
-eval "$(thefuck --alias)"
-
-# VS Code shell integration
-[[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path bash)"
-
-# Amazon Q post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/bashrc.post.bash" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/bashrc.post.bash"

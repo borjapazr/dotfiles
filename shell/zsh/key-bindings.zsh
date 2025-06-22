@@ -2,7 +2,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 
 # fzf key bindings
 source "$(brew --prefix)/opt/fzf/shell/key-bindings.zsh"
-[[ $- == *i* ]] && source "$(brew --prefix)/opt/fzf/shell/completion.zsh" 2> /dev/null
+[[ $- == *i* ]] && source "$(brew --prefix)/opt/fzf/shell/completion.zsh" 2>/dev/null
 
 # navi key bindings
 eval "$(navi widget zsh)"
