@@ -158,9 +158,6 @@ main() {
 
   _s "🎉 .dotfiles installed correctly! 🎉"
   _s "🙏 Please, restart your terminal to see the changes"
-
-  _a "📋 Check the installation logs"
-  cat "$DOTFILES_LOG_FILE"
 }
 
 main "$@"

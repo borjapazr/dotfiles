@@ -23,7 +23,6 @@
     ~/.czrc: git/.czrc
     ~/.vimrc: editors/vim/.vimrc
     ~/.config/Code/User/settings.json: editors/vscode/settings.json
-    ~/Library/Application Support/Cursor/User/settings.json: editors/vscode/settings.json
     ~/.config/ghostty/config: os/common/ghostty/config
 
 - create:

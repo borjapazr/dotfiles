@@ -8,6 +8,7 @@
 - link:
     ~/.wezterm.lua: os/common/wezterm/.wezterm.lua
     ~/Library/Application Support/Code/User/settings.json: editors/vscode/settings.json
+    ~/Library/Application Support/Cursor/User/settings.json: editors/vscode/settings.json
     $DOTFILES_PATH/bin/external/bash: /opt/homebrew/bin/bash
     $DOTFILES_PATH/bin/external/date: /opt/homebrew/bin/gdate
     $DOTFILES_PATH/bin/external/find: /opt/homebrew/bin/gfind

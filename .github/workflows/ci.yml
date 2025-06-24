@@ -46,20 +46,3 @@ jobs:
 
       - name: 💅 Lint bash files
         run: bash scripts/self/lint
-
-  build:
-    name: 🚀 Build
-    runs-on: ${{ matrix.os }}
-    needs: lint
-    strategy:
-      matrix:
-        os:
-          - macos-latest
-          - ubuntu-latest
-
-    steps:
-      - name: ⬇️ Checkout project
-        uses: actions/checkout@v4
-
-      - name: 📥 Install .dotfiles
-        run: echo "$HOME/.dotfiles" | bash installer

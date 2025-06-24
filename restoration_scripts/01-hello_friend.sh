@@ -1,1 +1,0 @@
-echo "🤖 Hello my friend!"

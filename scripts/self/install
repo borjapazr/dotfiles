@@ -14,9 +14,6 @@ update_system
 
 install_requirements
 
-install_ohmyzsh_plugins
-install_ohmyzsh_themes
-
 log::info "🔗 Aplying symlinks"
 "$DOTFILES_PATH/bin/dot" symlinks apply | log::file "🔗 Aplying symlinks" || true
 
@@ -27,15 +24,3 @@ fi
 
 log::info "📥 Importing packages"
 "$DOTFILES_PATH/bin/dot" package import 2>&1 | log::file "📥 Importing packages"
-
-log::info "🔙 Executing custom restoration scripts"
-install_scripts_path="$DOTFILES_PATH/restoration_scripts"
-if [ -d "$install_scripts_path" ]; then
-  find "$install_scripts_path" -mindepth 1 -maxdepth 1 -type l,f -name '*.sh' |
-    sort |
-    while read -r install_script; do
-      { [[ -x "$install_script" ]] && . "$install_script" | log::file "🔙 Executing afterinstall: $(basename "$install_script")"; } || {
-        log::error "Install script error in $(basename "$install_script")"
-      }
-    done
-fi

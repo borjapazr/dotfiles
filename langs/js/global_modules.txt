@@ -1,4 +1,3 @@
-@angular/cli
 dockly
 gitmoji-cli
 http-server
