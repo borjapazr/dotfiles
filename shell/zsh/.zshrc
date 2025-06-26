@@ -27,14 +27,15 @@ if [[ -z $TMUX ]]; then
 else
   zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 fi
+zstyle ':zim:prompt-pwd' git-root yes
 
 # Configuration
 DEFAULT_USER=$(whoami)
-COMPLETION_WAITING_DOTS="false"
+COMPLETION_WAITING_DOTS=false
 ZSH_AUTOSUGGEST_USE_ASYNC=true
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 ZSH_HIGHLIGHT_MAXLENGTH=300
-ZSH_DISABLE_COMPFIX="true"
+ZSH_DISABLE_COMPFIX=true
 
 # Load completions
 fpath=("$DOTFILES_PATH/shell/zsh/completions" "$(brew --prefix)/share/zsh/site-functions" $fpath)

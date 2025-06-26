@@ -1,20 +1,67 @@
 # If you modify this execute `zimfw uninstall & zimfw install`
 
-zmodule zimfw/prompt-pwd
-zmodule zimfw/git-info
-zmodule zimfw/duration-info
+#
+# Modules
+#
+# Sets sane Zsh built-in environment options.
 zmodule zimfw/environment
-zmodule zsh-users/zsh-autosuggestions
-zmodule zsh-users/zsh-completions
-zmodule zsh-users/zsh-syntax-highlighting
-zmodule Aloxaf/fzf-tab
-zmodule wfxr/forgit
-zmodule zimfw/archive
+# Provides handy git aliases and functions.
 zmodule zimfw/git
-zmodule zimfw/gitster
-zmodule zimfw/homebrew
+# Applies correct bindkeys for input events.
 zmodule zimfw/input
-zmodule zimfw/run-help
-zmodule zimfw/ssh
+# Sets a custom terminal title.
+zmodule zimfw/termtitle
+# Utility aliases and functions. Adds colour to ls, grep and less.
 zmodule zimfw/utility
-zmodule zimfw/completion
+# Provides archive and unarchive functions for easy archive manipulation.
+zmodule zimfw/archive
+# Adds aliases for Homebrew.
+zmodule zimfw/homebrew
+# Figures out where to get the best help, and gets it.
+zmodule zimfw/run-help
+# Provides a convenient way to load ssh-agent.
+zmodule zimfw/ssh
+# Configures fzf for faster fetching of files and directories names.
+# zmodule fzf
+
+#
+# Third-party modules
+#
+zmodule Aloxaf/fzf-tab
+zmodule Freed-Wu/fzf-tab-source
+zmodule wfxr/forgit
+zmodule paulirish/git-open
+zmodule MichaelAquilina/zsh-you-should-use
+zmodule ohmyzsh/ohmyzsh --root plugins/aliases
+zmodule ohmyzsh/ohmyzsh --root plugins/dirhistory
+zmodule ohmyzsh/ohmyzsh --root plugins/sudo
+zmodule ohmyzsh/ohmyzsh --root plugins/brew
+zmodule ohmyzsh/ohmyzsh --root plugins/colorize
+zmodule ohmyzsh/ohmyzsh --root plugins/command-not-found
+
+#
+# Prompt
+#
+# Formats the current working directory to be used by prompts.
+zmodule zimfw/prompt-pwd
+# Exposes to prompts how long the last command took to execute.
+zmodule zimfw/duration-info
+# Exposes git repository status information to prompts.
+zmodule zimfw/git-info
+# Theme
+zmodule agnoster
+
+#
+# Completion
+#
+zmodule zsh-users/zsh-completions --fpath src
+zmodule completion
+
+#
+# Modules that must be initialized last
+#
+zmodule ohmyzsh/ohmyzsh --root plugins/git
+zmodule ohmyzsh/ohmyzsh --root plugins/cp
+zmodule zsh-users/zsh-syntax-highlighting
+zmodule zsh-users/zsh-history-substring-search
+zmodule zsh-users/zsh-autosuggestions
