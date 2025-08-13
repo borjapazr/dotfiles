@@ -1,53 +1,30 @@
 {
-  "[caddyfile]": {
-    "editor.defaultFormatter": "matthewpi.caddyfile-support"
-  },
-  "[dockercompose]": {
-    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
-  },
-  "[dockerfile]": {
-    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
-  },
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[shellscript]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[yaml]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
+  /*** Workbench settings ***/
+  "workbench.activityBar.orientation": "vertical",
+  "workbench.colorTheme": "Gruvbox Dark Medium",
+  "workbench.editor.labelFormat": "short",
+  "workbench.editor.languageDetection": true,
+  "workbench.editor.pinnedTabsOnSeparateRow": true,
+  "workbench.iconTheme": "catppuccin-mocha",
+  "workbench.list.horizontalScrolling": true,
+  "workbench.list.smoothScrolling": true,
+  "workbench.productIconTheme": "fluent-icons",
+  "workbench.settings.editor": "json",
+  "workbench.sideBar.location": "left",
+  "workbench.startupEditor": "none",
+  "workbench.statusBar.visible": true,
+  "workbench.tree.enableStickyScroll": true,
+  "workbench.tree.indent": 20,
+  "window.nativeFullScreen": true,
+  "window.titleBarStyle": "custom",
+  "search.useGlobalIgnoreFiles": true,
+  "search.useIgnoreFiles": true,
   "breadcrumbs.enabled": true,
-  "codeium.enableConfig": {
-    "*": true,
-    "caddyfile": true,
-    "dockercompose": true,
-    "java-properties": true,
-    "markdown": true
-  },
-  "codeium.enableSearch": true,
-  "codesnap.backgroundColor": "#21252b",
-  "codesnap.boxShadow": "#21252b",
-  "console-ninja.featureSet": "Community",
-  "debug.console.fontSize": 18,
+  "explorer.compactFolders": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+
+  /*** Editor settings ***/
   "editor.acceptSuggestionOnEnter": "on",
   "editor.accessibilitySupport": "off",
   "editor.bracketPairColorization.enabled": true,
@@ -56,7 +33,7 @@
     "source.fixAll.format": "explicit",
     "source.fixAll.htmlhint": "explicit",
     "source.fixAll.stylelint": "explicit",
-    "source.organizeImports": "never"
+    "source.organizeImports": "explicit"
   },
   "editor.cursorBlinking": "smooth",
   "editor.cursorSmoothCaretAnimation": "on",
@@ -173,64 +150,10 @@
     ]
   },
   "editor.wordWrap": "off",
-  "errorLens.excludeBySource": ["cSpell"],
-  "explorer.compactFolders": false,
-  "explorer.confirmDelete": false,
-  "explorer.confirmDragAndDrop": false,
-  "files.associations": {
-    ".env*": "dotenv"
-  },
-  "files.autoSave": "onFocusChange",
-  "files.eol": "\n",
-  "files.insertFinalNewline": true,
-  "git-graph.tabIconColourTheme": "grey",
-  "git.autofetch": true,
-  "git.blame.editorDecoration.enabled": true,
-  "git.blame.statusBarItem.enabled": true,
-  "git.openRepositoryInParentFolders": "never",
-  "github.copilot.enable": {
-    "*": true,
-    "markdown": true,
-    "plaintext": true,
-    "yaml": true
-  },
-  "githubPullRequests.pullBranch": "never",
-  "gitlens.codeLens.authors.enabled": false,
-  "gitlens.codeLens.recentChange.enabled": false,
-  "gitlens.currentLine.enabled": false,
-  "gitlens.defaultDateStyle": "absolute",
-  "gitlens.statusBar.enabled": true,
-  "javascript.inlayHints.enumMemberValues.enabled": true,
-  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
-  "javascript.inlayHints.parameterNames.enabled": "all",
-  "javascript.inlayHints.parameterTypes.enabled": true,
-  "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
-  "javascript.inlayHints.variableTypes.enabled": true,
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "jest.runMode": "on-demand",
-  "markdown.preview.fontSize": 16,
   "multiDiffEditor.experimental.enabled": true,
-  "oneDarkPro.bold": true,
-  "oneDarkPro.italic": true,
-  "oneDarkPro.vivid": true,
-  "playwright.env": {
-    "NODE_ENV": "test"
-  },
-  "playwright.reuseBrowser": true,
-  "powermode.shake.enabled": false,
-  "prettier.semi": true,
-  "prettier.withNodeModules": true,
-  "rapidapi.terminalLink.enabled": false,
-  "redhat.telemetry.enabled": false,
-  "remote.SSH.remotePlatform": {
-    "192.168.1.21": "linux"
-  },
-  "remoteHub.uncommittedChangesOnEntry": "none",
-  "scm.experimental.showHistoryGraph": true,
-  "search.useGlobalIgnoreFiles": true,
-  "search.useIgnoreFiles": true,
-  "security.workspace.trust.untrustedFiles": "open",
-  "symbols.hidesExplorerArrows": false,
+  "errorLens.excludeBySource": ["cSpell"],
+
+  /*** Terminal settings ***/
   "terminal.integrated.confirmOnExit": "always",
   "terminal.integrated.confirmOnKill": "always",
   "terminal.integrated.cursorStyle": "line",
@@ -240,6 +163,191 @@
   "terminal.integrated.shellIntegration.enabled": true,
   "terminal.integrated.stickyScroll.enabled": true,
   "terminal.integrated.suggest.enabled": true,
+  "debug.console.fontSize": 18,
+
+  /*** Look and Feel settings ***/
+  "oneDarkPro.bold": true,
+  "oneDarkPro.italic": true,
+  "oneDarkPro.vivid": true,
+  "symbols.hidesExplorerArrows": false,
+
+  /*** Files settings ***/
+  "files.associations": {
+    ".env*": "dotenv",
+    "*.chatmode.md": "markdown",
+    "*.instructions.md": "markdown",
+    "*.prompt.md": "markdown"
+  },
+  "files.autoSave": "onFocusChange",
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+
+  /*** Formatting and linting settings ***/
+  "prettier.semi": true,
+  "prettier.withNodeModules": true,
+
+  /*** Git settings ***/
+  "git-graph.tabIconColourTheme": "grey",
+  "git.autofetch": true,
+  "git.blame.editorDecoration.enabled": true,
+  "git.blame.statusBarItem.enabled": true,
+  "git.openRepositoryInParentFolders": "never",
+  "githubPullRequests.pullBranch": "never",
+  "gitlens.codeLens.authors.enabled": false,
+  "gitlens.codeLens.recentChange.enabled": false,
+  "gitlens.currentLine.enabled": false,
+  "gitlens.defaultDateStyle": "absolute",
+  "gitlens.statusBar.enabled": true,
+  "scm.experimental.showHistoryGraph": true,
+
+  /*** JavaScript/TypeScript settings ***/
+  "javascript.inlayHints.enumMemberValues.enabled": true,
+  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "javascript.inlayHints.parameterNames.enabled": "all",
+  "javascript.inlayHints.parameterTypes.enabled": true,
+  "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "javascript.inlayHints.variableTypes.enabled": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.inlayHints.enumMemberValues.enabled": true,
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "typescript.inlayHints.parameterNames.enabled": "all",
+  "typescript.inlayHints.parameterTypes.enabled": true,
+  "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "typescript.inlayHints.variableTypes.enabled": true,
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.preferences.preferTypeOnlyAutoImports": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "jest.runMode": "on-demand",
+  "playwright.env": {
+    "NODE_ENV": "test"
+  },
+  "playwright.reuseBrowser": true,
+
+  /*** Markdown settings ***/
+  "markdown.preview.fontSize": 16,
+
+  /*** GitHub Copilot Settings ***/
+  // General settings
+  "chat.commandCenter.enabled": true,
+  "workbench.commandPalette.experimental.askChatLocation": "chatView",
+  "search.searchView.semanticSearchBehavior": "manual",
+  "search.searchView.keywordSuggestions": true,
+  "workbench.settings.showAISearchToggle": true,
+  // Code editing settings
+  "github.copilot.editor.enableCodeActions": true,
+  "github.copilot.renameSuggestions.triggerAutomatically": true,
+  "github.copilot.enable": {
+    "*": true,
+    "markdown": true,
+    "plaintext": true,
+    "yaml": true
+  },
+  "github.copilot.nextEditSuggestions.enabled": true,
+  // Chat settings
+  "github.copilot.chat.localeOverride": "en",
+  "github.copilot.chat.useProjectTemplates": true,
+  "github.copilot.chat.scopeSelection": true,
+  "github.copilot.chat.terminalChatLocation": "chatView",
+  "github.copilot.chat.edits.suggestRelatedFilesFromGitHistory": true,
+  // Agent mode settings
+  "chat.agent.enabled": true,
+  "chat.agent.maxRequests": 30,
+  "github.copilot.chat.agent.autoFix": true,
+  "github.copilot.chat.agent.runTasks": true,
+  "chat.mcp.enabled": true,
+  "github.copilot.chat.newWorkspaceCreation.enabled": true,
+  "github.copilot.chat.agent.thinkingTool": true,
+  // Inline chat settings
+  "inlineChat.finishOnType": false,
+  "inlineChat.holdToSpeech": true,
+  "editor.inlineSuggest.syntaxHighlightingEnabled": true,
+  "inlineChat.lineEmptyHint": false,
+  "inlineChat.lineNaturalLanguageHint": true,
+  "github.copilot.chat.editor.temporalContext.enabled": false,
+  // Code review settings
+  "github.copilot.chat.reviewSelection.enabled": true,
+  "github.copilot.chat.reviewSelection.instructions": [],
+  // Custom instructions settings
+  "github.copilot.chat.codeGeneration.useInstructionFiles": true,
+  "chat.instructionsFilesLocations": {
+    ".github/instructions": true
+  },
+  "github.copilot.chat.commitMessageGeneration.instructions": [
+    {
+      "text": "Keep it simple stupid, follow that strictly. Use conventional commit message format. Remain consistent across commits no matter what. It doesn't have to be super strict, but it should be clear what the commit is doing. For example, use 'fix: bug in user login' instead of 'fixed a bug'. This helps in understanding the purpose of the commit at a glance. \n\nIf you're not sure about the format, you can check out the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification for more details. For a cheat sheet see [here](https://kapeli.com/cheat_sheets/Conventional_Commits.docset/Contents/Resources/Documents/index). Scopes, while useful, should only be used if needed. Otherwise just use the general commit message format. You will keep it simple and easy to understand. Shorter the better. Stay away from robotic phrases like enhance. You will limit to one line and short messages. \n\nExamples:\n- feat: update account settings\n- feat(auth): add forgot password logic\n- feat(dashboard): implement sku editor\n- style: linting\n- docs: update readme"
+    },
+    {
+      "text": "Use conventional commit format with types like 'feat:', 'fix:', 'docs:', 'style:', 'refactor:', 'perf:', 'test:', 'chore:' at the beginning of commit messages."
+    },
+    {
+      "text": "Phrase the commit message as an action (e.g., 'implement feature', 'fix bug', 'update documentation')."
+    },
+    {
+      "text": "Follow the Conventional Commits 1.0.0 specification (https://www.conventionalcommits.org/en/v1.0.0/)."
+    }
+  ],
+  "github.copilot.chat.pullRequestDescriptionGeneration.instructions": [],
+  // Reusable prompt files settings
+  "chat.promptFiles": true,
+  "chat.promptFilesLocations": {
+    ".github/prompts": true
+  },
+  // Chat mode settings
+  "chat.modeFilesLocations": {
+    ".github/chatmodes": true
+  },
+  // Debugging settings
+  "github.copilot.chat.startDebugging.enabled": true,
+  "github.copilot.chat.copilotDebugCommand.enabled": true,
+  // Testing settings
+  "github.copilot.chat.generateTests.codeLens": true,
+  "github.copilot.chat.setupTests.enabled": true,
+  "docker.extension.enableComposeLanguageServer": false,
+
+  /*** File specific settings ***/
+  "[caddyfile]": {
+    "editor.defaultFormatter": "matthewpi.caddyfile-support"
+  },
+  "[dockercompose]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "files.trimTrailingWhitespace": false
+  },
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  /*** Extensions settings ***/
   "todo-tree.general.tags": [
     "BUG",
     "HACK",
@@ -250,38 +358,7 @@
     "[x]"
   ],
   "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
-  "typescript.inlayHints.enumMemberValues.enabled": true,
-  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
-  "typescript.inlayHints.parameterNames.enabled": "all",
-  "typescript.inlayHints.parameterTypes.enabled": true,
-  "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
-  "typescript.inlayHints.variableTypes.enabled": true,
-  "typescript.preferences.importModuleSpecifier": "non-relative",
-  "typescript.preferences.preferTypeOnlyAutoImports": true,
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "where-am-i.colorful": false,
-  "window.nativeFullScreen": true,
-  "window.titleBarStyle": "custom",
-  "workbench.activityBar.orientation": "vertical",
-  "workbench.colorTheme": "Gruvbox Dark Medium",
-  "workbench.editor.labelFormat": "short",
-  "workbench.editor.languageDetection": true,
-  "workbench.editor.pinnedTabsOnSeparateRow": true,
-  "workbench.iconTheme": "catppuccin-mocha",
-  "workbench.list.horizontalScrolling": true,
-  "workbench.list.smoothScrolling": true,
-  "workbench.productIconTheme": "fluent-icons",
-  "workbench.settings.editor": "json",
-  "workbench.sideBar.location": "left",
-  "workbench.startupEditor": "none",
-  "workbench.statusBar.visible": true,
-  "workbench.tree.enableStickyScroll": true,
-  "workbench.tree.indent": 20,
-  "terminal.integrated.defaultProfile.osx": "zsh",
-  "terminal.integrated.env.osx": {
-    "Q_NEW_SESSION": "1"
-  },
-  "chat.commandCenter.enabled": false,
-  "docker.extension.enableComposeLanguageServer": false
+  "rapidapi.terminalLink.enabled": false,
+  "redhat.telemetry.enabled": false,
+  "remoteHub.uncommittedChangesOnEntry": "none"
 }
