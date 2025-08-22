@@ -20,7 +20,8 @@ export JAVA_TOOLS_OPTIONS='-Dfile.encoding="UTF-8"'
 export GOPATH="${HOME}/.go"
 export GOBIN="${GOPATH}/bin"
 
-export GPG_TTY=$TTY
+GPG_TTY=$(tty)
+export GPG_TTY
 
 # Homebrew
 export HOMEBREW_AUTO_UPDATE_SECS=604800
@@ -41,21 +42,27 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS"
 "
 export FORGIT_FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS$FORGIT_FZF_DEFAULT_OPTS
 
+export BAT_THEME='gruvbox-dark'
+
 CUSTOM_PATH_LIST=(
+  "/sbin"
+  "/usr/bin"
+  "/bin"
+  "/usr/local/bin"
   "$HOME/.local/bin"
   "/home/linuxbrew/.linuxbrew/bin"
   "/home/linuxbrew/.linuxbrew/sbin"
   "/opt/homebrew/bin"
   "/opt/homebrew/sbin"
   "/opt/homebrew/opt/coreutils/libexec/gnubin"
-  "/usr/local/bin"
-  "$DOTFILES_PATH/bin"
-  "$DOTFILES_PATH/bin/external"
-  "$GOBIN"
   "$HOME/.composer/vendor/bin"
   "$HOME/.config/composer/vendor/bin"
+  "$GOBIN"
   "$HOME/.rd/bin"
+  "$HOME/bin"
   "${ASDF_DATA_DIR:-$HOME/.asdf}/shims"
+  "$DOTFILES_PATH/bin"
+  "$DOTFILES_PATH/bin/external"
 )
 
 for val in "${CUSTOM_PATH_LIST[@]}"; do

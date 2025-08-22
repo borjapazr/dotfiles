@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-source "$DOTLY_PATH/scripts/core/_main.sh"
+source "$DOTFILES_PATH/scripts/core/_main.sh"
 
 ##? Empty the trash and remove cache files
 #?? 1.0.0
