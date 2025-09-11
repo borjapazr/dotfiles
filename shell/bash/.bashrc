@@ -21,6 +21,3 @@ if [ -n "$(/bin/ls -A "$DOTFILES_PATH/shell/bash/completions/")" ]; then
     source "$bash_file"
   done
 fi
-
-# Load z
-source $(brew --prefix)/etc/profile.d/z.sh

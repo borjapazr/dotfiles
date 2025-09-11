@@ -5,6 +5,7 @@
   "workbench.editor.labelFormat": "short",
   "workbench.editor.languageDetection": true,
   "workbench.editor.pinnedTabsOnSeparateRow": true,
+  "workbench.experimental.share.enabled": true,
   "workbench.iconTheme": "catppuccin-mocha",
   "workbench.list.horizontalScrolling": true,
   "workbench.list.smoothScrolling": true,
@@ -181,6 +182,7 @@
   "files.autoSave": "onFocusChange",
   "files.eol": "\n",
   "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
 
   /*** Formatting and linting settings ***/
@@ -300,12 +302,6 @@
   "[caddyfile]": {
     "editor.defaultFormatter": "matthewpi.caddyfile-support"
   },
-  "[dockercompose]": {
-    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
-  },
-  "[dockerfile]": {
-    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
-  },
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -349,7 +345,5 @@
     "[x]"
   ],
   "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
-  "rapidapi.terminalLink.enabled": false,
-  "redhat.telemetry.enabled": false,
-  "remoteHub.uncommittedChangesOnEntry": "none"
+  "redhat.telemetry.enabled": false
 }

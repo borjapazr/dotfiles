@@ -65,3 +65,4 @@ zmodule ohmyzsh/ohmyzsh --root plugins/cp
 zmodule zsh-users/zsh-syntax-highlighting
 zmodule zsh-users/zsh-history-substring-search
 zmodule zsh-users/zsh-autosuggestions
+zmodule kiesman99/zim-zoxide

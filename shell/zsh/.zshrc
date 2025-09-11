@@ -48,9 +48,6 @@ fi
 ## Initialize modules.
 source ${ZIM_HOME}/init.zsh
 
-# Load z
-source $(brew --prefix)/etc/profile.d/z.sh
-
 # Load aliases, exports and functions
 source $DOTFILES_PATH/shell/init.sh
 # Load key bindings
