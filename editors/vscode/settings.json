@@ -257,7 +257,7 @@
   "chat.agent.maxRequests": 30,
   "github.copilot.chat.agent.autoFix": true,
   "github.copilot.chat.agent.runTasks": true,
-  "chat.mcp.enabled": true,
+  "chat.mcp.access": "all",
   "github.copilot.chat.newWorkspaceCreation.enabled": true,
   "github.copilot.chat.agent.thinkingTool": true,
   // Inline chat settings
