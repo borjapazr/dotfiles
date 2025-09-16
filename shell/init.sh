@@ -3,3 +3,5 @@ source "$DOTFILES_PATH/modules/private/shell/exports.sh"
 source "$DOTFILES_PATH/shell/private-stuff.sh"
 source "$DOTFILES_PATH/shell/exports.sh"
 source "$DOTFILES_PATH/shell/functions.sh"
+
+gpgconf --launch gpg-agent
