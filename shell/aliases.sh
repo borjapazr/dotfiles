@@ -37,6 +37,7 @@ alias c.='(code $PWD &>/dev/null &)'
 alias o.='open .'
 
 # Utils
+alias clear="precmd() { precmd() { echo } } && clear && printf '\e[3J'"
 alias ping="prettyping --nolegend"
 alias htop="btm"
 alias k="kill -9"
