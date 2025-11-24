@@ -82,9 +82,6 @@
 [commit]
 	gpgsign = true
 
-[credential]
-	helper = osxkeychain
-
 [tag]
 	gpgsign = true
 
