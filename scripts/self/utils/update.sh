@@ -19,9 +19,6 @@ update_system() {
   elif platform::is_macos; then
     log::info "🔁 Updating MacOS platform"
     _update_macos 2>&1 | log::file "🔁 Updating MacOS platform"
-  elif platform::is_wsl; then
-    log::info"🔁 Updating WSL platform"
-    _update_wsl 2>&1 | log::file "🔁 Updating WSL platform"
   fi
 }
 
@@ -32,20 +29,6 @@ _update_macos() {
 }
 
 _update_linux() {
-  if platform::command_exists apt-mark; then
-    sudo apt-get update -y
-    sudo apt-get upgrade -y
-    sudo apt-get autoremove -y
-  fi
-  if platform::command_exists snap; then
-    sudo snap refresh
-  fi
-  if platform::command_exists brew; then
-    brew update && brew upgrade && brew cleanup
-  fi
-}
-
-_update_wsl() {
   if platform::command_exists apt-mark; then
     sudo apt-get update -y
     sudo apt-get upgrade -y

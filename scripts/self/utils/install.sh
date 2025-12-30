@@ -10,9 +10,6 @@ install_requirements() {
   elif platform::is_macos; then
     log::info "🍎 Setting up MacOS platform"
     _install_macos_requirements
-  elif platform::is_wsl; then
-    log::info"🚀 Setting up WSL platform"
-    _install_wsl_requirements
   fi
 }
 
@@ -42,17 +39,6 @@ _install_macos_requirements() {
 }
 
 _install_linux_requirements() {
-  _install_apt_package() {
-    sudo apt-get install -y $1 2>&1 | log::file "📦 Installing apt $1"
-  }
-
-  if platform::command_exists apt-mark; then
-    _install_apt_package zsh
-    _install_apt_package gcc
-  fi
-}
-
-_install_wsl_requirements() {
   _install_apt_package() {
     sudo apt-get install -y $1 2>&1 | log::file "📦 Installing apt $1"
   }

@@ -72,7 +72,7 @@ if platform::command_exists apt-mark; then
   _apt_import
 fi
 
-if ! platform::is_wsl && platform::command_exists snap; then
+if platform::command_exists snap; then
   log::info "📥 Installing snap packages"
   _snap_import
 fi

@@ -7,7 +7,7 @@ _pathadd() {
 export EDITOR='vim'
 
 # Default browser
-export BROWSER='google-chrome'
+export BROWSER="$DOTFILES_PATH/bin/chrome"
 
 # Default pager
 export PAGER='less'

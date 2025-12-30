@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+set -o pipefail
+
+##? Open Google Chrome in different operating systems
+##?
+##? Usage:
+##?    chrome [<url>...]
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+if platform::is_macos; then
+  open -a "Google Chrome" "$@"
+elif platform::is_linux; then
+  google-chrome "$@"
+else
+  log::error "Unsupported platform"
+  exit 1
+fi
