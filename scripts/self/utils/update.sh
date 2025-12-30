@@ -8,7 +8,8 @@ update_dotfiles() {
   git submodule update
   git submodule status
   git submodule update --init --recursive
-  git submodule update --remote --merge
+  git submodule update --init --recursive --remote
+  git submodule update --init --recursive --remote --merge
 }
 
 update_system() {
