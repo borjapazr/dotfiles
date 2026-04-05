@@ -25,6 +25,6 @@ dot::list_scripts_path() {
 }
 
 dot::list_bash_files() {
-  grep '#!/usr/bin/env bash' "$DOTFILES_PATH"/{bin,scripts,shell,installer} -R | awk -F':' '{print $1}'
-  find "$DOTFILES_PATH"/{bin,scripts,shell} -type f -name "*.sh"
+  grep '#!/usr/bin/env bash' "$DOTFILES_PATH"/{bin,scripts,shell,installer} -R --exclude-dir=.zim | awk -F':' '{print $1}'
+  find "$DOTFILES_PATH"/{bin,scripts,shell} -not -path "*/.zim/*" -type f -name "*.sh"
 }
