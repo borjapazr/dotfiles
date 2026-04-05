@@ -232,6 +232,7 @@
   /*** GitHub Copilot Settings ***/
   // General settings
   "chat.commandCenter.enabled": true,
+  "chat.viewSessions.orientation": "stacked",
   "workbench.commandPalette.experimental.askChatLocation": "chatView",
   "search.searchView.semanticSearchBehavior": "manual",
   "search.searchView.keywordSuggestions": true,

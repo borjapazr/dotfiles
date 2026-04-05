@@ -27,6 +27,10 @@ function mkd() {
   mkdir -p "$@" && cd "$_" || exit
 }
 
+function mkdc() {
+  mkdir -p "$@" && cd "$_" && code . || exit
+}
+
 function tre() {
   tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX
 }
