@@ -1,0 +1,23 @@
+shell/exports.sh
+  s_29ba2501d58777::t_2906411eb40836 1,3,24-25
+shell/init.sh
+  s_29ba2501d58777::t_8cd15d70292aae 7
+shell/zsh/.zimrc
+  s_29ba2501d58777::t_ee72fa3450135c 51
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.14",
+  "base_commit_sha": "0f9f1af072bfcc70468ffb485e57355fbb455210",
+  "prompts": {},
+  "sessions": {
+    "s_29ba2501d58777": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5aa4c7b5-5a47-40a5-8d78-bcc69d6bf1ab",
+        "model": "unknown"
+      },
+      "human_author": "Borja Paz Rodríguez <borjapazr@gmail.com>"
+    }
+  }
+}
