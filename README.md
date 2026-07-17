@@ -45,8 +45,8 @@ bash <(curl -s https://raw.githubusercontent.com/borjapazr/dotfiles/HEAD/install
 
 ### 🧸 Configuration
 
-- [macOS Installation Guide](doc/installation-guide-macos.md)
-- [Linux Installation Guide](doc/installation-guide-linux.md)
+- [macOS Installation Guide](docs/installation-guide-macos.md)
+- [Linux Installation Guide](docs/installation-guide-linux.md)
 
 ## 📋 Features
 

@@ -7,22 +7,20 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##? Import previously dumped packages from:
 ##?  * Brew
 ##?  * Apt
-##?  * NPM
 ##?
 ##? Usage:
 ##?   import
 docs::parse "$@"
 
 if platform::is_macos; then
-  HOMEBREW_FILE_PATH="$DOTFILES_PATH/os/mac/brew/Brewfile"
+  HOMEBREW_FILE_PATH="$DOTFILES_PATH/dots/os/macos/brew/Brewfile"
 elif platform::is_linux; then
-  HOMEBREW_FILE_PATH="$DOTFILES_PATH/os/linux/brew/Brewfile"
+  HOMEBREW_FILE_PATH="$DOTFILES_PATH/dots/os/linux/brew/Brewfile"
 fi
-APT_FILE_PATH="$DOTFILES_PATH/os/linux/apt/packages.txt"
-APT_DESKTOP_FILE_PATH="$DOTFILES_PATH/os/linux/apt/packages-desktop.txt"
-SNAP_FILE_PATH="$DOTFILES_PATH/os/linux/snap/packages.txt"
-SNAP_DESKTOP_FILE_PATH="$DOTFILES_PATH/os/linux/snap/packages-desktop.txt"
-NPM_FILE_PATH="$DOTFILES_PATH/langs/js/global_modules.txt"
+APT_FILE_PATH="$DOTFILES_PATH/dots/os/linux/apt/packages.txt"
+APT_DESKTOP_FILE_PATH="$DOTFILES_PATH/dots/os/linux/apt/packages-desktop.txt"
+SNAP_FILE_PATH="$DOTFILES_PATH/dots/os/linux/snap/packages.txt"
+SNAP_DESKTOP_FILE_PATH="$DOTFILES_PATH/dots/os/linux/snap/packages-desktop.txt"
 
 _brew_import() {
   if [ -f "$HOMEBREW_FILE_PATH" ]; then
@@ -54,12 +52,6 @@ _snap_import() {
   fi
 }
 
-_npm_import() {
-  if [ -f "$NPM_FILE_PATH" ]; then
-    xargs -I_ sudo npm install -g "_" <"$NPM_FILE_PATH"
-  fi
-}
-
 log::info "🎩 Let's import your packages (this could take a while)"
 
 if platform::command_exists brew; then
@@ -75,11 +67,6 @@ fi
 if platform::command_exists snap; then
   log::info "📥 Installing snap packages"
   _snap_import
-fi
-
-if platform::command_exists npm; then
-  log::info "📥 Installing npm packages"
-  _npm_import
 fi
 
 log::success "Done!"

@@ -41,7 +41,7 @@ ZSH_HIGHLIGHT_MAXLENGTH=300
 ZSH_DISABLE_COMPFIX=true
 
 # Load completions
-fpath=("$DOTFILES_PATH/shell/zsh/completions" "$(brew --prefix)/share/zsh/site-functions" $fpath)
+fpath=("$DOTFILES_PATH/dots/shell/zsh/completions" "$(brew --prefix)/share/zsh/site-functions" $fpath)
 
 # Start Zim
 ## Install missing modules and update ${ZIM_HOME}/init.zsh if missing or outdated.
@@ -52,9 +52,9 @@ fi
 source ${ZIM_HOME}/init.zsh
 
 # Load aliases, exports and functions
-source $DOTFILES_PATH/shell/init.sh
+source $DOTFILES_PATH/dots/shell/init.sh
 # Load key bindings
-source $DOTFILES_PATH/shell/zsh/key-bindings.zsh
+source $DOTFILES_PATH/dots/shell/zsh/key-bindings.zsh
 
 # Added by aidevtracker
 source "/Users/borjapr/.config/inditex/aidevtracker/scripts/init.sh"

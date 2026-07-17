@@ -1,9 +1,9 @@
 # Zim Shell Framework
-shell/zsh/.zim
+dots/shell/zsh/.zim
 
 # Compiled ZSH
-shell/zsh/**/**.zwc
-shell/zsh/**/**.zwc.old
+dots/shell/zsh/**/**.zwc
+dots/shell/zsh/**/**.zwc.old
 
 # Private Stuff
 /**/**/private-*

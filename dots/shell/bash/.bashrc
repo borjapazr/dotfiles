@@ -12,12 +12,12 @@ if [[ "$(ps -p $$ -ocomm=)" =~ (bash$) ]]; then
   export PROMPT_COMMAND="__right_prompt"
 fi
 
-source $DOTFILES_PATH/shell/init.sh
+source $DOTFILES_PATH/dots/shell/init.sh
 
-source $DOTFILES_PATH/shell/bash/themes/mrmars.sh
+source $DOTFILES_PATH/dots/shell/bash/themes/mrmars.sh
 
-if [ -n "$(/bin/ls -A "$DOTFILES_PATH/shell/bash/completions/")" ]; then
-  for bash_file in "$DOTFILES_PATH"/shell/bash/completions/_*; do
+if [ -n "$(/bin/ls -A "$DOTFILES_PATH/dots/shell/bash/completions/")" ]; then
+  for bash_file in "$DOTFILES_PATH"/dots/shell/bash/completions/_*; do
     source "$bash_file"
   done
 fi
