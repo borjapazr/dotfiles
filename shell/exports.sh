@@ -11,7 +11,8 @@ export EDITOR='vim'
 export BROWSER="$DOTFILES_PATH/bin/chrome"
 
 # Default pager
-export PAGER='less'
+export PAGER="cat"
+export GH_PAGER="cat"
 
 # JVM
 export MAVEN_OPTS="-Xmx1024m -Xdebug -Xrunjdwp:transport=dt_socket,address=8787,server=y,suspend=n"

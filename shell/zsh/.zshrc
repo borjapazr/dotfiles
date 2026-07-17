@@ -28,6 +28,9 @@ else
   zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 fi
 zstyle ':zim:prompt-pwd' git-root yes
+zstyle ':zim:prompt-pwd' git-root yes
+zstyle ':zim:termtitle' format '%0~'
+zstyle ':zim:termtitle' hooks 'preexec' 'precmd' 'chpwd' 'zshexit' 'periodic' 'zshaddhistory'
 
 # Configuration
 DEFAULT_USER=$(whoami)
@@ -52,3 +55,6 @@ source ${ZIM_HOME}/init.zsh
 source $DOTFILES_PATH/shell/init.sh
 # Load key bindings
 source $DOTFILES_PATH/shell/zsh/key-bindings.zsh
+
+# Added by aidevtracker
+source "/Users/borjapr/.config/inditex/aidevtracker/scripts/init.sh"
