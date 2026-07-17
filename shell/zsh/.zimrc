@@ -37,7 +37,6 @@ zmodule ohmyzsh/ohmyzsh --root plugins/dirhistory
 zmodule ohmyzsh/ohmyzsh --root plugins/sudo
 zmodule ohmyzsh/ohmyzsh --root plugins/brew
 zmodule ohmyzsh/ohmyzsh --root plugins/colorize
-zmodule ohmyzsh/ohmyzsh --root plugins/command-not-found
 
 #
 # Prompt
@@ -49,7 +48,7 @@ zmodule zimfw/duration-info
 # Exposes git repository status information to prompts.
 zmodule zimfw/git-info
 # Theme
-zmodule agnoster
+zmodule gitster
 
 #
 # Completion

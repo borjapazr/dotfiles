@@ -4,4 +4,4 @@ source "$DOTFILES_PATH/shell/private-stuff.sh"
 source "$DOTFILES_PATH/shell/exports.sh"
 source "$DOTFILES_PATH/shell/functions.sh"
 
-gpgconf --launch gpg-agent
+(gpgconf --launch gpg-agent &) &>/dev/null

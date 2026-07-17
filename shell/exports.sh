@@ -1,5 +1,6 @@
-# Add directory to $PATH if it's not already there
+# Add directory to $PATH if it exists and it's not already there
 _pathadd() {
+  [ -d "$1" ] || return 0
   PATH="$1${PATH:+":$PATH"}"
 }
 
@@ -20,8 +21,8 @@ export JAVA_TOOLS_OPTIONS='-Dfile.encoding="UTF-8"'
 export GOPATH="${HOME}/.go"
 export GOBIN="${GOPATH}/bin"
 
-# GPG
-GPG_TTY=$(tty)
+# GPG ($TTY is set by zsh without forking; fallback for bash)
+GPG_TTY=${TTY:-$(tty)}
 export GPG_TTY
 
 # Homebrew

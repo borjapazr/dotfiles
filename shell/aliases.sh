@@ -35,6 +35,8 @@ alias dc="dot docker connect"
 alias i.='(idea $PWD &>/dev/null &)'
 alias c.='(code $PWD &>/dev/null &)'
 alias o.='open .'
+alias oc="opencode"
+alias cc="claude"
 
 # Utils
 alias clear="precmd() { precmd() { echo } } && clear && printf '\e[3J'"
