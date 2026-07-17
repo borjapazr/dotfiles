@@ -4,7 +4,13 @@
 	signingkey = 5DBA4F4512483370
 
 # All Inditex git repositories are in a subdirectory of ~/Projects/work/inditex.
-[includeIf "gitdir:~/Projects/work/inditex/"]
+[includeIf "gitdir:~/Projects/"]
+	path = .gitconfig.inditex
+
+# Worktrees created by aicontext/aidevtracker point their working tree under
+# ~/Projects but their real .git dir lives under ~/.aicontext/global-repos/,
+# which includeIf "gitdir:" matches against (not the worktree path).
+[includeIf "gitdir:~/.aicontext/"]
 	path = .gitconfig.inditex
 
 [core]
@@ -14,7 +20,7 @@
 	autocrlf = input
 	trustctime = false
 	precomposeunicode = false
-	pager = delta --dark
+	pager = cat
 	ignorecase = false
 
 [delta]
@@ -86,7 +92,7 @@
 	gpgsign = true
 
 [gpg]
-	program = gpg
+	program = /opt/homebrew/bin/gpg
 
 [pull]
 	rebase = true
@@ -97,3 +103,7 @@
 
 [init]
 	defaultBranch = main
+
+[trace2]
+	eventTarget = af_unix:stream:/Users/borjapr/.git-ai/internal/daemon/trace2.sock
+	eventNesting = 0
