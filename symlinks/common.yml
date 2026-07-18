@@ -14,8 +14,6 @@
     ~/.zlogin: dots/shell/zsh/.zlogin
     ~/.zshenv: dots/shell/zsh/.zshenv
     ~/.zprofile: dots/shell/zsh/.zprofile
-    ~/.p10k.zsh: dots/shell/zsh/themes/powerlevel10k/.p10k.zsh
-    ~/.config/starship.toml: dots/shell/zsh/themes/starship/starship.toml
     ~/.gitconfig: dots/git/.gitconfig
     ~/.gitconfig.inditex: dots/git/.gitconfig.inditex
     ~/.gitattributes: dots/git/.gitattributes

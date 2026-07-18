@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Validate that every dot script is executable and has a ##? docblock
+##?
+##? Usage:
+##?    validate_scripts
+if [ "$1" == "-h" ] || [ "$1" = "--help" ]; then
+  docs::parse "$@"
+fi
+
+errors=0
+
+while IFS= read -r script; do
+  if [ ! -x "$script" ]; then
+    log::error "${script#"$DOTFILES_PATH"/} is not executable"
+    errors=$((errors + 1))
+  fi
+
+  if ! grep -q '^##?' "$script"; then
+    log::error "${script#"$DOTFILES_PATH"/} is missing a ##? docblock"
+    errors=$((errors + 1))
+  fi
+done < <(find "$DOTFILES_PATH/scripts" -maxdepth 2 -type f -not -path "$DOTFILES_PATH/scripts/core/*")
+
+if [ "$errors" -gt 0 ]; then
+  log::error "Found $errors issue(s)"
+  exit 1
+fi
+
+log::success "All scripts are executable and documented"

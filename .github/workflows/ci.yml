@@ -46,3 +46,19 @@ jobs:
 
       - name: 💅 Lint bash files
         run: bash scripts/self/lint
+
+  validate-scripts:
+    name: 📜 Validate scripts
+    runs-on: ubuntu-latest
+    needs: static-analysis
+
+    steps:
+      - name: ⬇️ Checkout project
+        uses: actions/checkout@v4
+
+      - name: ⚪️ Set needed environment variables
+        run: |
+          echo "DOTFILES_PATH=$PWD" >> $GITHUB_ENV
+
+      - name: 📜 Validate scripts
+        run: bash scripts/self/validate_scripts

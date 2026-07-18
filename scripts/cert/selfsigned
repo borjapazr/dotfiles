@@ -4,6 +4,14 @@ set -euo pipefail
 
 source "$DOTFILES_PATH/scripts/core/_main.sh"
 
+##? Interactively create a self-signed certificate with step-cli
+##?
+##? Usage:
+##?    selfsigned
+if [ "$1" == "-h" ] || [ "$1" = "--help" ]; then
+  docs::parse "$@"
+fi
+
 COLOR_RED="\033[31m"
 COLOR_GREEN="\033[32m"
 COLOR_YELLOW="\033[33m"

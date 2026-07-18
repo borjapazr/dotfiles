@@ -52,13 +52,16 @@ bash <(curl -s https://raw.githubusercontent.com/borjapazr/dotfiles/HEAD/install
 
 ### ⚒️ Built with
 
-- [Oh My Zsh](https://ohmyz.sh/) Oh My Zsh is a delightful, open source, community-driven framework for managing your Zsh configuration. It comes bundled with thousands of helpful functions, helpers, plugins, themes, and a few things that make you shout...
-- [fzf](https://github.com/junegunn/fzf) A general-purpose command-line fuzzy finder.
-- [dotbot](https://github.com/anishathalye/dotbot) Dotbot is a tool that bootstraps your dotfiles (it's a [Dot]files [bo]o[t]strapper, get it?). It does less than you think, because version control systems do more than you think.
+| | |
+|---|---|
+| Shell framework | [Zim](https://zimfw.sh/) — fast-loading Zsh config, with a handful of [Oh My Zsh](https://ohmyz.sh/) plugins pulled in for their aliases/functions |
+| Fuzzy finder | [fzf](https://github.com/junegunn/fzf) + [fzf-tab](https://github.com/Aloxaf/fzf-tab) |
+| Symlinking | [dotbot](https://github.com/anishathalye/dotbot) |
+| Package management | Homebrew (macOS/Linux), apt/snap (Linux) |
 
 ### 🌚 The `dot` command
 
-`dot` is the core command my .dotfiles. If you execute it, you'll see all your scripts.
+`dot` is the core command of these dotfiles. Run it bare to fuzzy-pick a script; run it with a context/script to invoke directly.
 
 ```bash
 [mars] ~ dot -h
@@ -68,6 +71,33 @@ Usage:
    dot <context> <script> [<args>...]
    dot -h | --help
    dot -p | --print
+```
+
+### 🗓️ Daily workflow
+
+| Command | What it does |
+|---|---|
+| `dot self update` | Update system, dotfiles, submodules and re-apply symlinks |
+| `dot symlinks apply` | Re-apply symlinks after adding/removing an entry |
+| `dot package import` | Install packages from the Brewfile/apt/snap manifests |
+| `dot shell benchmark` | Benchmark zsh interactive startup time |
+| `dot shell compile` | Compile the zsh files to bytecode for a faster startup |
+
+### 🗂️ Structure
+
+```
+.dotfiles/
+├── bin/          # dot CLI + external GNU tool shims
+├── docs/         # task-oriented guides
+├── dots/         # everything symlinked into $HOME, by domain
+│   ├── editors/  # vim, VS Code
+│   ├── git/      # gitconfig, gitignore, czrc
+│   ├── os/       # common/macos/linux/windows-specific config
+│   └── shell/    # bash/, zsh/, aliases, exports, functions
+├── modules/      # git submodules (dotbot, private)
+├── resources/    # fonts, wallpapers, templates
+├── scripts/      # the dot CLI's script library, by context
+└── symlinks/     # dotbot manifests (common/macos/linux/...)
 ```
 
 ## 👥 Contributing
