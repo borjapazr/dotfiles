@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Show packages installed but not declared in the Brewfile (drift detection)
+##?
+##? Usage:
+##?   prune [--force]
+##?
+##? By default this is a dry run: it lists what would be removed and exits
+##? non-zero if there's anything to prune, without touching your system.
+##? Pass --force to actually uninstall the undeclared packages.
+docs::parse "$@"
+
+if platform::is_macos; then
+  HOMEBREW_FILE_PATH="$DOTFILES_PATH/dots/os/macos/brew/Brewfile"
+elif platform::is_linux; then
+  HOMEBREW_FILE_PATH="$DOTFILES_PATH/dots/os/linux/brew/Brewfile"
+fi
+
+if ! platform::command_exists brew; then
+  log::error "brew not found"
+  exit 1
+fi
+
+if [ "${1:-}" = "--force" ]; then
+  log::info "🔪 Removing packages not declared in the Brewfile"
+  brew bundle cleanup --force --file="$HOMEBREW_FILE_PATH"
+  log::success "Done!"
+else
+  log::info "🔍 Packages installed but not declared in the Brewfile (dry run, pass --force to remove)"
+  brew bundle cleanup --file="$HOMEBREW_FILE_PATH"
+fi

@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Apply Finder preferences (idempotent, safe to re-run)
+##?
+##? Usage:
+##?   set_defaults
+docs::parse "$@"
+
+log::info "🖥️  Applying Finder defaults"
+
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+defaults write com.apple.finder AppleShowAllFiles -bool true
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+
+killall Finder &>/dev/null || true
+
+log::success "Done! (Finder restarted to apply changes)"
