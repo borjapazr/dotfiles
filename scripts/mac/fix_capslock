@@ -7,7 +7,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##? Remove the Caps Lock key delay
 ##?
 ##? Usage:
-##?   fix_capslock_delay
+##?   fix_capslock
 ##?
 ##? hidutil property doesn't persist across reboots/logins — re-run this
 ##? after a restart to reapply it.
