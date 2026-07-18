@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/borjapr/.dotfiles/**)",
+      "Bash(dot:*)",
+      "Bash(bin/dot:*)",
+      "Bash(shellcheck:*)",
+      "Bash(shfmt:*)",
+      "Bash(zsh -n:*)",
+      "Bash(bash -n:*)"
+    ],
+    "deny": ["Read(//Users/borjapr/.dotfiles/dots/shell/private-stuff.sh)"]
+  }
+}

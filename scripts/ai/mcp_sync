@@ -1,0 +1,64 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Register the MCP servers declared in dots/agents/mcp-servers.json with claude
+##?
+##? Usage:
+##?    mcp_sync
+##?
+##? Reads server name/command/args and a list of env var NAMES ("envFrom") from
+##? the skeleton, resolves each name from the current environment (populated by
+##? dots/shell/private-stuff.sh) and registers the server via
+##? `claude mcp add-json --scope user`. Never reads or prints secret values
+##? beyond what `claude mcp add-json` itself receives.
+docs::parse "$@"
+
+manifest="$DOTFILES_PATH/dots/agents/mcp-servers.json"
+
+if ! platform::command_exists claude; then
+  log::error "claude CLI not found"
+  exit 1
+fi
+
+if ! platform::command_exists jq; then
+  log::error "jq not found"
+  exit 1
+fi
+
+jq -r '.mcpServers | keys[]' "$manifest" | while read -r name; do
+  command=$(jq -r ".mcpServers[\"$name\"].command" "$manifest")
+
+  if [ -z "$command" ]; then
+    log::error "$name: no command configured in mcp-servers.json, skipping"
+    continue
+  fi
+
+  args=$(jq -c ".mcpServers[\"$name\"].args" "$manifest")
+  env_names=$(jq -r ".mcpServers[\"$name\"].envFrom[]?" "$manifest")
+
+  env_json="{}"
+  missing=0
+  while read -r var_name; do
+    [ -z "$var_name" ] && continue
+    value="${!var_name:-}"
+    if [ -z "$value" ]; then
+      log::error "$name: \$$var_name is not set, skipping"
+      missing=1
+      continue
+    fi
+    env_json=$(echo "$env_json" | jq --arg k "$var_name" --arg v "$value" '.[$k] = $v')
+  done <<<"$env_names"
+
+  if [ "$missing" -eq 1 ]; then
+    continue
+  fi
+
+  server_json=$(jq -n --arg cmd "$command" --argjson args "$args" --argjson env "$env_json" \
+    '{command: $cmd, args: $args, env: $env}')
+
+  claude mcp add-json "$name" "$server_json" --scope user
+  log::success "$name registered"
+done

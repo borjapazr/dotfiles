@@ -4,6 +4,7 @@
     link:
       create: true
       force: true
+      backup: true
 
 - link:
     ~/.bashrc: dots/shell/bash/.bashrc
@@ -22,6 +23,8 @@
     ~/.vimrc: dots/editors/vim/.vimrc
     ~/.config/Code/User/settings.json: dots/editors/vscode/settings.json
     ~/.config/ghostty/config: dots/os/common/ghostty/config
+    ~/.claude/CLAUDE.md: dots/agents/GLOBAL_AGENTS.md
+    ~/.claude/skills: dots/agents/skills
 
 - create:
     - $DOTFILES_PATH/bin/external
