@@ -21,6 +21,3 @@ if [ -n "$(/bin/ls -A "$DOTFILES_PATH/dots/shell/bash/completions/")" ]; then
     source "$bash_file"
   done
 fi
-
-# Added by git-ai installer on lun. may. 25 14:40:00 CEST 2026
-export PATH="/Users/borjapr/.git-ai/bin:$PATH"

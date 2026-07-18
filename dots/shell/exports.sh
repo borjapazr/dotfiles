@@ -1,6 +1,7 @@
-# Add directory to $PATH if it exists and it's not already there
+# Prepend directory to $PATH. No per-entry existence check on purpose: stat'ing
+# every candidate is costly under endpoint security (Defender), and non-existent
+# directories in $PATH are harmless. Keeps the same prepend order as before.
 _pathadd() {
-  [ -d "$1" ] || return 0
   PATH="$1${PATH:+":$PATH"}"
 }
 

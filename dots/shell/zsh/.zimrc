@@ -3,6 +3,8 @@
 #
 # Modules
 #
+# Deferred execution helper (must load first so zsh-defer is available).
+zmodule romkatv/zsh-defer
 # Sets sane Zsh built-in environment options.
 zmodule zimfw/environment
 # Provides handy git aliases and functions.
@@ -17,10 +19,6 @@ zmodule zimfw/utility
 zmodule zimfw/archive
 # Adds aliases for Homebrew.
 zmodule zimfw/homebrew
-# Figures out where to get the best help, and gets it.
-zmodule zimfw/run-help
-# Provides a convenient way to load ssh-agent.
-zmodule zimfw/ssh
 # Configures fzf for faster fetching of files and directories names.
 # zmodule fzf
 
@@ -28,10 +26,7 @@ zmodule zimfw/ssh
 # Third-party modules
 #
 zmodule Aloxaf/fzf-tab
-zmodule Freed-Wu/fzf-tab-source
-zmodule wfxr/forgit
 zmodule paulirish/git-open
-zmodule MichaelAquilina/zsh-you-should-use
 zmodule ohmyzsh/ohmyzsh --root plugins/aliases
 zmodule ohmyzsh/ohmyzsh --root plugins/dirhistory
 zmodule ohmyzsh/ohmyzsh --root plugins/sudo
