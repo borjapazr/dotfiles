@@ -51,6 +51,11 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool true
 defaults write NSGlobalDomain KeyRepeat -int 1
 defaults write NSGlobalDomain InitialKeyRepeat -int 10
 
+# Remove the Caps Lock key delay. hidutil doesn't persist across
+# reboots/logins — this only takes effect until the next restart, re-run
+# this script after one to reapply.
+hidutil property --set '{"CapsLockDelayOverride":0}' >/dev/null
+
 # Show language menu in the top right corner of the boot screen
 sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool true
 
