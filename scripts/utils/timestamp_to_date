@@ -4,12 +4,12 @@ set -euo pipefail
 
 source "$DOTFILES_PATH/scripts/core/_main.sh"
 
-##? Convert a timestamp to a date
+##? Convert a millisecond timestamp to a date
 ##?
 ##? Usage:
-##?    timestamp_to_date
+##?    timestamp_to_date <timestamp>
 docs::parse "$@"
 
 let DATE_FORMATTED=$1/1000
 
-gdate -d @$DATE_FORMATTED
+date -d @$DATE_FORMATTED

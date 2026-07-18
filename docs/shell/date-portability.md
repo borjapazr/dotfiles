@@ -12,6 +12,4 @@ Homebrew's `coreutils`), and `bin/external` is on `PATH`
 - Prefer plain `date` (GNU syntax) in new scripts — it resolves correctly on
   both platforms via the shim.
 - Don't hardcode `gdate` — that only exists on macOS with `coreutils`
-  installed, and isn't the portable name (`scripts/utils/timestamp_to_date`
-  currently does this and would fail on Linux — a known gap, not a pattern to
-  copy).
+  installed, and isn't the portable name.
