@@ -24,11 +24,11 @@ function fif() {
 }
 
 function mkd() {
-  mkdir -p "$@" && cd "$_" || exit
+  mkdir -p "$@" && cd "$_" || return 1
 }
 
 function mkdc() {
-  mkdir -p "$@" && cd "$_" && code . || exit
+  mkdir -p "$@" && cd "$_" && code . || return 1
 }
 
 function tre() {

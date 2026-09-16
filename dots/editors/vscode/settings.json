@@ -169,12 +169,17 @@
   "terminal.integrated.confirmOnExit": "always",
   "terminal.integrated.confirmOnKill": "always",
   "terminal.integrated.cursorStyle": "line",
+  // Safety net: "auto" warns whenever the shell doesn't advertise bracketed
+  // paste, and that modal blocks an agent's multi-line command until confirmed.
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
   "terminal.integrated.fontFamily": "Cascadia Code NF",
   "terminal.integrated.fontLigatures.enabled": true,
   "terminal.integrated.fontSize": 16,
   "terminal.integrated.shellIntegration.enabled": true,
   "terminal.integrated.stickyScroll.enabled": true,
-  "terminal.integrated.suggest.enabled": true,
+  // Terminal IntelliSense reacts to keystrokes and TAB, so it can interfere with
+  // commands an agent types into the terminal. Off as a precaution.
+  "terminal.integrated.suggest.enabled": false,
 
   /*** Files settings ***/
   "files.associations": {
@@ -317,6 +322,8 @@
   "github.copilot.chat.agent.autoFix": true,
   "github.copilot.chat.agent.runTasks": true,
   "chat.mcp.access": "all",
+  "github.copilot.chat.agentDebugLog.enabled": true,
+  "github.copilot.chat.agentDebugLog.fileLogging.enabled": true,
   "github.copilot.chat.newWorkspaceCreation.enabled": true,
   "github.copilot.chat.agent.thinkingTool": true,
   // Inline chat settings

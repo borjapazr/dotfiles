@@ -2,6 +2,8 @@ DOTFILES_LOG_FILE=${DOTFILES_LOG_FILE:-$HOME/dotfiles.log}
 
 log::ansi() {
   local bg=false
+  local color=37
+  local mod=0
   case "$@" in
   *reset*)
     echo "\e[0m"
