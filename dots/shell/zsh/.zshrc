@@ -1,9 +1,5 @@
 #!/usr/bin/env zsh
 
-# ─── Profiling (opt-in) ──────────────────────────────────────────────────────
-# `ZSH_PROFILE=1 zsh -i -c exit` prints a zprof startup report. Inert otherwise.
-[[ -n ${ZSH_PROFILE:-} ]] && zmodload zsh/zprof
-
 # ─── History ─────────────────────────────────────────────────────────────────
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=10000000
@@ -22,10 +18,10 @@ setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_IGNORE_DUPS
 setopt HIST_VERIFY
 setopt HIST_FIND_NO_DUPS
+setopt NO_BANG_HIST
 
 # ─── Shell options ───────────────────────────────────────────────────────────
 setopt +o nomatch
-unset zle_bracketed_paste
 
 # ─── Completion menu (fzf-tab) ───────────────────────────────────────────────
 # Previews are opt-in per command: with fzf-tab-source removed there is no
@@ -43,6 +39,9 @@ fi
 zstyle ':zim:prompt-pwd' git-root yes
 zstyle ':zim:termtitle' format '%0~'
 zstyle ':zim:termtitle' hooks 'preexec' 'precmd' 'chpwd' 'zshexit' 'periodic' 'zshaddhistory'
+zstyle ':url-quote-magic:*' url-metas ''
+zstyle ':url-quote-magic:*' url-seps ''
+zstyle ':completion:*' insert-tab pending
 
 # ─── Module configuration ────────────────────────────────────────────────────
 DEFAULT_USER=${USERNAME}
@@ -67,20 +66,3 @@ source $DOTFILES_PATH/dots/shell/init.sh
 
 # ─── Keybindings ─────────────────────────────────────────────────────────────
 source $DOTFILES_PATH/dots/shell/zsh/key-bindings.zsh
-
-# ─── Deferred work (runs after the first prompt; zsh-defer comes from Zim) ────
-# Recompile any stale .zwc bytecode so the next startup is faster.
-_dotfiles_zwc_recompile() {
-  local f
-  for f in \
-    "$DOTFILES_PATH"/dots/shell/{init,aliases,exports,functions}.sh \
-    "$DOTFILES_PATH"/dots/shell/zsh/{.zshenv,.zshrc,.zprofile,.zlogin,key-bindings.zsh}; do
-    [[ -r $f && (! -e $f.zwc || $f -nt $f.zwc) ]] && zcompile -- $f 2>/dev/null
-  done
-}
-
-# Everything not needed for the first prompt, loaded after it appears.
-zsh-defer _dotfiles_zwc_recompile
-
-# ─── Profiling report (opt-in) ───────────────────────────────────────────────
-if [[ -n ${ZSH_PROFILE:-} ]]; then zprof; fi
