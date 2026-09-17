@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+source "$DOTFILES_PATH/commands/core/_main.sh"
+source "$DOTFILES_PATH/commands/self/utils/install.sh"
+source "$DOTFILES_PATH/commands/self/utils/update.sh"
+
+##? Update system
+##?
+##? Usage:
+##?    update
+docs::parse "$@"
+
+update_system
+
+log::info "🔃 Updating dotfiles and submodules"
+update_dotfiles 2>&1 | log::file "🔃 Updating dotfiles and submodules"
+
+log::info "🔗 Aplying symlinks"
+"$DOTFILES_PATH/bin/dot" links apply | log::file "🔗 Aplying symlinks" || true

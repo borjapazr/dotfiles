@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/commands/core/_main.sh"
+
+links::manifest() {
+  local -r CONFIG="$DOTFILES_PATH/links/$1"
+  shift
+
+  echo
+  "$DOTFILES_PATH/modules/dotbot/bin/dotbot" -d "$DOTFILES_PATH" -c "$CONFIG" "$@"
+  echo
+}
+
+##? Link every dotfile into place for this machine
+##?
+##? Usage:
+##?    apply
+##?
+docs::parse "$@"
+
+links::manifest "common.yml"
+
+if platform::is_macos; then
+  if platform::is_macos_arm; then
+    links::manifest "macos.yml"
+  else
+    links::manifest "macos-intel.yml"
+  fi
+else
+  if platform::is_linux_desktop; then
+    links::manifest "linux-desktop.yml"
+  fi
+  links::manifest "linux.yml"
+fi
+
+log::success "Done!"

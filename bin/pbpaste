@@ -2,7 +2,7 @@
 
 set -o pipefail
 
-source "$DOTFILES_PATH/scripts/core/_main.sh"
+source "$DOTFILES_PATH/commands/core/_main.sh"
 
 if platform::is_macos; then
   /usr/bin/pbpaste

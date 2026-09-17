@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+# No `set -e`: bats exits non-zero when a test fails, which is the result to
+# report, not an error to abort on.
+set -uo pipefail
+
+source "$DOTFILES_PATH/commands/core/_main.sh"
+
+##? Run the test suite
+##?
+##? Usage:
+##?    test [<file>]
+##?
+##? Options:
+##?    <file>    Run a single test file instead of the whole suite
+if [ "${1:-}" = "-h" ] || [ "${1:-}" = "--help" ]; then
+  docs::parse "$@"
+fi
+
+platform::require bats || exit 1
+
+if [ -n "${1:-}" ]; then
+  exec bats "$1"
+fi
+
+exec bats "$DOTFILES_PATH/tests"

@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "${DOTFILES_PATH}/commands/core/_main.sh"
+
+##? Universal clipboard tools
+##?
+##? Usage:
+##?     clip copy
+##?     clip paste
+##?     clip map <args>...
+docs::parse "$@"
+
+operation="${1:-}"
+shift || true
+
+_copy() {
+  if platform::command_exists pbcopy; then
+    pbcopy
+  elif platform::command_exists xclip; then
+    xclip -selection clipboard
+  elif platform::command_exists clip.exe; then
+    clip.exe
+  elif platform::command_exists clip; then
+    clip
+  else
+    log::error "No available clipboard tool"
+    return 1
+  fi
+}
+
+_paste() {
+  if platform::command_exists pbpaste; then
+    pbpaste
+  elif platform::command_exists xclip; then
+    xclip -selection clipboard -o
+  elif platform::command_exists powershell.exe; then
+    powershell.exe Get-Clipboard | sed 's/\r$//'
+  elif platform::command_exists powershell; then
+    powershell Get-Clipboard | sed 's/\r$//'
+  else
+    log::error "No available clipboard tool"
+    return 1
+  fi
+}
+
+_map() {
+  _paste | "$@" | _copy
+}
+
+case $operation in
+copy) _copy ;;
+paste) _paste ;;
+map) _map "$@" ;;
+*)
+  log::error "Unknown operation <${operation}>. Expected: copy, paste or map"
+  exit 1
+  ;;
+esac

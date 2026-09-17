@@ -7,7 +7,7 @@ set -o pipefail
 ##? Usage:
 ##?    chrome [<url>...]
 
-source "$DOTFILES_PATH/scripts/core/_main.sh"
+source "$DOTFILES_PATH/commands/core/_main.sh"
 
 if platform::is_macos; then
   open -a "Google Chrome" "$@"

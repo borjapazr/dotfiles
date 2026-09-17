@@ -2,23 +2,99 @@
 
 set -o pipefail
 
-source "$DOTFILES_PATH/scripts/core/_main.sh"
+# Resolve the repo root before sourcing anything: `source "$DOTFILES_PATH/..."`
+# cannot fall back to a self-derived path, because expanding the unset variable
+# is what fails first. _main.sh exports it, so every script we dispatch to
+# inherits it and needs no such dance.
+if [[ -z ${DOTFILES_PATH:-} ]]; then
+  DOTFILES_PATH="$(cd -- "$(dirname -- "$(command -v -- "${BASH_SOURCE[0]}")")/.." && pwd)"
+  export DOTFILES_PATH
+fi
 
+source "$DOTFILES_PATH/commands/core/_main.sh"
+
+##? dot — run the dotfiles' scripts
+##?
 ##? Usage:
 ##?    dot
 ##?    dot <context>
 ##?    dot <context> <script> [<args>...]
 ##?    dot -h | --help
+##?    dot -l | --list
+##?    dot --json
 ##?    dot -p | --print
+##?
+##? Options:
+##?    -h --help   Show this help, or the help of <context> <script>
+##?    -l --list   Print every available command, one per line
+##?    --json      Print every available command as JSON (for tooling and agents)
+##?    -p --print  Print the picked command instead of running it
+
+PRINT=false
+LIST=false
+JSON=false
 
 while :; do
   case "${1-}" in
-  -h | --help) docs::parse "$@" ;;
-  -p | --print) PRINT=true ;;
+  -h | --help)
+    docs::parse --help
+    exit 0
+    ;;
+  -l | --list)
+    LIST=true
+    shift
+    ;;
+  --json)
+    JSON=true
+    shift
+    ;;
+  -p | --print)
+    PRINT=true
+    shift
+    ;;
   *) break ;;
   esac
-  shift
 done
+
+# An fzf picker needs a human at a keyboard. Without one — CI, an AI agent, a
+# pipe — fzf either fails or blocks forever, so fall back to printing the list.
+dot::is_interactive() {
+  [[ $LIST == false && $JSON == false && -t 0 && -t 1 && ${DOTFILES_AGENT:-0} != 1 ]] &&
+    platform::command_exists fzf
+}
+
+dot::print_list() {
+  local path context script summary
+  while IFS= read -r path; do
+    script=${path##*/}
+    context=${path%/*}
+    context=${context##*/}
+    summary="$(dot::script_summary "$context" "$script")"
+    if [[ -n $summary ]]; then
+      printf 'dot %s %s\t%s\n' "$context" "$script" "$summary"
+    else
+      printf 'dot %s %s\n' "$context" "$script"
+    fi
+  done <<<"$1"
+}
+
+dot::print_json() {
+  local path context script summary first=true
+  printf '[\n'
+  while IFS= read -r path; do
+    script=${path##*/}
+    context=${path%/*}
+    context=${context##*/}
+    summary="$(dot::script_summary "$context" "$script")"
+    summary=${summary//\\/\\\\}
+    summary=${summary//\"/\\\"}
+    [[ $first == true ]] || printf ',\n'
+    first=false
+    printf '  {"context": "%s", "script": "%s", "command": "dot %s %s", "summary": "%s"}' \
+      "$context" "$script" "$context" "$script" "$summary"
+  done <<<"$1"
+  printf '\n]\n'
+}
 
 fzf_prompt() {
   local paths="$1"
@@ -37,15 +113,38 @@ fzf_prompt() {
     else
       printf "%s" "$script"
       read -r args
+      # shellcheck disable=SC2086 # word splitting is the point: $args is a command line
       "$DOTFILES_PATH/bin/dot" $script $args
     fi
   fi
 }
 
+dot::dispatch() {
+  local paths="$1"
+
+  if [[ -z $paths ]]; then
+    log::error "No commands found"
+    return 1
+  fi
+
+  if [[ $JSON == true ]]; then
+    dot::print_json "$paths"
+  elif dot::is_interactive; then
+    fzf_prompt "$paths"
+  else
+    dot::print_list "$paths"
+  fi
+}
+
 if args::has_no_args "$@"; then
-  fzf_prompt "$(dot::list_scripts_path)"
+  dot::dispatch "$(dot::list_scripts_path)"
 elif args::total_is 1 "$@"; then
-  fzf_prompt "$(dot::list_scripts_path | grep "/$1/")"
+  if ! dot::context_exists "$DOTFILES_PATH" "$1"; then
+    log::error "The context <$1> doesn't exist"
+    log::info "Available contexts: $(dot::list_contexts | tr '\n' ' ')"
+    exit 1
+  fi
+  dot::dispatch "$(dot::list_scripts_path | grep "/$1/")"
 else
   context="$1"
   script="$2"
@@ -53,9 +152,14 @@ else
   shift 2
 
   if ! dot::script_exists "$DOTFILES_PATH" "$context" "$script"; then
-    log::error "The script <$context / $script> doesn't exist"
+    log::error "The script <$context $script> doesn't exist"
+    if dot::context_exists "$DOTFILES_PATH" "$context"; then
+      log::info "Available in <$context>: $(dot::list_context_scripts "$context" | tr '\n' ' ')"
+    else
+      log::info "Available contexts: $(dot::list_contexts | tr '\n' ' ')"
+    fi
     exit 1
   fi
 
-  "${DOTFILES_PATH}/scripts/${context}/${script}" "$@"
+  "${DOTFILES_PATH}/commands/${context}/${script}" "$@"
 fi

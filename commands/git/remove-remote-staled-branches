@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/commands/core/_main.sh"
+
+##? Remove all remote staled branches
+##?
+##? Usage:
+##?    remove-remote-staled-branches
+docs::parse "$@"
+
+git branch -r --merged | egrep -v "origin/HEAD|origin/main" | sed 's/origin\///g' | xargs git push --no-verify origin --delete

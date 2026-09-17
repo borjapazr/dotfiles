@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+# No `set -e`: shfmt -d exits non-zero when it finds style issues, which is the
+# result we want to report, not an error to abort on.
+set -uo pipefail
+
+source "$DOTFILES_PATH/commands/core/_main.sh"
+
+##? Lint all dotfiles related bash files
+##?
+##? Usage:
+##?    lint
+if [ "${1:-}" = "-h" ] || [ "${1:-}" = "--help" ]; then
+  docs::parse "$@"
+fi
+
+platform::require shfmt || exit 1
+
+dot::list_bash_files | xargs shfmt -i 2 -d

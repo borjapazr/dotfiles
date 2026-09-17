@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/commands/core/_main.sh"
+
+##? Paste the selected prompt
+#?? 1.0.0
+##?
+##? Usage:
+##?   prompts
+docs::parse "$@"
+
+platform::require choose || exit 1
+
+prompts_dir="$DOTFILES_PATH/modules/private/ai/prompts"
+prompt=$(ls -1 "$prompts_dir" | choose)
+
+cat "$prompts_dir/$prompt" | pbcopy
+
+dot mac paste_text -n

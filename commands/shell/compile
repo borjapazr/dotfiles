@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/commands/core/_main.sh"
+
+##? Compile the dotfiles' zsh files to .zwc bytecode for a faster startup
+##?
+##? Usage:
+##?   compile
+##?
+##? zsh transparently sources the .zwc when it is newer than its source file,
+##? and falls back to the plain source after a manual edit. The shell also
+##? recompiles stale files automatically (deferred) on startup, so running this
+##? by hand is only needed to force a full rebuild.
+docs::parse "$@"
+
+ZSH_FILES=(
+  "$DOTFILES_PATH"/config/shell/shared/*.sh
+  "$DOTFILES_PATH"/config/shell/shared/env/*.sh
+  "$DOTFILES_PATH"/config/shell/shared/interactive/*/*.sh
+  "$DOTFILES_PATH/config/shell/zsh/.zshenv"
+  "$DOTFILES_PATH/config/shell/zsh/.zshrc"
+  "$DOTFILES_PATH/config/shell/zsh/.zprofile"
+  "$DOTFILES_PATH/config/shell/zsh/.zlogin"
+  "$DOTFILES_PATH/config/shell/zsh/interactive.zsh"
+  "$DOTFILES_PATH/config/shell/zsh/key-bindings.zsh"
+)
+
+log::info "⚡ Compiling zsh files to bytecode (.zwc)"
+
+for file in "${ZSH_FILES[@]}"; do
+  [ -r "$file" ] || continue
+  # zcompile is a zsh builtin, so invoke it through a zsh subshell.
+  zsh -c 'zcompile -- "$1"' _ "$file"
+  log::success "compiled ${file#"$DOTFILES_PATH"/}"
+done
+
+log::success "Done!"

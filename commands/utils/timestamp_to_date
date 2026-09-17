@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/commands/core/_main.sh"
+
+##? Convert a millisecond timestamp to a date
+##?
+##? Usage:
+##?    timestamp_to_date <timestamp>
+docs::parse "$@"
+
+seconds=$(($1 / 1000))
+
+# BSD date (macOS) and GNU date disagree on how to format an epoch value.
+if date -r "$seconds" >/dev/null 2>&1; then
+  date -r "$seconds"
+else
+  date -d "@$seconds"
+fi

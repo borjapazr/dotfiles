@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+
+# No `set -e`: every check below is expected to fail for some scripts; the point
+# is to count the failures and report them all at once.
+set -uo pipefail
+
+source "$DOTFILES_PATH/commands/core/_main.sh"
+
+##? Validate that every dot script is executable and has a ##? docblock
+##?
+##? Usage:
+##?    validate_scripts
+if [ "${1:-}" = "-h" ] || [ "${1:-}" = "--help" ]; then
+  docs::parse "$@"
+fi
+
+errors=0
+
+while IFS= read -r script; do
+  if [ ! -x "$script" ]; then
+    log::error "${script#"$DOTFILES_PATH"/} is not executable"
+    errors=$((errors + 1))
+  fi
+
+  if ! grep -q '^##?' "$script"; then
+    log::error "${script#"$DOTFILES_PATH"/} is missing a ##? docblock"
+    errors=$((errors + 1))
+  fi
+
+  # `dot <context> <name>` dispatches on the filename, so a Usage line naming
+  # anything else documents a command that cannot be typed.
+  usage_name="$(awk '/^##\?[[:space:]]*Usage:/ { getline; gsub(/^##\?[[:space:]]*/, ""); print $1; exit }' "$script")"
+  if [ -n "$usage_name" ] && [ "$usage_name" != "$(basename "$script")" ]; then
+    log::error "${script#"$DOTFILES_PATH"/} documents itself as <$usage_name>"
+    errors=$((errors + 1))
+  fi
+done < <(find "$DOTFILES_PATH/commands" -maxdepth 2 -type f -not -path "$DOTFILES_PATH/commands/core/*")
+
+if [ "$errors" -gt 0 ]; then
+  log::error "Found $errors issue(s)"
+  exit 1
+fi
+
+log::success "All scripts are executable and documented"
