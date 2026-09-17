@@ -12,7 +12,7 @@ This is an installation guide to migrate from a legacy computer with **MacOS** t
 2. Execute the dotfiles installer
    - `~/.dotfiles/installer`
 3. Configure, customize and set **iTerm2** as default terminal
-   - Select load preferences from URL and use ~/.dotfiles/dots/os/macos/iterm
+   - Select load preferences from URL and use ~/.dotfiles/config/terminals/iterm
 4. Install **Mars Mono** and **Cascadia Code** fonts
-6. **Configure JetBrains products** and synchronize them with Jetbrains account
-7. **Configure VS Code** and synchronize plugins
+5. **Configure JetBrains products** and synchronize them with Jetbrains account
+6. **Configure VS Code** and synchronize plugins
