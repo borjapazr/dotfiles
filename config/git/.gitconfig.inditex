@@ -1,0 +1,10 @@
+[user]
+	email = borjapr@inditex.com
+	signingkey = 60694E9414998C93
+
+# aidevtracker telemetry. Scoped to work repositories on purpose: in the global
+# config it would trace every personal repository too, and the socket path is
+# machine-specific.
+[trace2]
+	eventTarget = af_unix:stream:/Users/borjapr/.git-ai/internal/daemon/trace2.sock
+	eventNesting = 0

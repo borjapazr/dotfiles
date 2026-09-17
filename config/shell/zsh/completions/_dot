@@ -1,0 +1,29 @@
+#compdef dot
+
+source "$DOTFILES_PATH/commands/core/_main.sh"
+
+_dot() {
+  local curcontext="$curcontext" state line
+  typeset -A opt_args
+
+  _arguments \
+    '1: :->context' \
+    '2: :->script' \
+    '*: :->args'
+
+  case $state in
+  context)
+    existing_contexts=$(dot::list_contexts)
+    _arguments "1:Context:($existing_contexts)"
+    ;;
+  script)
+    existing_scripts=$(dot::list_context_scripts $words[2])
+    _arguments "2:Script:($existing_scripts)"
+    ;;
+  *)
+    _files
+    ;;
+  esac
+}
+
+_dot "$@"
