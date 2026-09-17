@@ -87,10 +87,10 @@ jobs:
         os: [ubuntu-latest, macos-latest]
 
     steps:
+      # Submodules stay uninitialized: modules/private is a private repository
+      # the runner cannot clone, and no test reaches into modules/.
       - name: ⬇️ Checkout project
         uses: actions/checkout@v4
-        with:
-          submodules: recursive
 
       - name: 📥 Install bats and zsh
         run: |
