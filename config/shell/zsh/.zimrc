@@ -17,8 +17,6 @@ zmodule zimfw/termtitle
 zmodule zimfw/utility
 # Provides archive and unarchive functions for easy archive manipulation.
 zmodule zimfw/archive
-# Adds aliases for Homebrew.
-zmodule zimfw/homebrew
 # Configures fzf for faster fetching of files and directories names.
 # zmodule fzf
 
