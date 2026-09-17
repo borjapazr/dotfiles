@@ -7,8 +7,10 @@ DOT := ./bin/dot
 .PHONY: help check lint fmt format test install update hooks
 
 help: ## Show this help
+	@printf '\n\033[1m.dotfiles\033[0m — make targets\n\n'
 	@grep -hE '^[a-z][a-z-]*:.*?## ' $(MAKEFILE_LIST) \
 		| awk 'BEGIN{FS=":.*?## "}{printf "  \033[36m%-9s\033[0m %s\n", $$1, $$2}'
+	@printf '\nEvery target is a thin wrapper over `dot self <name>`.\n\n'
 
 check: lint fmt test ## Run every gate CI runs
 
