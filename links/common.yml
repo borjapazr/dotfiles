@@ -1,0 +1,35 @@
+# Only dead links pointing back into this repo are removed. `~` is not
+# recursive, so ~/.config has to be listed for the links we create inside it.
+- clean:
+    ~/:
+    ~/.config:
+      recursive: true
+
+- defaults:
+    link:
+      create: true
+      force: true
+      backup: true
+
+- link:
+    ~/.bashrc: config/shell/bash/.bashrc
+    ~/.bash_profile: config/shell/bash/.bash_profile
+    ~/.profile: config/shell/bash/.profile
+    ~/.zshrc: config/shell/zsh/.zshrc
+    ~/.zimrc: config/shell/zsh/.zimrc
+    ~/.zlogin: config/shell/zsh/.zlogin
+    ~/.zshenv: config/shell/zsh/.zshenv
+    ~/.zprofile: config/shell/zsh/.zprofile
+    ~/.gitconfig: config/git/.gitconfig
+    ~/.gitconfig.inditex: config/git/.gitconfig.inditex
+    ~/.gitattributes: config/git/.gitattributes
+    ~/.gitignore_global: config/git/.gitignore_global
+    ~/.czrc: config/git/.czrc
+    ~/.vimrc: config/editors/vim/.vimrc
+    ~/.config/Code/User/settings.json: config/editors/vscode/settings.json
+    ~/.config/ghostty/config: config/terminals/ghostty/config
+
+- shell:
+    - touch $DOTFILES_PATH/config/shell/local.sh
+    - touch $DOTFILES_PATH/config/shell/local.interactive.sh
+    - touch $HOME/.z

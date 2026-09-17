@@ -1,0 +1,12 @@
+- clean: ["~"]
+
+- defaults:
+    link:
+      create: true
+      force: true
+
+- link:
+    ~/.wezterm.lua: config/terminals/wezterm/.wezterm.lua
+    ~/.config/tilix/schemes/nord.json: config/terminals/tilix/schemes/nord.json
+    ~/.config/rofi/config.rasi: config/launchers/rofi/config.rasi
+    ~/.config/rofi/mars-theme.rasi: config/launchers/rofi/mars-theme.rasi

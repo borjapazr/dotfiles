@@ -1,0 +1,14 @@
+- clean: ["~"]
+
+- defaults:
+    link:
+      create: true
+      force: true
+
+- link:
+    ~/.wezterm.lua: config/terminals/wezterm/.wezterm.lua
+    ~/Library/Application Support/Code/User/settings.json: config/editors/vscode/settings.json
+    ~/Library/Application Support/Cursor/User/settings.json: config/editors/vscode/settings.json
+
+- create:
+    - ~/.hushlogin
