@@ -6,6 +6,10 @@ on:
       - main
   pull_request:
 
+env:
+  # Every job needs it, so set it once instead of in a step per job.
+  DOTFILES_PATH: ${{ github.workspace }}
+
 jobs:
   secrets-scan:
     name: 🔍 Secrets scan
@@ -30,12 +34,8 @@ jobs:
       - name: ⬇️ Checkout project
         uses: actions/checkout@v4
 
-      - name: ⚪️ Set needed environment variables
-        run: |
-          echo "DOTFILES_PATH=$PWD" >> $GITHUB_ENV
-
       - name: 👀 Static analysis
-        run: bash scripts/self/static_analysis
+        run: bash commands/self/static_analysis
 
   lint:
     name: 💅 Lint
@@ -53,14 +53,13 @@ jobs:
 
       - name: ⚪️ Set needed environment variables
         run: |
-          echo "DOTFILES_PATH=$PWD" >> $GITHUB_ENV
           echo "PATH=$PATH:$HOME/go/bin" >> $GITHUB_ENV
 
       - name: 📥 Install shfmt
         run: go install mvdan.cc/sh/v3/cmd/shfmt@latest
 
       - name: 💅 Lint bash files
-        run: bash scripts/self/lint
+        run: bash commands/self/lint
 
   validate-scripts:
     name: 📜 Validate scripts
@@ -71,9 +70,35 @@ jobs:
       - name: ⬇️ Checkout project
         uses: actions/checkout@v4
 
-      - name: ⚪️ Set needed environment variables
-        run: |
-          echo "DOTFILES_PATH=$PWD" >> $GITHUB_ENV
-
       - name: 📜 Validate scripts
-        run: bash scripts/self/validate_scripts
+        run: bash commands/self/validate_scripts
+
+  # The regressions worth catching here were platform-specific: a GNU-only
+  # `find` spelling that BSD rejects, and shell layers that had to behave the
+  # same under zsh and bash. A single-OS job would have missed both.
+  test:
+    name: 🧪 Test (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    needs: static-analysis
+
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+
+    steps:
+      - name: ⬇️ Checkout project
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: 📥 Install bats and zsh
+        run: |
+          if [ "$RUNNER_OS" = "macOS" ]; then
+            brew install bats-core
+          else
+            sudo apt-get update && sudo apt-get install -y bats zsh
+          fi
+
+      - name: 🧪 Run test suite
+        run: bats tests

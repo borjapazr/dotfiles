@@ -1,0 +1,29 @@
+# Shellcheck configuration for the whole repository.
+
+#
+
+# Kept here rather than as CI flags so that running `shellcheck <file>` in an
+
+# editor, in a pre-commit hook or on a laptop reports exactly what CI reports.
+
+# Fragments under config/shell are sourced, not executed, so they carry no shebang.
+
+shell=bash
+
+# Resolve `source` targets relative to the file being checked.
+
+source-path=SCRIPTDIR
+
+# SC1090/SC1091: every script sources "$DOTFILES_PATH/commands/core/\_main.sh",
+
+# a path that cannot be resolved statically.
+
+# SC2154: the variables they then use are defined by that library.
+
+disable=SC1090,SC1091,SC2154
+
+# The severity threshold is NOT set here: shellcheck 0.11 honours `disable`
+
+# from this file but ignores `severity`. It lives in commands/self/static_analysis
+
+# as -S warning instead.

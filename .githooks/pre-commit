@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+#
+# Staged files only. A hook that runs the full suite gets bypassed with
+# --no-verify within a week, so keep it fast enough to never be in the way.
+
+set -uo pipefail
+
+repo="$(git rev-parse --show-toplevel)"
+status=0
+
+staged_files() {
+  git diff --cached --name-only --diff-filter=ACM
+}
+
+# Machine-local files hold real credentials. They are gitignored, but `git add
+# -f` walks straight past that.
+while IFS= read -r file; do
+  case "${file##*/}" in
+  local.sh | local.interactive.sh | private-*)
+    printf '\033[31m✖\033[0m refusing to commit machine-local file: %s\n' "$file"
+    status=1
+    ;;
+  esac
+done < <(staged_files)
+
+# Bash files among the staged changes, by extension or by shebang.
+bash_files=()
+while IFS= read -r file; do
+  [ -f "$repo/$file" ] || continue
+  case "$file" in
+  *.sh)
+    bash_files+=("$repo/$file")
+    continue
+    ;;
+  esac
+  IFS= read -r shebang <"$repo/$file" 2>/dev/null || continue
+  case "$shebang" in
+  '#!'*bash*) bash_files+=("$repo/$file") ;;
+  esac
+done < <(staged_files)
+
+if [ ${#bash_files[@]} -gt 0 ]; then
+  if command -v shellcheck >/dev/null; then
+    # Same threshold as commands/self/static_analysis, or the hook rejects what
+    # CI accepts and gets bypassed.
+    shellcheck -S warning "${bash_files[@]}" || status=1
+  fi
+
+  if command -v shfmt >/dev/null && shfmt -i 2 -l "${bash_files[@]}" | grep -q .; then
+    printf '\033[31m✖\033[0m needs formatting, run: make format\n'
+    status=1
+  fi
+fi
+
+exit "$status"
