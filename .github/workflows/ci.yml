@@ -26,21 +26,21 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  static-analysis:
-    name: 💿 Static analysis
+  lint:
+    name: 💅 Lint
     runs-on: ubuntu-latest
 
     steps:
       - name: ⬇️ Checkout project
         uses: actions/checkout@v4
 
-      - name: 👀 Static analysis
-        run: bash commands/self/static_analysis
+      - name: 💅 Lint bash files
+        run: bash commands/self/lint
 
-  lint:
-    name: 💅 Lint
+  format:
+    name: 🎨 Format
     runs-on: ubuntu-latest
-    needs: static-analysis
+    needs: lint
 
     steps:
       - name: ⬇️ Checkout project
@@ -58,13 +58,13 @@ jobs:
       - name: 📥 Install shfmt
         run: go install mvdan.cc/sh/v3/cmd/shfmt@latest
 
-      - name: 💅 Lint bash files
-        run: bash commands/self/lint
+      - name: 🎨 Check formatting
+        run: bash commands/self/format --check
 
   validate-scripts:
     name: 📜 Validate scripts
     runs-on: ubuntu-latest
-    needs: static-analysis
+    needs: lint
 
     steps:
       - name: ⬇️ Checkout project
@@ -79,7 +79,7 @@ jobs:
   test:
     name: 🧪 Test (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
-    needs: static-analysis
+    needs: lint
 
     strategy:
       fail-fast: false

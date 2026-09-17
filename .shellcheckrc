@@ -24,6 +24,6 @@ disable=SC1090,SC1091,SC2154
 
 # The severity threshold is NOT set here: shellcheck 0.11 honours `disable`
 
-# from this file but ignores `severity`. It lives in commands/self/static_analysis
+# from this file but ignores `severity`. It lives in commands/self/lint
 
 # as -S warning instead.

@@ -23,12 +23,13 @@ while IFS= read -r file; do
   esac
 done < <(staged_files)
 
-# Bash files among the staged changes, by extension or by shebang.
+# Bash files among the staged changes, by extension or by shebang. Kept in sync
+# with dot::list_bash_files by tests/githook_pre_commit.bats.
 bash_files=()
 while IFS= read -r file; do
   [ -f "$repo/$file" ] || continue
   case "$file" in
-  *.sh)
+  *.sh | *.bash)
     bash_files+=("$repo/$file")
     continue
     ;;
@@ -41,8 +42,8 @@ done < <(staged_files)
 
 if [ ${#bash_files[@]} -gt 0 ]; then
   if command -v shellcheck >/dev/null; then
-    # Same threshold as commands/self/static_analysis, or the hook rejects what
-    # CI accepts and gets bypassed.
+    # Same threshold as commands/self/lint, or the hook rejects what CI accepts
+    # and gets bypassed.
     shellcheck -S warning "${bash_files[@]}" || status=1
   fi
 

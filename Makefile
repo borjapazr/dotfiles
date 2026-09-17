@@ -13,10 +13,10 @@ help: ## Show this help
 check: lint fmt test ## Run every gate CI runs
 
 lint: ## Static analysis with shellcheck
-	@$(DOT) self static_analysis
+	@$(DOT) self lint
 
 fmt: ## Report formatting drift with shfmt
-	@$(DOT) self lint
+	@$(DOT) self format --check
 
 format: ## Rewrite files to the canonical format
 	@$(DOT) self format

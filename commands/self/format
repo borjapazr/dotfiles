@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# No `set -e`: with --check, shfmt exits non-zero when it finds drift, which is
+# the result to report, not an error to abort on.
 set -uo pipefail
 
 source "$DOTFILES_PATH/commands/core/_main.sh"
@@ -7,12 +9,20 @@ source "$DOTFILES_PATH/commands/core/_main.sh"
 ##? Rewrite all dotfiles related bash files to the canonical format
 ##?
 ##? Usage:
-##?    format
+##?    format [--check]
+##?
+##? Options:
+##?    --check    Print the drift as a diff instead of rewriting the files
 if [ "${1:-}" = "-h" ] || [ "${1:-}" = "--help" ]; then
   docs::parse "$@"
 fi
 
 platform::require shfmt || exit 1
+
+if [ "${1:-}" = "--check" ]; then
+  dot::list_bash_files | xargs shfmt -i 2 -d
+  exit $?
+fi
 
 dot::list_bash_files | xargs shfmt -i 2 -w
 

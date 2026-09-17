@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
-# No `set -e`: shfmt -d exits non-zero when it finds style issues, which is the
+# No `set -e`: shellcheck exits non-zero when it finds issues, which is the
 # result we want to report, not an error to abort on.
 set -uo pipefail
 
 source "$DOTFILES_PATH/commands/core/_main.sh"
 
-##? Lint all dotfiles related bash files
+##? Lint all dotfiles related bash files with shellcheck
 ##?
 ##? Usage:
 ##?    lint
@@ -14,6 +14,8 @@ if [ "${1:-}" = "-h" ] || [ "${1:-}" = "--help" ]; then
   docs::parse "$@"
 fi
 
-platform::require shfmt || exit 1
+platform::require shellcheck || exit 1
 
-dot::list_bash_files | xargs shfmt -i 2 -d
+# Suppressions live in .shellcheckrc so an editor and CI agree on them; only the
+# severity threshold has to be a flag, because shellcheck ignores it in the file.
+dot::list_bash_files | xargs shellcheck -S warning

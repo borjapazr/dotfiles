@@ -55,20 +55,20 @@ dot::script_summary() {
   done <"$file"
 }
 
-# Every *.sh plus every file whose first line is a bash shebang, in any of its
-# spellings. Machine-local files are pruned on purpose: shellcheck quotes the
-# offending line and `shfmt -d` prints a diff, so linting the secrets file would
-# print its contents to stdout and into CI logs.
+# Every *.sh and *.bash plus every file whose first line is a bash shebang, in
+# any of its spellings. Machine-local files are pruned on purpose: shellcheck
+# quotes the offending line and `shfmt -d` prints a diff, so linting the secrets
+# file would print its contents to stdout and into CI logs.
 dot::list_bash_files() {
   local file shebang
 
-  find "$DOTFILES_PATH"/{bin,commands,config/shell,installer} \
+  find "$DOTFILES_PATH"/{bin,commands,config/shell,tests,.githooks,installer} \
     \( -name .zim -o -name 'private-*' -o -name 'local.sh' -o -name 'local.interactive.sh' \) -prune \
     -o -type f -print 2>/dev/null |
     while IFS= read -r file; do
       case $file in
       *.zwc | *.zwc.old | *.bak) continue ;;
-      *.sh)
+      *.sh | *.bash)
         printf '%s\n' "$file"
         continue
         ;;
