@@ -184,6 +184,7 @@
   /*** Files settings ***/
   "files.associations": {
     ".env*": "dotenv",
+    "**/config/terminals/ghostty/config": "ini",
     "*.chatmode.md": "markdown",
     "*.instructions.md": "markdown",
     "*.prompt.md": "markdown"
@@ -202,6 +203,9 @@
   },
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[ini]": {
+    "editor.formatOnSave": false
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -358,6 +362,7 @@
   // Debugging settings
   "github.copilot.chat.startDebugging.enabled": true,
   "github.copilot.chat.copilotDebugCommand.enabled": true,
+  "github.copilot.chat.otel.dbSpanExporter.enabled": true,
   // Testing settings
   "github.copilot.chat.generateTests.codeLens": true,
   "github.copilot.chat.setupTests.enabled": true,
