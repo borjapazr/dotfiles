@@ -1,18 +1,133 @@
-background-blur-radius = 20
-background-opacity = 0.95
-confirm-close-surface = false
-cursor-style = bar
-font-family = Delugia
+# ============================================================================
+# Ghostty configuration
+# ============================================================================
+#
+# Ghostty does not support inline comments, so keep notes on separate lines.
+# Validate changes with: ghostty +validate-config
+
+# --- Font -------------------------------------------------------------------
+font-family = Cascadia Code NF
 font-size = 16
 font-thicken = true
-macos-titlebar-style = hidden
-quit-after-last-window-closed = true
-shell-integration = detect
-theme = GruvboxDark
+font-thicken-strength = 64
+font-style-bold = Bold
+font-style-bold-italic = Bold Italic
+adjust-cell-height = 5
+font-feature = +calt
+font-feature = +zero
+font-feature = +ss01
+
+# --- Theme & cursor ---------------------------------------------------------
+theme = light:Gruvbox Dark,dark:Gruvbox Dark
+cursor-style = bar
+cursor-style-blink = true
+
+# --- Window -----------------------------------------------------------------
+window-height = 30
+window-width = 100
+window-theme = ghostty
 window-decoration = true
-window-height = 22
 window-padding-balance = true
 window-padding-x = 20
-window-padding-y = 20
-window-theme = ghostty
-window-width = 80
+window-padding-y = 12
+window-padding-color = extend
+macos-titlebar-style = tabs
+window-new-tab-position = end
+quit-after-last-window-closed = true
+
+# Restore windows, tabs, and splits when reopening Ghostty.
+window-save-state = always
+
+# More vivid colors for new windows. Comment this out if the cursor shader
+# looks dull.
+window-colorspace = display-p3
+
+# --- Transparency & blur ----------------------------------------------------
+background-opacity = 0.90
+
+# Keep this classic blur and explicit radius together; the cursor shader shows
+# its full effect with this combination. Avoid macos-glass-regular, which dulls
+# the shader.
+background-blur = true
+background-blur-radius = 20
+
+# --- Splits -----------------------------------------------------------------
+# Increase contrast between the focused pane and the rest.
+unfocused-split-opacity = 0.7
+
+# Gruvbox fill and divider colors.
+unfocused-split-fill = 1d2021
+split-divider-color = 504945
+
+# --- Quick terminal ---------------------------------------------------------
+# Global drop-down terminal. macOS requests Accessibility access on first use.
+# Shortcut: Command + ñ (easy to reach on a Spanish keyboard layout).
+keybind = global:cmd+ñ=toggle_quick_terminal
+quick-terminal-position = top
+quick-terminal-autohide = true
+quick-terminal-animation-duration = 0.15
+
+# --- Shaders ----------------------------------------------------------------
+# Custom shaders are applied in order, with paths relative to this config.
+# Dotbot symlinks this file into ~/.config/ghostty/; vendored shaders live in
+# config/terminals/ghostty/shaders/ so they can be patched and versioned here.
+custom-shader = shaders/cursor_trail.glsl
+
+# --- Scrollback -------------------------------------------------------------
+# Measured in bytes, not lines: 50,000 is only a few hundred lines. 100 MB
+# gives tens of thousands of lines; lower it (e.g. 50000000) to save RAM.
+scrollback-limit = 100000000
+
+# --- Clipboard --------------------------------------------------------------
+# Allow OSC 52 (Neovim, tmux) without permission prompts.
+clipboard-read = allow
+clipboard-write = allow
+
+# --- Shell integration ------------------------------------------------------
+# Ghostty's integration redraws the prompt after initial window sizing, leaving
+# a stale blank prompt at the top. This shell handles OSC 133 semantics itself.
+# ssh-env and ssh-terminfo keep remote machines without xterm-ghostty terminfo
+# from breaking clear, tmux, etc.
+shell-integration-features = no-cursor,no-title,ssh-env,ssh-terminfo
+
+# --- Notifications & UI -----------------------------------------------------
+bell-features = border
+desktop-notifications = true
+mouse-hide-while-typing = true
+
+# Notify when a long command finishes while the window is unfocused. This
+# relies on shell integration (OSC 133), which this shell handles itself, so
+# it may not fire. If it does not, remove these two settings.
+notify-on-command-finish = unfocused
+notify-on-command-finish-after = 30s
+
+# --- macOS ------------------------------------------------------------------
+# Left Option acts as Alt for word navigation; right Option stays available
+# for accents and @ on a Spanish keyboard.
+macos-option-as-alt = left
+
+macos-icon = custom-style
+macos-icon-frame = aluminum
+macos-icon-ghost-color = #3cff64
+macos-icon-screen-color = #3cff64
+
+# --- Features ---------------------------------------------------------------
+link-url = true
+auto-update = download
+auto-update-channel = tip
+
+# --- Keybindings ------------------------------------------------------------
+keybind = performable:super+c=copy_to_clipboard
+keybind = super+v=paste_from_clipboard
+keybind = shift+enter=text:\n
+keybind = command+k=clear_screen
+keybind = ctrl+b=text:/tasks\r
+keybind = ctrl+u=text:/usage\r
+
+# Cmd+Backspace deletes from the cursor to the start of the line.
+keybind = cmd+backspace=text:\x15
+
+# --- Local overrides --------------------------------------------------------
+# Optional unversioned per-machine settings, such as font or window size. The
+# ? prefix makes Ghostty ignore this file if it does not exist.
+config-file = ?local.conf

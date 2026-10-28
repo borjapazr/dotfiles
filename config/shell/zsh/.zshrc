@@ -31,6 +31,7 @@ setopt NO_BANG_HIST
 
 # ─── Shell options ───────────────────────────────────────────────────────────
 setopt +o nomatch
+setopt append_create
 
 # ─── Completion menu (fzf-tab) ───────────────────────────────────────────────
 # Previews are opt-in per command: with fzf-tab-source removed there is no
@@ -69,6 +70,13 @@ if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZIM_CONFIG_FILE:-${ZDOTDIR:-${HOME}}/.zimrc} 
   source "${HOMEBREW_PREFIX}/opt/zimfw/share/zimfw.zsh" init
 fi
 source ${ZIM_HOME}/init.zsh
+
+# ─── Patches ─────────────────────────────────────────────────────────────────
+# Workarounds for third-party code loaded above; each file says when to drop it.
+for _dotfiles_patch in $DOTFILES_PATH/config/shell/zsh/patches/*.zsh(N); do
+  source $_dotfiles_patch
+done
+unset _dotfiles_patch
 
 # ─── Dotfiles (env + interactive: aliases, functions, fzf) ───────────────────
 source $DOTFILES_PATH/config/shell/shared/interactive.sh

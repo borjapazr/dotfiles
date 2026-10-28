@@ -9,8 +9,7 @@ source "$DOTFILES_PATH/commands/core/_main.sh"
 ##? Usage:
 ##?   fix_capslock
 ##?
-##? hidutil property doesn't persist across reboots/logins — re-run this
-##? after a restart to reapply it.
+##? hidutil property resets at login; a LaunchAgent reapplies it automatically.
 docs::parse "$@"
 
 hidutil property --set '{"CapsLockDelayOverride":0}' >/dev/null

@@ -1,0 +1,106 @@
+{
+  "$schema": "https://raw.githubusercontent.com/manaflow-ai/cmux/main/web/data/cmux.schema.json",
+  "schemaVersion": 1,
+  "app": {
+    "accentColor": "system",
+    "appIcon": "automatic",
+    "appearance": "system",
+    "language": "en",
+    "commandPaletteSearchesAllSurfaces": true,
+    "equalizeSplitsOnCreate": true,
+    "focusHistoryIncludesPanesAndTabs": true,
+    "focusPaneOnFirstClick": true,
+    "hideTabCloseButton": false,
+    "keepWorkspaceOpenWhenClosingLastSurface": true,
+    "menuBarOnly": false,
+    "minimalMode": true,
+    "workspaceInheritWorkingDirectory": true,
+    "preferredEditor": "code",
+    "sendAnonymousTelemetry": false
+  },
+  "automation": {
+    "suppressSubagentNotifications": true,
+    "workspaceAutoNaming": true
+  },
+  "shortcuts": {
+    "bindings": {
+      "toggleTerminalCopyMode": "cmd+shift+m"
+    }
+  },
+  "customSidebars": {
+    "beta": {
+      "enabled": false
+    }
+  },
+  "extensions": {
+    "beta": {
+      "enabled": false
+    }
+  },
+  "mobile": {
+    "browserTunnel": {
+      "allowOtherHosts": true
+    }
+  },
+  "notifications": {
+    "agentIdleReminder": false,
+    "dockBadge": true,
+    "paneFlashThemeColor": true,
+    "showInMenuBar": false
+  },
+  "rightSidebar": {
+    "beta": {
+      "feed": {
+        "enabled": false
+      }
+    }
+  },
+  "sidebar": {
+    "activeTabIndicatorStyle": "leftRail",
+    "beta": {
+      "workspaceTodos": {
+        "checklistStyle": "popover"
+      }
+    },
+    "branchVerticalLayout": true,
+    "compactAgentStatus": false,
+    "hideAllDetails": false,
+    "loadingSpinnerPosition": "trailing",
+    "notificationBadgePosition": "trailing",
+    "notificationMessageLineLimit": 1,
+    "pathLastSegmentOnly": true,
+    "showAgentUsage": true,
+    "showBranchDirectory": true,
+    "showCustomMetadata": true,
+    "showNotificationMessage": true,
+    "showWorkspaceDescription": true,
+    "stackBranchDirectory": false,
+    "watchGitStatus": true,
+    "wrapWorkspaceTitles": true
+  },
+  "sidebarAppearance": {
+    "matchTerminalBackground": true
+  },
+  "sleepyMode": {
+    "mascot": "ghost",
+    "theme": "cmux"
+  },
+  "terminal": {
+    "adaptiveDefaultTheme": true,
+    "copyOnSelect": false,
+    "rendererRealization": {
+      "idleSeconds": 30,
+      "maxWarmRenderers": 12
+    },
+    "autoResumeAgentSessions": true,
+    "showPasswordInputDots": true,
+    "titleUpdates": {
+      "coalescing": {
+        "enabled": false
+      }
+    }
+  },
+  "workspaceColors": {
+    "subtleSelection": true
+  }
+}

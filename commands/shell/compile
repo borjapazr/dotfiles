@@ -25,6 +25,7 @@ ZSH_FILES=(
   "$DOTFILES_PATH/config/shell/zsh/.zlogin"
   "$DOTFILES_PATH/config/shell/zsh/interactive.zsh"
   "$DOTFILES_PATH/config/shell/zsh/key-bindings.zsh"
+  "$DOTFILES_PATH"/config/shell/zsh/patches/*.zsh
 )
 
 log::info "⚡ Compiling zsh files to bytecode (.zwc)"

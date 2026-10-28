@@ -7,8 +7,15 @@
 
 - link:
     ~/.wezterm.lua: config/terminals/wezterm/.wezterm.lua
+    ~/.gnupg/gpg-agent.conf: config/macos/gnupg/gpg-agent.conf
+    ~/.gnupg/gpg.conf: config/macos/gnupg/gpg.conf
     ~/Library/Application Support/Code/User/settings.json: config/editors/vscode/settings.json
     ~/Library/Application Support/Cursor/User/settings.json: config/editors/vscode/settings.json
+    ~/Library/LaunchAgents/dev.bpaz.dotfiles.capslock-delay.plist: config/macos/LaunchAgents/dev.bpaz.dotfiles.capslock-delay.plist
+    ~/.config/cmux/cmux.json: config/terminals/cmux/cmux.json
 
 - create:
     - ~/.hushlogin
+
+- shell:
+    - defaults write com.cmuxterm.app sidebarShellIntegration -bool true

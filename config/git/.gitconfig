@@ -39,13 +39,13 @@
 
 [fetch]
 	prune = true
-	fsckobjects = true
+	fsckobjects = false
 
 [transfer]
-	fsckobjects = true
+	fsckobjects = false
 
 [receive]
-	fsckObjects = true
+	fsckObjects = false
 
 [push]
 	default = simple

@@ -28,6 +28,7 @@
     ~/.vimrc: config/editors/vim/.vimrc
     ~/.config/Code/User/settings.json: config/editors/vscode/settings.json
     ~/.config/ghostty/config: config/terminals/ghostty/config
+    ~/.config/ghostty/shaders: config/terminals/ghostty/shaders
 
 - shell:
     - touch $DOTFILES_PATH/config/shell/local.sh
