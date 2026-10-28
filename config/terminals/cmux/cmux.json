@@ -72,11 +72,12 @@
     "showAgentUsage": true,
     "showBranchDirectory": true,
     "showCustomMetadata": true,
-    "showNotificationMessage": true,
-    "showWorkspaceDescription": true,
+    "showLog": false,
+    "showNotificationMessage": false,
+    "showWorkspaceDescription": false,
     "stackBranchDirectory": false,
     "watchGitStatus": true,
-    "wrapWorkspaceTitles": true
+    "wrapWorkspaceTitles": false
   },
   "sidebarAppearance": {
     "matchTerminalBackground": true
